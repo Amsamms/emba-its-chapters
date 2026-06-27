@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 7: e-Business Systems | Explained Simply</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="backdrop"></div>
+<button class="menubtn">☰ Contents</button>
+
+<div class="wrap">
+  <aside class="side">
+    <a class="brand" href="index.html" style="text-decoration:none">
+      <span class="lg">IT</span>
+      <span><b>IT Strategy, Simply</b><small>Chapter 7 of 12</small></span>
+    </a>
+    <nav class="toc">
+      <div class="grp">On this page</div>
+      <a href="#story"><span class="n">★</span> The whole chapter as a story</a>
+      <a href="#ebiz"><span class="n">1</span> e-business vs e-commerce</a>
+      <a href="#cross"><span class="n">2</span> Cross-functional systems</a>
+      <a href="#architecture"><span class="n">3</span> The enterprise map</a>
+      <a href="#erp"><span class="n">4</span> ERP (the backbone)</a>
+      <a href="#crm"><span class="n">5</span> CRM (the customer)</a>
+      <a href="#scm"><span class="n">6</span> SCM (the supply chain)</a>
+      <a href="#eai"><span class="n">7</span> EAI, TPS and collaboration</a>
+      <a href="#functional"><span class="n">8</span> The functional systems</a>
+      <a href="#confuse"><span class="n">⚖</span> Easy to confuse</a>
+      <a href="#check"><span class="n">✓</span> Quick self-check</a>
+    </nav>
+    <a class="home" href="index.html">← All 12 chapters</a>
+  </aside>
+
+  <main class="main">
+  <div class="reading">
+
+    <section class="hero" id="top">
+      <span class="tag"><span class="dot"></span> Chapter 7 &middot; Exam favourite</span>
+      <h1>e-Business <span class="grad">Systems</span></h1>
+      <p class="lead">The big company-wide systems that join up the whole business: ERP, CRM and SCM, plus the
+      tools that integrate them and the systems that serve each department.</p>
+      <div class="exam" style="margin-top:18px"><b>Exam radar:</b> a heavily examined chapter. Lock in the
+      three big initials — <b>ERP</b> (internal backbone), <b>CRM</b> (customers), <b>SCM</b> (suppliers) — what
+      each is, who it faces, and why ERP projects cost and fail so much. All flagged below.</div>
+    </section>
+
+    <details class="plain-english" id="story" open>
+      <summary>In plain English — the whole chapter as one story</summary>
+      <p><strong>Our running example:</strong> BrewHaus has grown into a real company with departments, suppliers
+      and thousands of customers. The problem now: each department has its own systems that do not talk to each
+      other. This chapter is about the big systems that <em>join the whole business up</em>.</p>
+
+      <h4>1. "e-business" is bigger than "e-commerce"</h4>
+      <p>e-commerce is just the buying and selling online. <em>e-business</em> is the whole thing: selling,
+      <em>plus</em> internal collaboration and running business processes with technology.</p>
+
+      <h4>2. The useful systems cross department lines</h4>
+      <p>Taking an order touches sales, the kitchen, finance and delivery. A system that only serves one
+      department is not enough; you need <em>cross-functional</em> systems that span them all.</p>
+
+      <h4>3. Three giant systems, each facing a different direction</h4>
+      <p><strong>ERP</strong> is the internal backbone that runs BrewHaus itself. <strong>CRM</strong> faces
+      outward to customers. <strong>SCM</strong> faces outward to suppliers. Picture ERP in the centre with CRM
+      and SCM reaching out to either side.</p>
+
+      <h4>4. CRM keeps the customers</h4>
+      <p>It gives every staff member one complete view of each customer, and works to acquire, grow and keep them.
+      It is far cheaper to keep a customer than to win a new one, which is the whole point.</p>
+
+      <h4>5. ERP is powerful but brutal to install</h4>
+      <p>It ties every internal process into one system on one database. The catch: most of the cost is not the
+      software, it is redesigning how the company works, and a botched ERP can cripple a business.</p>
+
+      <h4>6. SCM gets the right stuff to the right place</h4>
+      <p>It coordinates suppliers so BrewHaus has the right beans, in the right shop, at the right time, without
+      drowning in stock. The clever idea: "substitute information for inventory."</p>
+
+      <p class="connect"><strong>How the chapter connects:</strong> e-business is the wide umbrella → the systems
+      that matter cross departments → three giants organise the company, ERP in the centre, CRM facing customers,
+      SCM facing suppliers → CRM wins and keeps customers → ERP integrates the insides (at great cost and risk) →
+      SCM coordinates the supply chain → and underneath sit the everyday functional systems for each department.</p>
+    </details>
+
+    <section id="ebiz">
+      <div class="kicker">Section 1 · exam favourite</div>
+      <h2 class="sec">e-business versus e-commerce</h2>
+      <p class="lead-q">People use these two words as if they mean the same thing. Do they?</p>
+      <p>No, and the exam likes this distinction. One is a part of the other:</p>
+      <div class="keypoint">
+        <b>e-commerce</b> is the narrow piece: <strong>buying, selling and marketing</strong> products, services
+        and information over the internet and other networks.<br><br>
+        <b>e-business</b> is the wide umbrella: using the internet and technology to support
+        <strong>everything</strong> — e-commerce, <em>plus</em> internal communication and collaboration,
+        <em>plus</em> running web-enabled business processes.
+      </div>
+      <p>So every bit of e-commerce is e-business, but lots of e-business (like BrewHaus's internal staff
+      collaboration) is not e-commerce. <strong>e-commerce is a subset of e-business.</strong></p>
+    </section>
+
+    <section id="cross">
+      <div class="kicker">Section 2 · exam favourite</div>
+      <h2 class="sec">Cross-functional systems</h2>
+      <p class="lead-q">Why isn't a separate system for each department good enough?</p>
+      <p>Because real business processes do not respect department walls. Think about bringing a new BrewHaus
+      seasonal drink to life: it starts in <strong>marketing</strong> (customer feedback, market research), moves
+      to <strong>R&amp;D</strong> (recipe design and testing), and ends in <strong>operations</strong> (production
+      and rollout). One process, three departments.</p>
+      <p>A <strong>cross-functional system</strong> is one that deliberately <strong>crosses the boundaries of
+      traditional business functions</strong> so that an end-to-end process is supported all the way through,
+      instead of being chopped into disconnected pieces. ERP, CRM and SCM are all cross-functional.</p>
+    </section>
+
+    <section id="architecture">
+      <div class="kicker">Section 3 · exam favourite</div>
+      <h2 class="sec">The enterprise application map</h2>
+      <p class="lead-q">How do the big systems fit together?</p>
+      <p>Here is the single most useful picture in the chapter. <strong>ERP sits in the centre</strong> as the
+      internal backbone, and the other applications reach out from it to the groups they serve:</p>
+      <figure>
+        <svg viewBox="0 0 560 300" role="img" aria-label="Enterprise application architecture with ERP at the center">
+          <circle cx="280" cy="150" r="58" fill="#16304f" stroke="#33e0d4" stroke-width="2"/>
+          <text x="280" y="145" text-anchor="middle" class="svg-label" fill="#80f0e8">ERP</text>
+          <text x="280" y="165" text-anchor="middle" class="svg-sub" fill="#80f0e8">internal backbone</text>
+          <rect x="200" y="14" width="160" height="48" rx="9" fill="#12243d" stroke="#f5b84a"/>
+          <text x="280" y="34" text-anchor="middle" class="svg-label">SCM → Suppliers</text><text x="280" y="51" text-anchor="middle" class="svg-sub">sourcing, procurement</text>
+          <rect x="200" y="238" width="160" height="48" rx="9" fill="#12243d" stroke="#f5b84a"/>
+          <text x="280" y="258" text-anchor="middle" class="svg-label">CRM → Customers</text><text x="280" y="275" text-anchor="middle" class="svg-sub">marketing, sales, service</text>
+          <rect x="14" y="126" width="150" height="48" rx="9" fill="#12243d" stroke="#4a93ff"/>
+          <text x="89" y="146" text-anchor="middle" class="svg-label">KM → Employees</text><text x="89" y="163" text-anchor="middle" class="svg-sub">collaboration</text>
+          <rect x="396" y="126" width="150" height="48" rx="9" fill="#12243d" stroke="#4a93ff"/>
+          <text x="471" y="146" text-anchor="middle" class="svg-label">PRM → Partners</text><text x="471" y="163" text-anchor="middle" class="svg-sub">selling, distribution</text>
+          <g stroke="#7491b3" stroke-width="2">
+            <line x1="280" y1="92" x2="280" y2="62"/><line x1="280" y1="208" x2="280" y2="238"/>
+            <line x1="222" y1="150" x2="164" y2="150"/><line x1="338" y1="150" x2="396" y2="150"/>
+          </g>
+        </svg>
+        <figcaption>ERP is the integrating core. SCM reaches up to suppliers, CRM reaches down to customers,
+        knowledge management serves employees, and partner relationship management faces partners.</figcaption>
+      </figure>
+      <p>Remember it by direction: <strong>ERP = inside, SCM = suppliers (upstream), CRM = customers
+      (downstream).</strong></p>
+    </section>
+
+    <section id="erp">
+      <div class="kicker">Section 4 · exam favourite</div>
+      <h2 class="sec">ERP: the internal backbone</h2>
+      <p class="lead-q">What exactly is ERP, and why do people fear installing it?</p>
+      <p><strong>Enterprise Resource Planning (ERP)</strong> is a cross-functional system that ties all of a
+      company's major <strong>internal</strong> processes into one integrated suite of software modules sharing one
+      common database, covering production, logistics, accounting and finance, human resources, and sales and
+      order management. Instead of each department keeping its own data, everyone works from the same single
+      source.</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>ERP benefits</th><th>ERP challenges</th></tr></thead>
+        <tbody>
+          <tr><td>Better quality and efficiency.</td><td>High risk and high cost.</td></tr>
+          <tr><td>Lower costs.</td><td>Hardware and software are only a small part of the project.</td></tr>
+          <tr><td>Better decision support (one source of truth).</td><td>A failed rollout can cripple or kill the business.</td></tr>
+          <tr><td>Greater enterprise agility.</td><td>&nbsp;</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="keypoint"><b>The exam's favourite ERP fact:</b> most of the money in an ERP project is not the
+      technology. Roughly <strong>43% goes on reengineering</strong> the business processes, with training, data
+      conversion and change management eating much of the rest. Hardware and software together are only about a
+      quarter of the cost. ERP is mostly an organisational change project wearing a software costume.</div>
+      <p>ERP projects fail when companies underestimate the complexity, fail to involve affected employees,
+      over-rely on the vendor, skimp on training and data conversion, or try to do too much, too fast.</p>
+    </section>
+
+    <section id="crm">
+      <div class="kicker">Section 5 · exam favourite</div>
+      <h2 class="sec">CRM: keeping the customer</h2>
+      <p class="lead-q">What does CRM do, and why does it matter so much?</p>
+      <p><strong>Customer Relationship Management (CRM)</strong> is a cross-functional system that integrates and
+      automates the customer-serving processes. Its goal is a <strong>single, complete view of every customer</strong>
+      for staff, and a single, complete view of the company for the customer. It pulls together five clusters of
+      activity: <strong>sales, marketing and fulfillment, customer service and support, retention and loyalty
+      programs, and contact and account management.</strong></p>
+      <p>CRM works across the whole life of a customer relationship, in three phases:</p>
+      <figure>
+        <svg viewBox="0 0 540 90" role="img" aria-label="Three phases of CRM: acquire, enhance, retain">
+          <rect x="20" y="25" width="140" height="44" rx="22" fill="#12243d" stroke="#4a93ff"/><text x="90" y="52" text-anchor="middle" class="svg-label">1. Acquire</text>
+          <rect x="200" y="25" width="140" height="44" rx="22" fill="#13263f" stroke="#33e0d4"/><text x="270" y="52" text-anchor="middle" class="svg-label" fill="#80f0e8">2. Enhance</text>
+          <rect x="380" y="25" width="140" height="44" rx="22" fill="#16304f" stroke="#f5b84a"/><text x="450" y="52" text-anchor="middle" class="svg-label" fill="#ffd27a">3. Retain</text>
+          <g stroke="#7491b3" stroke-width="2" marker-end="url(#arc)">
+            <line x1="160" y1="47" x2="198" y2="47"/><line x1="340" y1="47" x2="378" y2="47"/>
+          </g>
+          <defs><marker id="arc" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#7491b3"/></marker></defs>
+        </svg>
+        <figcaption>Acquire new customers (marketing, sales), enhance the relationship (cross-sell, up-sell,
+        support), then retain the best ones (proactive service, loyalty).</figcaption>
+      </figure>
+      <div class="keypoint"><b>Why retention is the goal (memorable numbers).</b> The odds of selling to an existing
+      customer are about <strong>50%</strong>, versus only <strong>15%</strong> for a new one. It costs around
+      <strong>six times more</strong> to win a new customer than keep one, an unhappy customer tells 8 to 10
+      others, and lifting retention by just <strong>5%</strong> can lift profits by as much as <strong>85%</strong>.
+      That is why BrewHaus's loyalty programme is worth so much.</div>
+      <p>But CRM is not magic: around <strong>50% of CRM projects fail to deliver</strong> what was promised, and
+      about <strong>20% actually damage</strong> customer relationships. The usual causes: poor preparation, trying
+      to automate a broken process instead of fixing it first, and not involving the business stakeholders. (Notice
+      the echo of Chapter 5: CRM only works if the underlying customer <em>data</em> is clean.)</p>
+    </section>
+
+    <section id="scm">
+      <div class="kicker">Section 6 · exam favourite</div>
+      <h2 class="sec">SCM: the supply chain</h2>
+      <p class="lead-q">What is supply chain management trying to achieve?</p>
+      <p>A <strong>supply chain</strong> is the whole web of suppliers, distributors and partners needed to design,
+      build and sell a product (it is closely related to the <em>value chain</em> from Chapter 2).
+      <strong>Supply Chain Management (SCM)</strong> coordinates it so the company gets:</p>
+      <div class="keypoint"><b>The right products, to the right place, at the right time, in the right quantity, at
+      an acceptable cost.</b> Its goals: forecast demand, control inventory, strengthen relationships with
+      suppliers and distributors, and get feedback on the status of every link in the chain.</div>
+      <p>SCM brings <strong>benefits</strong> like faster and more accurate order processing, lower inventory,
+      quicker time to market, lower costs, and stronger supplier relationships. Its <strong>challenges</strong> are
+      weak demand-planning skills, inaccurate data from other systems, poor collaboration between departments, and
+      immature, hard-to-implement tools. An early enabling technology was <strong>EDI (electronic data
+      interchange)</strong>: the electronic exchange of standard business documents (orders, invoices) directly
+      between trading partners.</p>
+      <div class="analogy"><b>"Substitute information for inventory."</b> The headline idea of modern SCM: the
+      better and more accurate your information about demand, the less spare stock you need to hold "just in case."
+      Good data lets BrewHaus keep less oat milk sitting around while never running out, money that would otherwise
+      be frozen in a warehouse.</div>
+    </section>
+
+    <section id="eai">
+      <div class="kicker">Section 7</div>
+      <h2 class="sec">Joining it all up: EAI, TPS and collaboration</h2>
+      <p class="lead-q">If a company has all these separate systems, what makes them work together?</p>
+      <ul>
+        <li><strong>EAI (enterprise application integration)</strong> is the software glue that connects these
+        different systems so they can share data and talk to each other. It acts as <strong>middleware</strong>
+        linking the customer-facing "front office" (sales, service) with the "back office" (manufacturing, finance),
+        so an order entered once flows automatically to everything that needs it.</li>
+        <li><strong>TPS (transaction processing systems)</strong> handle the basic business transactions, sales,
+        purchases, payments. They can run in <strong>batch</strong> (collect transactions and process them in a
+        group later) or, more commonly today, <strong>online / real-time (OLTP)</strong>, capturing each
+        transaction the instant it happens. BrewHaus's till is a real-time TPS.</li>
+        <li><strong>ECS (enterprise collaboration systems)</strong> help teams communicate, coordinate and
+        collaborate, through communication tools (email, messaging), conferencing tools (video, chat) and work
+        management tools (calendars, project and workflow management).</li>
+      </ul>
+    </section>
+
+    <section id="functional">
+      <div class="kicker">Section 8</div>
+      <h2 class="sec">The everyday functional systems</h2>
+      <p class="lead-q">Beneath the big three, what serves each individual department?</p>
+      <p>Each business function has its own information systems. These are the workhorses under the enterprise
+      systems:</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Function</th><th>Example systems</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Marketing</strong></td><td>CRM, interactive marketing, sales-force automation, targeted marketing.</td></tr>
+          <tr><td><strong>Production / operations</strong></td><td>Manufacturing resource planning, manufacturing execution, process control, computer-integrated manufacturing.</td></tr>
+          <tr><td><strong>Human resources</strong></td><td>Recruiting, skills inventory, compensation analysis, employee self-service.</td></tr>
+          <tr><td><strong>Accounting</strong></td><td>Order processing, inventory, accounts receivable/payable, payroll, general ledger.</td></tr>
+          <tr><td><strong>Finance</strong></td><td>Cash management, credit management, investment, capital budgeting, financial forecasting.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>A couple of facts that come up: <strong>accounting is the oldest and most widely used</strong> business
+      information system, and <strong>computer-integrated manufacturing (CIM)</strong> has three goals you can
+      remember as <strong>Simplify, Automate, Integrate</strong>.</p>
+    </section>
+
+    <section id="confuse">
+      <div class="kicker">Watch out</div>
+      <h2 class="sec">Easy to confuse</h2>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>This</th><th>versus that</th></tr></thead>
+        <tbody>
+          <tr><td><strong>e-business</strong> — the whole umbrella (selling + internal collaboration + processes).</td><td><strong>e-commerce</strong> — just the buying and selling online (a subset).</td></tr>
+          <tr><td><strong>ERP</strong> — integrates <em>internal</em> processes (the backbone).</td><td><strong>CRM</strong> faces <em>customers</em>; <strong>SCM</strong> faces <em>suppliers</em>.</td></tr>
+          <tr><td><strong>EAI</strong> — middleware that connects separate systems.</td><td><strong>ERP</strong> — one integrated suite replacing separate systems.</td></tr>
+          <tr><td><strong>Batch processing</strong> — collect, then process as a group later.</td><td><strong>Online/real-time (OLTP)</strong> — process each transaction instantly.</td></tr>
+          <tr><td><strong>Supply chain</strong> — the network of suppliers and partners.</td><td><strong>SCM</strong> — the system that manages and coordinates that chain.</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="check">
+      <div class="kicker">Test yourself</div>
+      <h2 class="sec">Quick self-check</h2>
+      <p class="muted">Try to answer each in your head, then click to reveal.</p>
+      <div class="selfcheck">
+        <div class="q"><span class="qi">Q1</span><span>How do e-business and e-commerce differ?</span></div>
+        <div class="a">e-commerce is just buying, selling and marketing online; e-business is the wider umbrella that
+        also includes internal collaboration and web-enabled business processes. e-commerce is a subset of
+        e-business.</div>
+        <div class="q"><span class="qi">Q2</span><span>What do ERP, CRM and SCM each face?</span></div>
+        <div class="a">ERP is the internal backbone (inside the company); CRM faces customers (downstream); SCM faces
+        suppliers (upstream).</div>
+        <div class="q"><span class="qi">Q3</span><span>What are the three phases of CRM?</span></div>
+        <div class="a">Acquire, enhance, retain, mapped to the customer life cycle.</div>
+        <div class="q"><span class="qi">Q4</span><span>Why are ERP projects so expensive and risky?</span></div>
+        <div class="a">Because most of the cost is not software but reengineering business processes (about 43%),
+        plus training and data conversion. Hardware and software are a minority of the cost, and a failed rollout
+        can cripple the business.</div>
+        <div class="q"><span class="qi">Q5</span><span>State the goal of SCM in one line.</span></div>
+        <div class="a">Get the right products to the right place at the right time, in the right quantity, at an
+        acceptable cost, by forecasting demand and controlling inventory.</div>
+        <div class="q"><span class="qi">Q6</span><span>What does "substitute information for inventory" mean?</span></div>
+        <div class="a">Better, more accurate demand information lets a company hold less spare stock while still
+        meeting demand, so good data replaces the need for buffer inventory.</div>
+        <div class="q"><span class="qi">Q7</span><span>What is EAI?</span></div>
+        <div class="a">Enterprise application integration: middleware software that connects a company's separate
+        systems (front office and back office) so they can share data and work together.</div>
+      </div>
+    </section>
+
+    <nav class="chnav">
+      <a class="prev" href="chapter-06.html"><small>Previous</small>Chapter 6 · Telecommunications and Networks</a>
+      <a class="next" href="chapter-08.html"><small>Next</small>Chapter 8 · E-Commerce Systems</a>
+    </nav>
+
+    <footer>Chapter 7 of 12 · IT Strategy, Explained Simply · plain-English study companion</footer>
+
+  </div>
+  </main>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
