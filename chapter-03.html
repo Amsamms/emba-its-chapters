@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 3: Computer Hardware | Explained Simply</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="backdrop"></div>
+<button class="menubtn">☰ Contents</button>
+
+<div class="wrap">
+  <aside class="side">
+    <a class="brand" href="index.html" style="text-decoration:none">
+      <span class="lg">IT</span>
+      <span><b>IT Strategy, Simply</b><small>Chapter 3 of 12</small></span>
+    </a>
+    <nav class="toc">
+      <div class="grp">On this page</div>
+      <a href="#story"><span class="n">★</span> The whole chapter as a story</a>
+      <a href="#sizes"><span class="n">1</span> The three sizes of computer</a>
+      <a href="#concept"><span class="n">2</span> What's inside any computer</a>
+      <a href="#speed"><span class="n">3</span> Speed and Moore's law</a>
+      <a href="#bits"><span class="n">4</span> Bits, bytes and storage size</a>
+      <a href="#input"><span class="n">5</span> Input devices</a>
+      <a href="#output"><span class="n">6</span> Output devices</a>
+      <a href="#storage"><span class="n">7</span> Storage and its trade-off</a>
+      <a href="#rfid"><span class="n">8</span> RFID and grid computing</a>
+      <a href="#confuse"><span class="n">⚖</span> Easy to confuse</a>
+      <a href="#check"><span class="n">✓</span> Quick self-check</a>
+    </nav>
+    <a class="home" href="index.html">← All 12 chapters</a>
+  </aside>
+
+  <main class="main">
+  <div class="reading">
+
+    <section class="hero" id="top">
+      <span class="tag"><span class="dot"></span> Chapter 3 &middot; Foundation</span>
+      <h1>Computer <span class="grad">Hardware</span></h1>
+      <p class="lead">The physical machines: the kinds of computers, the parts inside every one of them,
+      and the devices for getting data in, out, and stored. The "body" that the rest of the course runs on.</p>
+      <div class="exam" style="margin-top:18px"><b>Good to know:</b> this is a background chapter. The course
+      exam rarely asks about hardware directly, so read it to be comfortable with the vocabulary, not to
+      memorise specs. The few ideas worth keeping are flagged as you go.</div>
+    </section>
+
+    <details class="plain-english" id="story" open>
+      <summary>In plain English — the whole chapter as one story</summary>
+      <p><strong>Our running example:</strong> BrewHaus, your coffee chain. Chapter 1 said an information
+      system is built from people, hardware, software, data and networks. This chapter zooms in on one of
+      those ingredients: <em>the hardware</em>, the physical machines.</p>
+
+      <h4>1. Computers come in three sizes</h4>
+      <p>From the small (the laptop on your desk), to the medium (a server in the back room running the loyalty
+      app), to the large (a mainframe a bank uses for millions of transactions). Same idea, different muscle.</p>
+
+      <h4>2. Every computer has the same handful of parts</h4>
+      <p>No matter the size, a computer takes <em>input</em>, does <em>processing</em> in its brain (the CPU),
+      keeps things in <em>storage</em>, sends out <em>output</em>, and has a <em>control</em> part keeping it
+      all in step. It is the same input-process-output system idea from Chapter 1, in metal and silicon.</p>
+
+      <h4>3. The brain keeps getting faster</h4>
+      <p>The processing chip has roughly doubled in power every couple of years for decades. That is why the
+      phone in your pocket beats the room-sized computers of the past.</p>
+
+      <h4>4. Underneath, it is all just on/off switches</h4>
+      <p>Every photo, price and name is stored as tiny on/off signals: <em>bits</em>. Eight bits make a
+      <em>byte</em>, which holds one character. Pile up bytes and you get kilobytes, megabytes, gigabytes.</p>
+
+      <h4>5, 6. Getting data in and out</h4>
+      <p>Input devices (keyboard, touchscreen, scanner) put data in. Output devices (screens, printers) get it
+      back out. BrewHaus's till is input; its receipt printer and customer display are output.</p>
+
+      <h4>7. Storage is a trade-off</h4>
+      <p>Fast memory is expensive and small; cheap storage is big but slow. So computers use a mix: speedy
+      memory for right-now work, and cheaper disks and drives for keeping things long-term.</p>
+
+      <p class="connect"><strong>How the chapter connects:</strong> computers come in three sizes → but all share
+      the same input-process-store-output-control parts → the processing brain keeps getting faster → everything
+      inside is bits and bytes → we feed data in with input devices and get it back with output devices → and we
+      keep it on storage that trades speed against cost. That is the whole machine.</p>
+    </details>
+
+    <section id="sizes">
+      <div class="kicker">Section 1</div>
+      <h2 class="sec">The three sizes of computer</h2>
+      <p class="lead-q">Is a "computer" one thing, or many?</p>
+      <p>Computers come in a range of sizes, and we group them into tiers by power and price:</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Tier</th><th>What it is</th><th>Typical use</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Microcomputers</strong></td><td>Personal computers: laptops, desktops, tablets, hand-helds.</td><td>One person's everyday machine. BrewHaus's office laptop.</td></tr>
+          <tr><td><strong>Midrange systems</strong></td><td>More powerful network servers, once called minicomputers.</td><td>Running a website, an intranet, or a shared business app. BrewHaus's loyalty-app server.</td></tr>
+          <tr><td><strong>Mainframes</strong></td><td>Large, fast, powerful machines with huge capacity.</td><td>High-volume transaction processing. A bank's core system.</td></tr>
+          <tr><td><strong>Supercomputers</strong></td><td>The most powerful of all, using parallel processing.</td><td>Massive scientific and engineering number-crunching.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>A small, useful idea here: a <strong>terminal</strong> is any device that gives you access to a
+      computer, from a "dumb" screen with no brain of its own, to a point-of-sale register, which is a
+      <em>transaction terminal</em>. BrewHaus's till is exactly that.</p>
+    </section>
+
+    <section id="concept">
+      <div class="kicker">Section 2</div>
+      <h2 class="sec">What is inside any computer</h2>
+      <p class="lead-q">Whatever the size, what parts are always in there?</p>
+      <p>A computer is a system of hardware parts organised by function. There are five functional jobs, and
+      they map exactly onto the input-process-output picture from Chapter 1:</p>
+
+      <figure>
+        <svg viewBox="0 0 640 200" role="img" aria-label="Computer functional parts">
+          <rect x="20" y="80" width="110" height="46" rx="9" fill="#12243d" stroke="#4a93ff"/><text x="75" y="108" text-anchor="middle" class="svg-label">Input</text>
+          <rect x="250" y="80" width="140" height="46" rx="9" fill="#16304f" stroke="#33e0d4" stroke-width="2"/><text x="320" y="101" text-anchor="middle" class="svg-label" fill="#80f0e8">Processing</text><text x="320" y="117" text-anchor="middle" class="svg-sub" fill="#80f0e8">(the CPU)</text>
+          <rect x="510" y="80" width="110" height="46" rx="9" fill="#12243d" stroke="#4a93ff"/><text x="565" y="108" text-anchor="middle" class="svg-label">Output</text>
+          <rect x="250" y="150" width="140" height="40" rx="9" fill="#12243d" stroke="#4a93ff"/><text x="320" y="175" text-anchor="middle" class="svg-label">Storage</text>
+          <rect x="250" y="14" width="140" height="36" rx="8" fill="#1a2c1a" stroke="#43dd92"/><text x="320" y="37" text-anchor="middle" class="svg-sub" fill="#43dd92">Control</text>
+          <g stroke="#7491b3" stroke-width="2" marker-end="url(#arh)">
+            <line x1="130" y1="103" x2="248" y2="103"/><line x1="390" y1="103" x2="508" y2="103"/>
+          </g>
+          <line x1="320" y1="126" x2="320" y2="148" stroke="#7491b3" stroke-width="2"/>
+          <line x1="320" y1="50" x2="320" y2="78" stroke="#43dd92" stroke-width="1.6" stroke-dasharray="4 3"/>
+          <defs><marker id="arh" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#7491b3"/></marker></defs>
+        </svg>
+        <figcaption>The five functional parts of a computer. Input feeds the CPU; the CPU works with storage;
+        results go to output; control keeps it all coordinated.</figcaption>
+      </figure>
+
+      <p>The <strong>CPU (central processing unit)</strong> is the brain, and it has two halves:</p>
+      <ul>
+        <li>The <strong>control unit</strong>, which reads the instructions and directs the work, and</li>
+        <li>The <strong>arithmetic-logic unit (ALU)</strong>, which does the actual sums and comparisons.</li>
+      </ul>
+      <p>Right next to the CPU is <strong>primary storage (main memory)</strong>, which holds the data and
+      instructions the computer is using right now. Bigger, slower <strong>secondary storage</strong> (drives)
+      keeps everything for the long term.</p>
+    </section>
+
+    <section id="speed">
+      <div class="kicker">Section 3</div>
+      <h2 class="sec">Speed, and why computers keep getting faster</h2>
+      <p class="lead-q">Why does new kit always seem to leap ahead of last year's?</p>
+      <p>Computers do their work in almost unimaginably tiny slices of time: today's machines act in
+      <strong>nanoseconds</strong> (billionths of a second) and faster. The "clock speed" you see advertised, in
+      <strong>gigahertz</strong>, counts billions of cycles per second. A related idea is
+      <strong>throughput</strong>: how much useful work the machine gets done in a given time.</p>
+      <div class="keypoint"><b>Moore's law</b> is the famous observation that the number of transistors packed
+      onto a chip roughly <strong>doubles every 18 to 24 months</strong>. That steady doubling is why computing
+      power has exploded while prices have fallen, and why the phone in your pocket out-muscles the
+      room-sized computers of decades past.</div>
+    </section>
+
+    <section id="bits">
+      <div class="kicker">Section 4</div>
+      <h2 class="sec">Bits, bytes and how we measure storage</h2>
+      <p class="lead-q">When a computer stores the word "latte," what is it really storing?</p>
+      <p>At the bottom, everything is just two-state on/off electrical signals. From that simple idea:</p>
+      <ul>
+        <li>A <strong>bit</strong> is a single on/off value, a 0 or a 1. The smallest piece of data.</li>
+        <li>A <strong>byte</strong> is a group of <strong>eight bits</strong>, and it holds exactly one
+        character, one letter, digit or symbol. So "latte" is five bytes.</li>
+      </ul>
+      <p>Stack bytes up and you get the storage sizes you already know, each step about a thousand times bigger
+      than the last:</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Unit</th><th>Roughly</th></tr></thead>
+        <tbody>
+          <tr><td>Kilobyte (KB)</td><td>a thousand bytes</td></tr>
+          <tr><td>Megabyte (MB)</td><td>a million bytes</td></tr>
+          <tr><td>Gigabyte (GB)</td><td>a billion bytes</td></tr>
+          <tr><td>Terabyte (TB)</td><td>a trillion bytes</td></tr>
+          <tr><td>Petabyte (PB)</td><td>a quadrillion bytes</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="input">
+      <div class="kicker">Section 5</div>
+      <h2 class="sec">Getting data in: input devices</h2>
+      <p class="lead-q">How does information get into the machine in the first place?</p>
+      <p>Through input devices. There is a whole range, and they keep getting more natural to use:</p>
+      <ul>
+        <li><strong>Keyboard and pointing devices</strong> — the mouse, trackball, pointing stick, touchpad.</li>
+        <li><strong>Touchscreens</strong> — tap the screen directly (BrewHaus's self-order kiosk).</li>
+        <li><strong>Pen-based input</strong> — a stylus on a tablet that turns handwriting into text.</li>
+        <li><strong>Speech recognition</strong> — speaking to the computer; the most natural input of all, though
+        it has to learn to understand continuous, conversational speech.</li>
+        <li><strong>Optical scanning and OCR</strong> — a scanner reads a paper document, and optical character
+        recognition turns the picture of text into actual editable text. This is how barcodes are read and mail
+        is sorted.</li>
+        <li><strong>Other readers</strong> — magnetic stripe cards, smart cards, digital cameras, and the
+        magnetic-ink characters at the bottom of bank cheques (MICR).</li>
+      </ul>
+    </section>
+
+    <section id="output">
+      <div class="kicker">Section 6</div>
+      <h2 class="sec">Getting results out: output devices</h2>
+      <p class="lead-q">Once the computer has done its work, how do we see the result?</p>
+      <p>Through output devices, mainly screens and printers:</p>
+      <ul>
+        <li><strong>Video displays</strong> — the old bulky CRT, the flat LCD panel that replaced it, and plasma
+        displays used in large flat screens.</li>
+        <li><strong>Printers</strong> — inkjet printers (cheap to buy, great for colour and photos, costlier per
+        page) and laser printers (better for high-volume business printing).</li>
+        <li><strong>Voice response</strong> — the computer speaks back, increasingly common alongside screens.</li>
+      </ul>
+    </section>
+
+    <section id="storage">
+      <div class="kicker">Section 7</div>
+      <h2 class="sec">Storage, and the trade-off at its heart</h2>
+      <p class="lead-q">Why doesn't a computer just use one big, fast type of storage for everything?</p>
+      <p>Because of an unavoidable trade-off: the faster a storage type is, the more it costs and the less it
+      holds. So computers layer different types together.</p>
+      <figure>
+        <svg viewBox="0 0 520 220" role="img" aria-label="Storage trade-off pyramid">
+          <polygon points="260,20 200,80 320,80" fill="#16304f" stroke="#33e0d4"/>
+          <polygon points="200,80 320,80 350,140 170,140" fill="#12243d" stroke="#4a93ff"/>
+          <polygon points="170,140 350,140 390,200 130,200" fill="#0e1c30" stroke="#2f5577"/>
+          <text x="260" y="62" text-anchor="middle" class="svg-sub" fill="#80f0e8">Semiconductor</text>
+          <text x="260" y="115" text-anchor="middle" class="svg-label">Magnetic / optical disk</text>
+          <text x="260" y="178" text-anchor="middle" class="svg-label">Magnetic tape</text>
+          <text x="405" y="45" class="svg-sub" fill="#43dd92">▲ faster, costlier,</text>
+          <text x="405" y="60" class="svg-sub" fill="#43dd92">smaller</text>
+          <text x="405" y="190" class="svg-sub">▼ slower, cheaper,</text>
+          <text x="405" y="205" class="svg-sub">bigger</text>
+        </svg>
+        <figcaption>Going up the pyramid: faster, more expensive, less capacity. Going down: slower, cheaper,
+        more capacity. Computers mix all three layers.</figcaption>
+      </figure>
+      <p>The main storage types, from fastest to cheapest:</p>
+      <ul>
+        <li><strong>Semiconductor memory (primary storage).</strong> The fastest. Two kinds: <strong>RAM</strong>,
+        the main working memory you can read and write, but which is <em>volatile</em> (it loses everything when
+        the power goes off); and <strong>ROM</strong>, permanent read-only memory holding built-in programs
+        (called firmware).</li>
+        <li><strong>Magnetic disk (secondary storage).</strong> Hard drives. Fast access, high capacity,
+        reasonable cost. Several disks can be combined into a <strong>RAID</strong> array so that if one fails,
+        the data survives.</li>
+        <li><strong>Optical disk.</strong> CDs and DVDs, good for distributing software and archiving.</li>
+        <li><strong>Magnetic tape.</strong> Cheapest, but slow. Used for backups and archives.</li>
+        <li><strong>Flash drives.</strong> Small chips that keep data without power, durable and portable.</li>
+      </ul>
+      <div class="keypoint"><b>One more distinction worth keeping:</b> with <strong>direct (random) access</strong>,
+      like a disk, the machine jumps straight to any item. With <strong>sequential access</strong>, like tape, it
+      must read through everything in order to reach what it wants. That is why tape is fine for backups but poor
+      for everyday lookups.</div>
+    </section>
+
+    <section id="rfid">
+      <div class="kicker">Section 8</div>
+      <h2 class="sec">RFID and grid computing</h2>
+      <p class="lead-q">Two modern ideas worth a quick look. Why do they matter to a business?</p>
+      <p><strong>RFID (radio-frequency identification)</strong> is a way of tagging physical objects with a tiny
+      chip so a reader can identify and track them from a distance, without a line of sight. Compared to a
+      barcode, it can be read further away and can store real data, not just an ID number. Shops use it to track
+      stock, and supply chains use it to follow pallets from factory to shelf. The catch is privacy: things can
+      be read without people realising. If BrewHaus tagged its milk crates, it would know in real time which
+      shop has stock and which is about to run out.</p>
+      <p><strong>Grid computing</strong> pools many ordinary computers over a network so their combined, often
+      idle, power acts like one supercomputer. The appeal is cost: you get huge processing power without buying
+      expensive dedicated hardware. It is how some research and financial tasks get done affordably.</p>
+    </section>
+
+    <section id="confuse">
+      <div class="kicker">Watch out</div>
+      <h2 class="sec">Easy to confuse</h2>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>This</th><th>versus that</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Bit</strong> — a single 0 or 1.</td><td><strong>Byte</strong> — eight bits, holds one character.</td></tr>
+          <tr><td><strong>RAM</strong> — working memory, read/write, volatile (lost when power is off).</td><td><strong>ROM</strong> — permanent, read-only, keeps its contents.</td></tr>
+          <tr><td><strong>Primary storage</strong> — fast main memory next to the CPU.</td><td><strong>Secondary storage</strong> — slower drives that keep data long-term.</td></tr>
+          <tr><td><strong>Direct (random) access</strong> — jump straight to any item (disk).</td><td><strong>Sequential access</strong> — read through in order (tape).</td></tr>
+          <tr><td><strong>Control unit</strong> — directs the work inside the CPU.</td><td><strong>ALU</strong> — does the actual maths and comparisons.</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="check">
+      <div class="kicker">Test yourself</div>
+      <h2 class="sec">Quick self-check</h2>
+      <p class="muted">Try to answer each in your head, then click to reveal.</p>
+      <div class="selfcheck">
+        <div class="q"><span class="qi">Q1</span><span>Name the four size tiers of computers.</span></div>
+        <div class="a">Microcomputers (PCs), midrange systems (servers), mainframes, and supercomputers.</div>
+        <div class="q"><span class="qi">Q2</span><span>What are the two parts of the CPU and what does each do?</span></div>
+        <div class="a">The control unit (interprets instructions and directs the work) and the arithmetic-logic
+        unit / ALU (performs the calculations and comparisons).</div>
+        <div class="q"><span class="qi">Q3</span><span>How many bits are in a byte, and what does one byte hold?</span></div>
+        <div class="a">Eight bits make one byte, and one byte holds a single character (a letter, digit or symbol).</div>
+        <div class="q"><span class="qi">Q4</span><span>What does Moore's law say?</span></div>
+        <div class="a">The number of transistors on a chip roughly doubles every 18 to 24 months, which is why
+        computing power keeps rising as cost falls.</div>
+        <div class="q"><span class="qi">Q5</span><span>What is the difference between RAM and ROM?</span></div>
+        <div class="a">RAM is volatile read/write working memory (lost when the power is off); ROM is permanent,
+        read-only memory holding built-in firmware.</div>
+        <div class="q"><span class="qi">Q6</span><span>Explain the storage trade-off in one line.</span></div>
+        <div class="a">Faster storage costs more and holds less; cheaper storage is slower but holds more, so
+        computers layer fast memory with cheap long-term drives.</div>
+      </div>
+    </section>
+
+    <nav class="chnav">
+      <a class="prev" href="chapter-02.html"><small>Previous</small>Chapter 2 · Competing with Information Technology</a>
+      <a class="next" href="chapter-04.html"><small>Next</small>Chapter 4 · Computer Software</a>
+    </nav>
+
+    <footer>Chapter 3 of 12 · IT Strategy, Explained Simply · plain-English study companion</footer>
+
+  </div>
+  </main>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
