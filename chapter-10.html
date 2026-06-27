@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 10: Developing Business/IT Solutions | Explained Simply</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="backdrop"></div>
+<button class="menubtn">☰ Contents</button>
+
+<div class="wrap">
+  <aside class="side">
+    <a class="brand" href="index.html" style="text-decoration:none">
+      <span class="lg">IT</span>
+      <span><b>IT Strategy, Simply</b><small>Chapter 10 of 12</small></span>
+    </a>
+    <nav class="toc">
+      <div class="grp">On this page</div>
+      <a href="#story"><span class="n">★</span> The whole chapter as a story</a>
+      <a href="#thinking"><span class="n">1</span> The systems approach</a>
+      <a href="#sdlc"><span class="n">2</span> The SDLC, five stages</a>
+      <a href="#feasibility"><span class="n">3</span> Is it feasible?</a>
+      <a href="#analysis"><span class="n">4</span> Analysis: what, not how</a>
+      <a href="#design"><span class="n">5</span> Design and prototyping</a>
+      <a href="#acquire"><span class="n">6</span> Build, buy, evaluate</a>
+      <a href="#implement"><span class="n">7</span> Implementation</a>
+      <a href="#conversion"><span class="n">8</span> The four conversion strategies</a>
+      <a href="#maintain"><span class="n">9</span> Maintenance &amp; change</a>
+      <a href="#confuse"><span class="n">⚖</span> Easy to confuse</a>
+      <a href="#check"><span class="n">✓</span> Quick self-check</a>
+    </nav>
+    <a class="home" href="index.html">← All 12 chapters</a>
+  </aside>
+
+  <main class="main">
+  <div class="reading">
+
+    <section class="hero" id="top">
+      <span class="tag"><span class="dot"></span> Chapter 10 &middot; Exam favourite</span>
+      <h1>Developing Business/IT <span class="grad">Solutions</span></h1>
+      <p class="lead">How a new system actually gets built and rolled out: the step-by-step life cycle, deciding
+      whether to build or buy, and the four ways to switch everyone over to the new system.</p>
+      <div class="exam" style="margin-top:18px"><b>Exam radar:</b> heavily examined, and one topic is almost
+      guaranteed: the <b>four system conversion strategies</b> (parallel, direct, pilot, phased) and which to pick.
+      Also know the <b>five SDLC stages</b> and the <b>five feasibility types</b>. All flagged below.</div>
+    </section>
+
+    <details class="plain-english" id="story" open>
+      <summary>In plain English — the whole chapter as one story</summary>
+      <p><strong>Our running example:</strong> BrewHaus decides to replace its ageing ordering system with a new
+      one. This chapter is the project plan: how you go from "we need a new system" to "everyone is happily using
+      it," without disaster.</p>
+
+      <h4>1. Treat the problem like a system</h4>
+      <p>Before building anything, you diagnose the situation properly: define the problem, weigh options, pick
+      one, design it, build it, then check it worked. Methodical, not a guess.</p>
+
+      <h4>2. There is a standard five-step life cycle</h4>
+      <p>Investigate → analyse → design → implement → maintain. Each step produces something concrete before you
+      move on. Skipping steps is how projects fail.</p>
+
+      <h4>3. First ask: is this even worth doing?</h4>
+      <p>A feasibility study checks whether the project makes sense, on cost, on technology, on people, on the law.
+      Better to find out now than halfway through.</p>
+
+      <h4>4. Work out WHAT before HOW</h4>
+      <p>Analysis pins down what the system must <em>do</em> (the requirements). Only then does design decide
+      <em>how</em> to do it. Mixing these up causes chaos.</p>
+
+      <h4>5. You do not always build from scratch</h4>
+      <p>BrewHaus can build the system, buy a ready-made one, or rent it. And whatever it acquires, it evaluates
+      against clear factors before committing.</p>
+
+      <h4>6. Switching everyone over is the dangerous moment</h4>
+      <p>The riskiest step is going live. There are four ways to do it, from a clean overnight switch to running
+      old and new side by side, each with its own risk and cost. Choosing wisely is the whole game.</p>
+
+      <p class="connect"><strong>How the chapter connects:</strong> diagnose the problem as a system → follow the
+      five-stage life cycle → check feasibility before committing → define WHAT is needed, then design HOW →
+      build or buy it against clear evaluation factors → and finally go live using one of the four conversion
+      strategies, then maintain it. From idea to live system, safely.</p>
+    </details>
+
+    <section id="thinking">
+      <div class="kicker">Section 1</div>
+      <h2 class="sec">The systems approach</h2>
+      <p class="lead-q">Where do you even start when a business has a problem to solve?</p>
+      <p>You apply the <strong>systems approach</strong>, a structured problem-solving method. Applied to building
+      software, it is called <strong>information systems development</strong>. It runs in seven steps: recognise the
+      problem, develop a feasible solution idea, develop and evaluate alternatives, pick the best one, design it,
+      implement it, then evaluate whether it worked.</p>
+      <div class="analogy"><b>Systems thinking</b> means "seeing the forest <em>and</em> the trees." Instead of
+      blaming one cause for poor sales, you look at the whole situation as a system, its input, processing, output,
+      feedback and control, and find where it is actually breaking. Maybe BrewHaus's slow sales are not "bad staff"
+      but out-of-date procedures (processing) fed by wrong information (feedback).</div>
+    </section>
+
+    <section id="sdlc">
+      <div class="kicker">Section 2 · exam favourite</div>
+      <h2 class="sec">The systems development life cycle</h2>
+      <p class="lead-q">What are the actual stages of building a system?</p>
+      <p>The <strong>systems development life cycle (SDLC)</strong> has <strong>five stages</strong>, and each one
+      produces a concrete deliverable before you move on. This pairing of stage and product is exam gold:</p>
+      <figure>
+        <svg viewBox="0 0 600 130" role="img" aria-label="The five SDLC stages and their products">
+          <g font-family="Plus Jakarta Sans">
+            <rect x="6" y="35" width="108" height="46" rx="9" fill="#12243d" stroke="#4a93ff"/><text x="60" y="56" text-anchor="middle" class="svg-sub">Investigation</text><text x="60" y="71" text-anchor="middle" class="svg-mono">→ feasibility</text>
+            <rect x="126" y="35" width="108" height="46" rx="9" fill="#12243d" stroke="#4a93ff"/><text x="180" y="56" text-anchor="middle" class="svg-sub">Analysis</text><text x="180" y="71" text-anchor="middle" class="svg-mono">→ requirements</text>
+            <rect x="246" y="35" width="108" height="46" rx="9" fill="#13263f" stroke="#33e0d4"/><text x="300" y="56" text-anchor="middle" class="svg-sub" fill="#80f0e8">Design</text><text x="300" y="71" text-anchor="middle" class="svg-mono">→ specs</text>
+            <rect x="366" y="35" width="108" height="46" rx="9" fill="#13263f" stroke="#33e0d4"/><text x="420" y="56" text-anchor="middle" class="svg-sub" fill="#80f0e8">Implementation</text><text x="420" y="71" text-anchor="middle" class="svg-mono">→ live system</text>
+            <rect x="486" y="35" width="108" height="46" rx="9" fill="#16304f" stroke="#f5b84a"/><text x="540" y="56" text-anchor="middle" class="svg-sub" fill="#ffd27a">Maintenance</text><text x="540" y="71" text-anchor="middle" class="svg-mono">→ improved</text>
+          </g>
+          <g stroke="#7491b3" stroke-width="2" marker-end="url(#ars)">
+            <line x1="114" y1="58" x2="125" y2="58"/><line x1="234" y1="58" x2="245" y2="58"/><line x1="354" y1="58" x2="365" y2="58"/><line x1="474" y1="58" x2="485" y2="58"/>
+          </g>
+          <defs><marker id="ars" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#7491b3"/></marker></defs>
+        </svg>
+        <figcaption>The five stages, each with its deliverable.</figcaption>
+      </figure>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Stage</th><th>What happens</th><th>Product</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. Investigation</strong></td><td>Should we even do this? Check feasibility, plan the project.</td><td>Feasibility study</td></tr>
+          <tr><td><strong>2. Analysis</strong></td><td>What do users actually need the system to do?</td><td>Functional requirements</td></tr>
+          <tr><td><strong>3. Design</strong></td><td>Work out how to deliver those requirements (hardware, software, data, interface).</td><td>System specifications</td></tr>
+          <tr><td><strong>4. Implementation</strong></td><td>Build/acquire it, test it, train people, convert to it.</td><td>Operational (live) system</td></tr>
+          <tr><td><strong>5. Maintenance</strong></td><td>Monitor, fix and improve it over its life.</td><td>Improved system</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="feasibility">
+      <div class="kicker">Section 3 · exam favourite</div>
+      <h2 class="sec">Is the project feasible?</h2>
+      <p class="lead-q">Before spending a penny, how do you know the project is worth doing?</p>
+      <p>You run a <strong>feasibility study</strong>: a quick check of users' needs, costs, benefits and whether
+      the project can realistically be done. It tests five kinds of feasibility:</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Feasibility</th><th>The question it asks</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Operational</strong></td><td>Will it actually solve the problem and fit how the business works?</td></tr>
+          <tr><td><strong>Economic</strong></td><td>Do the benefits beat the costs (cost/benefit analysis)?</td></tr>
+          <tr><td><strong>Technical</strong></td><td>Can the hardware, software and network do it, in time?</td></tr>
+          <tr><td><strong>Human factors</strong></td><td>Will employees, customers and management accept and use it?</td></tr>
+          <tr><td><strong>Legal / political</strong></td><td>Any legal, contractual or power-structure problems?</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="analysis">
+      <div class="kicker">Section 4</div>
+      <h2 class="sec">Analysis: nail down WHAT, not HOW</h2>
+      <p class="lead-q">What is the single most important rule of the analysis stage?</p>
+      <p>Separate <strong>what</strong> the system must do from <strong>how</strong> it will do it. Analysis produces
+      the <strong>functional requirements</strong>: a clear statement of what each business activity needs the system
+      to do, with no decisions yet about the technology. A <strong>logical model</strong> is the blueprint that shows
+      <em>what</em> the system does without saying <em>how</em>. Getting this wrong, jumping to "how" too early, is a
+      classic cause of failed projects.</p>
+      <div class="keypoint"><b>Logical vs physical.</b> <strong>Logical = what</strong> (the requirements, the
+      blueprint). <strong>Physical = how</strong> (the actual hardware, software and code). Analysis is logical;
+      design and implementation make it physical.</div>
+    </section>
+
+    <section id="design">
+      <div class="kicker">Section 5</div>
+      <h2 class="sec">Design and prototyping</h2>
+      <p class="lead-q">Once you know what is needed, how do you design it?</p>
+      <p>Design turns requirements into <strong>system specifications</strong>, across three areas: the
+      <strong>user interface</strong> (screens, forms, reports), the <strong>data</strong> (how it is structured),
+      and the <strong>processes</strong> (the programs and procedures).</p>
+      <p>A powerful technique here is <strong>prototyping</strong>: quickly building a rough working model, showing
+      it to users, and refining it again and again until they are happy. It makes development faster and easier,
+      especially when nobody can describe exactly what they want up front, and it pulls end users right into the
+      design. BrewHaus's staff try a mock-up of the new till screen and say "move that button," and the next version
+      reflects it.</p>
+    </section>
+
+    <section id="acquire">
+      <div class="kicker">Section 6</div>
+      <h2 class="sec">Build, buy, and how to evaluate</h2>
+      <p class="lead-q">Does BrewHaus have to build the whole thing itself?</p>
+      <p>No. It can build it, buy a ready-made package, or use a service. Whatever it acquires, it evaluates vendors
+      properly: write a <strong>request for proposal (RFP/RFQ)</strong> stating the minimum requirements, send it to
+      vendors, and judge the bids, demanding demonstrations, checking other users' experiences, and
+      <strong>benchmarking</strong> (running test data to compare performance). Hardware is judged on a list of ten
+      factors (performance, cost, reliability, compatibility, technology, ergonomics, connectivity, scalability,
+      software, support); software adds quality, efficiency, flexibility, security, maintenance and documentation.</p>
+      <div class="analogy"><b>The headline rule for software:</b> "software that is slow, hard to use, bug-filled or
+      poorly documented is not a good choice at any price." A cheap system that staff hate is not a bargain.</div>
+    </section>
+
+    <section id="implement">
+      <div class="kicker">Section 7</div>
+      <h2 class="sec">Implementation</h2>
+      <p class="lead-q">The system is built. What does it take to actually put it into use?</p>
+      <p>Implementation has four keys: <strong>testing</strong> (debug everything before going live),
+      <strong>data conversion</strong> (move the old data across, cleaned and corrected, this is a major cause of
+      failure if done badly), <strong>documentation</strong> (user guides and system records), and
+      <strong>training</strong> (without it, even a great system fails). And then the big one: converting everyone
+      over to the new system.</p>
+    </section>
+
+    <section id="conversion">
+      <div class="kicker">Section 8 · the exam star</div>
+      <h2 class="sec">The four conversion strategies</h2>
+      <p class="lead-q">This is the exam question. How do you switch from the old system to the new one?</p>
+      <p>There are four ways to make the switch, and each trades risk against cost and speed. This is the most
+      examined idea in the chapter, so learn all four with their pros and cons:</p>
+      <figure>
+        <svg viewBox="0 0 560 200" role="img" aria-label="Four conversion strategies shown as old and new system timelines">
+          <text x="10" y="28" class="svg-label" fill="#ffd27a">Direct</text>
+          <rect x="120" y="14" width="150" height="18" fill="#3a2030" stroke="#ff7b7b"/><text x="195" y="27" text-anchor="middle" class="svg-sub">old</text>
+          <rect x="270" y="14" width="180" height="18" fill="#16304f" stroke="#33e0d4"/><text x="360" y="27" text-anchor="middle" class="svg-sub" fill="#80f0e8">new</text>
+          <text x="10" y="66" class="svg-label" fill="#80f0e8">Parallel</text>
+          <rect x="120" y="52" width="280" height="18" fill="#3a2030" stroke="#ff7b7b"/><text x="240" y="65" text-anchor="middle" class="svg-sub">old (kept running)</text>
+          <rect x="200" y="74" width="250" height="14" fill="#16304f" stroke="#33e0d4"/><text x="320" y="85" text-anchor="middle" class="svg-sub" fill="#80f0e8">new (runs alongside)</text>
+          <text x="10" y="116" class="svg-label">Pilot</text>
+          <rect x="120" y="104" width="200" height="18" fill="#3a2030" stroke="#ff7b7b"/><text x="210" y="117" text-anchor="middle" class="svg-sub">old (other sites)</text>
+          <rect x="200" y="126" width="120" height="14" fill="#16304f" stroke="#33e0d4"/><text x="260" y="137" text-anchor="middle" class="svg-sub" fill="#80f0e8">new at one site</text>
+          <rect x="320" y="104" width="130" height="36" fill="#16304f" stroke="#33e0d4"/><text x="385" y="126" text-anchor="middle" class="svg-sub" fill="#80f0e8">then everywhere</text>
+          <text x="10" y="170" class="svg-label">Phased</text>
+          <rect x="120" y="158" width="120" height="18" fill="#3a2030" stroke="#ff7b7b"/>
+          <rect x="240" y="158" width="70" height="18" fill="#234a3a" stroke="#43dd92"/>
+          <rect x="310" y="158" width="70" height="18" fill="#1d5546" stroke="#43dd92"/>
+          <rect x="380" y="158" width="70" height="18" fill="#16304f" stroke="#33e0d4"/><text x="345" y="171" text-anchor="middle" class="svg-sub" fill="#80f0e8">piece by piece</text>
+        </svg>
+        <figcaption>Direct: clean overnight switch. Parallel: both run together. Pilot: one site first, then roll
+        out. Phased: replaced piece by piece.</figcaption>
+      </figure>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Strategy</th><th>How it works</th><th>Risk</th><th>Cost</th><th>Best when…</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Direct</strong> (plunge / cold turkey)</td><td>Switch off the old, switch on the new, in one go.</td><td>Highest</td><td>Lowest</td><td>Emergencies, or when old and new cannot coexist. No safety net.</td></tr>
+          <tr><td><strong>Parallel</strong></td><td>Run old and new together until you trust the new one.</td><td>Lowest</td><td>Highest (up to 4x)</td><td>Replacing a manual system; when failure would be very costly.</td></tr>
+          <tr><td><strong>Pilot</strong></td><td>Launch the new system at one representative site first, then expand.</td><td>Contained</td><td>Moderate</td><td>Companies with many locations.</td></tr>
+          <tr><td><strong>Phased</strong></td><td>Bring the new system in one component at a time.</td><td>Moderate</td><td>Moderate</td><td>Large systems; combines the strengths of direct and parallel, but takes the longest.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="keypoint"><b>If the exam asks which you would adopt</b> (for a digital-transformation project, say),
+      give a reason, not just a name. A safe answer: a <strong>phased or pilot</strong> approach for a big, risky
+      rollout, because it limits the damage if something goes wrong, with <strong>parallel</strong> reserved for the
+      most critical systems you cannot afford to lose, and <strong>direct</strong> only when there is no choice.</div>
+    </section>
+
+    <section id="maintain">
+      <div class="kicker">Section 9</div>
+      <h2 class="sec">Maintenance and managing the change</h2>
+      <p class="lead-q">Once it is live, is the job done?</p>
+      <p>Not at all. <strong>Maintenance is the single most costly activity</strong> over a system's life, fixing
+      errors, improving performance, and adapting to change. It comes in four types: <strong>preventive,
+      corrective, adaptive and perfective</strong>.</p>
+      <p>And throughout, the hardest part is often the people. Systems fail not because the technology is bad but
+      because users <strong>resist</strong>. The cure is <strong>change management</strong>: involve users early,
+      train them well, communicate constantly, secure top-management commitment, and work <em>with</em> the company
+      culture rather than against it. A brilliant system nobody will use is a failed system.</p>
+    </section>
+
+    <section id="confuse">
+      <div class="kicker">Watch out</div>
+      <h2 class="sec">Easy to confuse</h2>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>This</th><th>versus that</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Direct conversion</strong> — overnight switch, riskiest, cheapest.</td><td><strong>Parallel conversion</strong> — both run together, safest, most expensive.</td></tr>
+          <tr><td><strong>Pilot conversion</strong> — one site first, then everywhere.</td><td><strong>Phased conversion</strong> — one component at a time, everywhere.</td></tr>
+          <tr><td><strong>Logical model</strong> — what the system does (analysis).</td><td><strong>Physical model</strong> — how it does it (design/build).</td></tr>
+          <tr><td><strong>Analysis</strong> — defines requirements (the "what").</td><td><strong>Design</strong> — defines specifications (the "how").</td></tr>
+          <tr><td><strong>Feasibility study</strong> — should we do it? (investigation stage)</td><td><strong>Functional requirements</strong> — what it must do (analysis stage)</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="check">
+      <div class="kicker">Test yourself</div>
+      <h2 class="sec">Quick self-check</h2>
+      <p class="muted">Try to answer each in your head, then click to reveal.</p>
+      <div class="selfcheck">
+        <div class="q"><span class="qi">Q1</span><span>Name the five SDLC stages and their products.</span></div>
+        <div class="a">Investigation → feasibility study; analysis → functional requirements; design → system
+        specifications; implementation → operational system; maintenance → improved system.</div>
+        <div class="q"><span class="qi">Q2</span><span>What are the five types of feasibility?</span></div>
+        <div class="a">Operational, economic, technical, human factors, and legal/political.</div>
+        <div class="q"><span class="qi">Q3</span><span>Name and describe the four conversion strategies.</span></div>
+        <div class="a">Direct (switch over in one go, riskiest, cheapest); parallel (run both together, safest, most
+        expensive); pilot (one representative site first, then expand); phased (introduce the new system one
+        component at a time, slowest but lower risk).</div>
+        <div class="q"><span class="qi">Q4</span><span>Which conversion strategy is safest, and why is it costly?</span></div>
+        <div class="a">Parallel, because the old system keeps running as a live backup. It is costly because you
+        operate both systems at once, up to four times the cost of the old system alone.</div>
+        <div class="q"><span class="qi">Q5</span><span>What is the difference between logical and physical models?</span></div>
+        <div class="a">A logical model shows what the system does (the requirements); a physical model shows how it
+        does it (the actual technology). Analysis is logical; design and build are physical.</div>
+        <div class="q"><span class="qi">Q6</span><span>Why do systems projects fail even when the technology is fine?</span></div>
+        <div class="a">User resistance. The fix is change management: involve users early, train them, communicate,
+        secure management commitment, and work with the company culture.</div>
+      </div>
+    </section>
+
+    <nav class="chnav">
+      <a class="prev" href="chapter-09.html"><small>Previous</small>Chapter 9 · Decision Support Systems</a>
+      <a class="next" href="chapter-11.html"><small>Next</small>Chapter 11 · Security and Ethical Challenges</a>
+    </nav>
+
+    <footer>Chapter 10 of 12 · IT Strategy, Explained Simply · plain-English study companion</footer>
+
+  </div>
+  </main>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
