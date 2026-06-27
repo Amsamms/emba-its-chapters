@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 6: Telecommunications and Networks | Explained Simply</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="backdrop"></div>
+<button class="menubtn">☰ Contents</button>
+
+<div class="wrap">
+  <aside class="side">
+    <a class="brand" href="index.html" style="text-decoration:none">
+      <span class="lg">IT</span>
+      <span><b>IT Strategy, Simply</b><small>Chapter 6 of 12</small></span>
+    </a>
+    <nav class="toc">
+      <div class="grp">On this page</div>
+      <a href="#story"><span class="n">★</span> The whole chapter as a story</a>
+      <a href="#network"><span class="n">1</span> What a network is + Metcalfe</a>
+      <a href="#three"><span class="n">2</span> Internet, intranet, extranet</a>
+      <a href="#value"><span class="n">3</span> Why networks are valuable</a>
+      <a href="#model"><span class="n">4</span> The parts of a network</a>
+      <a href="#types"><span class="n">5</span> Types of networks</a>
+      <a href="#media"><span class="n">6</span> The cables and the airwaves</a>
+      <a href="#protocols"><span class="n">7</span> How they agree to talk</a>
+      <a href="#confuse"><span class="n">⚖</span> Easy to confuse</a>
+      <a href="#check"><span class="n">✓</span> Quick self-check</a>
+    </nav>
+    <a class="home" href="index.html">← All 12 chapters</a>
+  </aside>
+
+  <main class="main">
+  <div class="reading">
+
+    <section class="hero" id="top">
+      <span class="tag"><span class="dot"></span> Chapter 6 &middot; Foundation</span>
+      <h1>Telecommunications <span class="grad">and Networks</span></h1>
+      <p class="lead">How computers talk to each other: the internet, private company networks, the kinds of
+      networks, and the cables and airwaves that carry the signals.</p>
+      <div class="exam" style="margin-top:18px"><b>Good to know:</b> mostly a background chapter for this course.
+      The one part that genuinely matters elsewhere is the difference between the <b>internet, an intranet, and an
+      extranet</b>, so make sure that one sticks. The rest is for comfortable vocabulary.</div>
+    </section>
+
+    <details class="plain-english" id="story" open>
+      <summary>In plain English — the whole chapter as one story</summary>
+      <p><strong>Our running example:</strong> BrewHaus, now with shops in several cities. Those shops, the head
+      office, the suppliers and the customers all need to exchange information. This chapter is about the
+      plumbing that connects them: networks.</p>
+
+      <h4>1. A network is just things connected together</h4>
+      <p>Connect two computers and you have a tiny network. The striking thing is that a network gets
+      <em>much</em> more valuable as more people join, far faster than you would expect. That is why the big
+      networks (like the internet) became unstoppable.</p>
+
+      <h4>2. Three flavours of network, told apart by who is allowed in</h4>
+      <p>The <em>internet</em> is open to everyone. An <em>intranet</em> is a private version just for BrewHaus
+      staff. An <em>extranet</em> opens a slice of that private network to specific outsiders, like your bean
+      supplier. Same technology, different doors.</p>
+
+      <h4>3. Networks knock down barriers</h4>
+      <p>They let BrewHaus beat distance (a head-office report reaches every city instantly), time, awkward
+      structures, and cost. That is the business reason to invest in them.</p>
+
+      <h4>4. Every network is built from the same handful of parts</h4>
+      <p>Devices at each end, processors that direct traffic, channels that carry the signal, computers, and
+      software to run it. Once you can name those, any network diagram makes sense.</p>
+
+      <h4>5. Networks come in sizes and shapes</h4>
+      <p>Small ones inside a building (LAN), big ones spanning cities (WAN), secure tunnels across the public
+      internet (VPN), and different ways to share the work (client/server or peer-to-peer).</p>
+
+      <p class="connect"><strong>How the chapter connects:</strong> a network is connected things that grow more
+      valuable with size → the internet, intranet and extranet differ only by who can access them → networks
+      create value by removing barriers of distance, time, structure and cost → each network is built from
+      devices, processors, channels, computers and software → and they come in different sizes (LAN, WAN, VPN)
+      and work-sharing styles (client/server, peer-to-peer), carried over cables and airwaves.</p>
+    </details>
+
+    <section id="network">
+      <div class="kicker">Section 1</div>
+      <h2 class="sec">What a network is, and why size matters so much</h2>
+      <p class="lead-q">Why is a network with many users worth so much more than one with few?</p>
+      <p>A <strong>network</strong> is simply an interconnected group of things, here, computers and devices, each
+      connection point being a <strong>node</strong>. The number of possible connections grows fast: with
+      <code>N</code> nodes there are <code>N(N-1)</code> possible links. Ten computers already allow ninety.</p>
+      <div class="keypoint"><b>Metcalfe's law.</b> The usefulness of a network grows roughly with the
+      <strong>square of the number of users</strong>. Double the users and you roughly quadruple the value. There
+      is a tipping point called <strong>critical mass</strong>: below it, a new technology only affects itself;
+      above it, whole social and economic systems shift. This is exactly why the internet kept getting more
+      valuable the more people joined, and why a loyalty network is worth far more at 50,000 members than at 500.</div>
+    </section>
+
+    <section id="three">
+      <div class="kicker">Section 2 · the part that matters</div>
+      <h2 class="sec">Internet, intranet, extranet</h2>
+      <p class="lead-q">These three words sound alike. What is the actual difference?</p>
+      <p>They all use the <em>same internet technology</em> (browsers, web pages, the standard internet
+      protocols). The only difference is <strong>who is allowed in</strong>:</p>
+      <figure>
+        <svg viewBox="0 0 560 200" role="img" aria-label="Internet, intranet and extranet by who can access">
+          <rect x="20" y="30" width="150" height="140" rx="10" fill="#0e1c30" stroke="#4a93ff"/>
+          <text x="95" y="52" text-anchor="middle" class="svg-label" fill="#7fb1ff">Internet</text>
+          <text x="95" y="72" text-anchor="middle" class="svg-sub">open to everyone</text>
+          <circle cx="95" cy="120" r="9" fill="#4a93ff"/><circle cx="70" cy="135" r="7" fill="#4a93ff"/><circle cx="120" cy="135" r="7" fill="#4a93ff"/><circle cx="95" cy="150" r="6" fill="#4a93ff"/>
+          <rect x="200" y="30" width="150" height="140" rx="10" fill="#13263f" stroke="#33e0d4"/>
+          <text x="275" y="52" text-anchor="middle" class="svg-label" fill="#80f0e8">Intranet</text>
+          <text x="275" y="72" text-anchor="middle" class="svg-sub">staff only</text>
+          <rect x="240" y="100" width="70" height="50" rx="8" fill="none" stroke="#33e0d4"/><text x="275" y="130" text-anchor="middle" class="svg-sub">inside the firm</text>
+          <rect x="380" y="30" width="160" height="140" rx="10" fill="#16304f" stroke="#f5b84a"/>
+          <text x="460" y="52" text-anchor="middle" class="svg-label" fill="#ffd27a">Extranet</text>
+          <text x="460" y="72" text-anchor="middle" class="svg-sub">staff + chosen partners</text>
+          <rect x="400" y="95" width="55" height="55" rx="8" fill="none" stroke="#f5b84a"/><text x="427" y="126" text-anchor="middle" class="svg-sub">firm</text>
+          <rect x="468" y="110" width="58" height="40" rx="8" fill="none" stroke="#f5b84a" stroke-dasharray="3 2"/><text x="497" y="134" text-anchor="middle" class="svg-sub">supplier</text>
+        </svg>
+        <figcaption>The only thing that changes across the three is who can get in. Internet = everyone; intranet =
+        staff inside; extranet = staff plus specific trusted partners.</figcaption>
+      </figure>
+      <ul>
+        <li><strong>Internet</strong> — the public, global network. No owner, no central computer, open to all.
+        BrewHaus uses it to reach customers with its website and online store.</li>
+        <li><strong>Intranet</strong> — a private internal network, built with internet technology but walled off
+        for employees only, protected by passwords, encryption and firewalls. BrewHaus's staff handbook, rotas and
+        internal dashboards live here.</li>
+        <li><strong>Extranet</strong> — extends part of that intranet outward to specific trusted partners over a
+        secure link. BrewHaus lets its bean supplier see stock levels and reorder, but nothing else.</li>
+      </ul>
+      <div class="keypoint"><b>Memory hook:</b> <strong>intra</strong>net = <em>inside</em> only;
+      <strong>extra</strong>net = <em>inside shared with chosen outsiders</em>; internet = open to all.</div>
+    </section>
+
+    <section id="value">
+      <div class="kicker">Section 3</div>
+      <h2 class="sec">Why networks are valuable to a business</h2>
+      <p class="lead-q">Beyond "computers can chat," what do networks actually buy you?</p>
+      <p>They give a business strategic reach by knocking down four barriers:</p>
+      <div class="grid g2">
+        <div class="card"><div class="ic">🌍</div><h4>Geographic</h4><p>Connect distant shops and offices as if
+        they were in one room.</p></div>
+        <div class="card"><div class="ic">⏱️</div><h4>Time</h4><p>Share information instantly instead of waiting
+        for post or travel.</p></div>
+        <div class="card"><div class="ic">🏢</div><h4>Structural</h4><p>Let separate departments and partners work
+        together smoothly.</p></div>
+        <div class="card"><div class="ic">💵</div><h4>Cost</h4><p>Do business more cheaply by moving information
+        instead of people and paper.</p></div>
+      </div>
+      <p>On top of that, the internet itself opens new revenue sources, new web-based products, new markets and
+      channels, and stronger customer loyalty.</p>
+    </section>
+
+    <section id="model">
+      <div class="kicker">Section 4</div>
+      <h2 class="sec">The parts of any network</h2>
+      <p class="lead-q">If I drew any network, what pieces would always be in the picture?</p>
+      <p>Five components make up every telecommunications network:</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Component</th><th>What it is</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Terminals / devices</strong></td><td>The PCs, tills and phones that send and receive.</td></tr>
+          <tr><td><strong>Telecommunications processors</strong></td><td>The traffic directors: modems, switches, routers, hubs.</td></tr>
+          <tr><td><strong>Channels</strong></td><td>The media that carry the signal: cables or airwaves.</td></tr>
+          <tr><td><strong>Computers</strong></td><td>The host or server at the other end.</td></tr>
+          <tr><td><strong>Software</strong></td><td>The programs that manage and run the network.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>A simple way to hold it: a <strong>sender</strong> transmits a <strong>message</strong> to a
+      <strong>receiver</strong> over a <strong>channel</strong> made of some <strong>medium</strong>.</p>
+    </section>
+
+    <section id="types">
+      <div class="kicker">Section 5</div>
+      <h2 class="sec">Types of networks</h2>
+      <p class="lead-q">Are all networks the same shape and size?</p>
+      <p>No. A few distinctions are worth knowing:</p>
+      <ul>
+        <li><strong>LAN (local area network)</strong> — covers a small area like one shop or office, to share local
+        resources (a printer, a server, files). One BrewHaus branch has a LAN.</li>
+        <li><strong>WAN (wide area network)</strong> — spans a large geographic area, tying distant sites together.
+        BrewHaus's cities are linked by a WAN.</li>
+        <li><strong>VPN (virtual private network)</strong> — a secure, private "tunnel" across the public internet,
+        so two sites can communicate privately without paying for dedicated lines.</li>
+      </ul>
+      <p>There are also two ways to <em>divide the work</em> across a network:</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Client/server</th><th>Peer-to-peer (P2P)</th></tr></thead>
+        <tbody>
+          <tr><td>Work is split: <strong>clients</strong> (the user-facing front end) request, and
+              <strong>servers</strong> (the shared back end) provide databases, applications and heavy processing.</td>
+              <td>Computers connect directly as equals and share files with each other, with no permanent boss.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>Peer-to-peer comes in two forms: a <strong>central-server</strong> version where a central directory lists
+      who has what (more secure, but the directory can become a bottleneck), and a <strong>pure</strong> version
+      with no central server at all (more resilient, but harder to secure and control).</p>
+    </section>
+
+    <section id="media">
+      <div class="kicker">Section 6</div>
+      <h2 class="sec">The cables and the airwaves</h2>
+      <p class="lead-q">What physically carries the signal?</p>
+      <p>Two families: things you run a wire through, and things you send through the air.</p>
+      <p><strong>Wired media</strong>, from slowest to fastest:</p>
+      <ul>
+        <li><strong>Twisted-pair wire</strong> — ordinary copper phone wire.</li>
+        <li><strong>Coaxial cable</strong> — thicker, shielded copper, like cable TV.</li>
+        <li><strong>Fiber-optic cable</strong> — hair-thin glass carrying pulses of light: huge capacity, very fast,
+        immune to electrical interference.</li>
+      </ul>
+      <p><strong>Wireless media:</strong> terrestrial microwave (line-of-sight relays), communications satellites
+      (great for remote areas, but a slight delay makes them poor for real-time interaction), cellular phone
+      systems, Wi-Fi wireless LANs, and short-range Bluetooth for nearby devices.</p>
+      <div class="analogy"><b>The "last mile" problem.</b> Providers run super-fast fibre as a backbone, but the
+      final stretch into many homes is still old twisted-pair wire. The slow last link cancels out the fast
+      backbone, like a motorway that ends in a dirt track at your driveway.</div>
+      <p>One more pair worth knowing: an <strong>analog</strong> signal is a continuous wave (old voice phone); a
+      <strong>digital</strong> signal is discrete numbers. Digital is faster, cheaper, lower-error, and can carry
+      data, voice and video on the same line, which is why everything moved to digital.</p>
+    </section>
+
+    <section id="protocols">
+      <div class="kicker">Section 7</div>
+      <h2 class="sec">How devices agree to talk</h2>
+      <p class="lead-q">How do machines from different makers manage to understand each other?</p>
+      <p>By agreeing on <strong>protocols</strong>: standard rules for how to communicate. The internet's rulebook
+      is <strong>TCP/IP</strong>. There is also a teaching model called the <strong>OSI model</strong> that breaks
+      communication into <strong>seven layers</strong> (from the physical wires at the bottom up to the application
+      you use at the top), each layer handling one part of the job. You do not need the seven names by heart for
+      this course; just know networking is organised in layers, and TCP/IP is the standard that makes the internet
+      work.</p>
+      <p>Two final ideas you may meet:</p>
+      <ul>
+        <li><strong>Circuit switching vs packet switching.</strong> Circuit switching opens one dedicated line for
+        the whole conversation (a traditional phone call). Packet switching chops the message into small
+        <em>packets</em> that travel separately and reassemble at the end (how the internet works) — far more
+        efficient.</li>
+        <li><strong>VoIP (voice over IP)</strong> — making phone calls over the internet instead of the phone
+        network, skipping long-distance charges. Skype is the classic example.</li>
+      </ul>
+    </section>
+
+    <section id="confuse">
+      <div class="kicker">Watch out</div>
+      <h2 class="sec">Easy to confuse</h2>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>This</th><th>versus that</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Intranet</strong> — private, staff only.</td><td><strong>Extranet</strong> — private but shared with chosen outside partners. (Internet = open to all.)</td></tr>
+          <tr><td><strong>LAN</strong> — one building or office.</td><td><strong>WAN</strong> — a large, multi-site geographic area.</td></tr>
+          <tr><td><strong>Client/server</strong> — front-end clients, back-end servers do the heavy lifting.</td><td><strong>Peer-to-peer</strong> — equal computers sharing directly, no permanent boss.</td></tr>
+          <tr><td><strong>Circuit switching</strong> — one dedicated line for the whole call.</td><td><strong>Packet switching</strong> — message split into packets travelling separately.</td></tr>
+          <tr><td><strong>Analog</strong> — continuous wave signal.</td><td><strong>Digital</strong> — discrete numeric signal (faster, cleaner).</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="check">
+      <div class="kicker">Test yourself</div>
+      <h2 class="sec">Quick self-check</h2>
+      <p class="muted">Try to answer each in your head, then click to reveal.</p>
+      <div class="selfcheck">
+        <div class="q"><span class="qi">Q1</span><span>What does Metcalfe's law say about a network's value?</span></div>
+        <div class="a">A network's usefulness grows roughly with the square of the number of users, so value rises
+        much faster than user count, especially after reaching critical mass.</div>
+        <div class="q"><span class="qi">Q2</span><span>Distinguish internet, intranet and extranet.</span></div>
+        <div class="a">They use the same technology but differ by access: the internet is open to everyone; an
+        intranet is private to employees; an extranet extends part of the intranet to specific trusted partners.</div>
+        <div class="q"><span class="qi">Q3</span><span>What four barriers do networks help a business overcome?</span></div>
+        <div class="a">Geographic, time, structural, and cost barriers.</div>
+        <div class="q"><span class="qi">Q4</span><span>LAN versus WAN?</span></div>
+        <div class="a">A LAN covers a small area like one office or building; a WAN spans a large geographic area,
+        connecting dispersed sites.</div>
+        <div class="q"><span class="qi">Q5</span><span>Client/server versus peer-to-peer?</span></div>
+        <div class="a">Client/server splits work between front-end clients and back-end servers; peer-to-peer
+        connects equal computers that share directly with no permanent server.</div>
+        <div class="q"><span class="qi">Q6</span><span>Circuit switching versus packet switching?</span></div>
+        <div class="a">Circuit switching holds one dedicated line open for the whole session; packet switching
+        breaks the message into packets that travel separately and reassemble, which is how the internet works.</div>
+      </div>
+    </section>
+
+    <nav class="chnav">
+      <a class="prev" href="chapter-05.html"><small>Previous</small>Chapter 5 · Data Resource Management</a>
+      <a class="next" href="chapter-07.html"><small>Next</small>Chapter 7 · e-Business Systems</a>
+    </nav>
+
+    <footer>Chapter 6 of 12 · IT Strategy, Explained Simply · plain-English study companion</footer>
+
+  </div>
+  </main>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
