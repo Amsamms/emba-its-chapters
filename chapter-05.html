@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 5: Data Resource Management | Explained Simply</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="backdrop"></div>
+<button class="menubtn">☰ Contents</button>
+
+<div class="wrap">
+  <aside class="side">
+    <a class="brand" href="index.html" style="text-decoration:none">
+      <span class="lg">IT</span>
+      <span><b>IT Strategy, Simply</b><small>Chapter 5 of 12</small></span>
+    </a>
+    <nav class="toc">
+      <div class="grp">On this page</div>
+      <a href="#story"><span class="n">★</span> The whole chapter as a story</a>
+      <a href="#hierarchy"><span class="n">1</span> The data hierarchy</a>
+      <a href="#fileproc"><span class="n">2</span> Why files alone fail</a>
+      <a href="#dbms"><span class="n">3</span> The database approach &amp; DBMS</a>
+      <a href="#structures"><span class="n">4</span> Database structures</a>
+      <a href="#relational"><span class="n">5</span> The relational model</a>
+      <a href="#query"><span class="n">6</span> Asking questions (SQL)</a>
+      <a href="#types"><span class="n">7</span> Types of databases</a>
+      <a href="#warehouse"><span class="n">8</span> Data warehouses</a>
+      <a href="#mining"><span class="n">9</span> Data mining &amp; OLAP</a>
+      <a href="#develop"><span class="n">10</span> Building a database</a>
+      <a href="#confuse"><span class="n">⚖</span> Easy to confuse</a>
+      <a href="#check"><span class="n">✓</span> Quick self-check</a>
+    </nav>
+    <a class="home" href="index.html">← All 12 chapters</a>
+  </aside>
+
+  <main class="main">
+  <div class="reading">
+
+    <section class="hero" id="top">
+      <span class="tag"><span class="dot"></span> Chapter 5 &middot; Exam favourite</span>
+      <h1>Data Resource <span class="grad">Management</span></h1>
+      <p class="lead">Treating data as a valuable company asset: how it is organised, how databases beat loose
+      files, and how warehouses and data mining turn piles of records into real business insight.</p>
+      <div class="exam" style="margin-top:18px"><b>Exam radar:</b> this chapter comes up a lot. The reliable
+      favourites are the <b>data hierarchy</b>, the <b>file-processing problems</b>, the <b>relational model</b>,
+      and especially the difference between a <b>data warehouse</b> and <b>data mining</b> (and OLAP). They are
+      all flagged below.</div>
+    </section>
+
+    <details class="plain-english" id="story" open>
+      <summary>In plain English — the whole chapter as one story</summary>
+      <p><strong>Our running example:</strong> BrewHaus, your coffee chain. Every sale, every loyalty member,
+      every stock count is <em>data</em>. This chapter is about treating that data as a real asset and getting
+      value out of it, instead of letting it sit in messy piles.</p>
+
+      <h4>1. Data is organised in a ladder</h4>
+      <p>It builds up in steps: a single letter or digit (character), grouped into a fact like a name (field),
+      grouped into one customer's full details (record), grouped into all customers (file), all linked together
+      (database). Once you see the ladder, databases stop being mysterious.</p>
+
+      <h4>2. Keeping data in separate files causes chaos</h4>
+      <p>If the till, the loyalty app and the accounts each keep their own customer list, the same person is
+      stored three times, the lists disagree, and nothing joins up. That mess is exactly what databases fix.</p>
+
+      <h4>3. A database puts everything in one shared place</h4>
+      <p>Instead of three separate lists, one shared database holds the data once, and a piece of software called
+      a <em>DBMS</em> manages who reads and writes it. No duplication, everything consistent.</p>
+
+      <h4>4. Data can be structured in a few ways, and one won</h4>
+      <p>Of the ways to organise a database, the <em>relational</em> model, simple tables linked by a shared
+      column, won because it is flexible and easy to query. It is what BrewHaus's systems almost certainly use.</p>
+
+      <h4>5. You ask the database questions with a language called SQL</h4>
+      <p>"Which customers bought nothing last month?" becomes a short SQL query. You do not have to write
+      programs; you just describe what you want.</p>
+
+      <h4>6. To analyse history, you build a warehouse</h4>
+      <p>Day-to-day databases are busy running the shop. So you copy cleaned-up history into a separate
+      <em>data warehouse</em> built for analysis, then <em>mine</em> it to discover patterns (like "people who
+      buy oat lattes also buy almond croissants").</p>
+
+      <p class="connect"><strong>How the chapter connects:</strong> data climbs a hierarchy → loose files create
+      redundancy and chaos → a shared database with a DBMS fixes that → the relational model became the standard
+      way to structure it → SQL lets you ask it questions → and for deeper analysis you copy history into a
+      warehouse and mine it for patterns. Data goes from raw fact to business knowledge.</p>
+    </details>
+
+    <section id="hierarchy">
+      <div class="kicker">Section 1 · exam favourite</div>
+      <h2 class="sec">The data hierarchy</h2>
+      <p class="lead-q">When we say "data," what are the building blocks, from smallest to biggest?</p>
+      <p>Data is organised as a ladder, where each rung is built from the one below it:</p>
+      <figure>
+        <svg viewBox="0 0 540 250" role="img" aria-label="Data hierarchy from character to database">
+          <g font-family="Plus Jakarta Sans">
+            <rect x="20" y="206" width="180" height="34" rx="7" fill="#0e1c30" stroke="#4a93ff"/><text x="30" y="228" class="svg-label">Character</text><text x="210" y="228" class="svg-sub">one letter or digit: "J"</text>
+            <rect x="40" y="166" width="180" height="34" rx="7" fill="#11223b" stroke="#4a93ff"/><text x="50" y="188" class="svg-label">Field</text><text x="230" y="188" class="svg-sub">one fact: Name = "Jones"</text>
+            <rect x="60" y="126" width="180" height="34" rx="7" fill="#13263f" stroke="#33e0d4"/><text x="70" y="148" class="svg-label">Record</text><text x="250" y="148" class="svg-sub">one customer's full details</text>
+            <rect x="80" y="86" width="180" height="34" rx="7" fill="#16304f" stroke="#33e0d4"/><text x="90" y="108" class="svg-label">File (table)</text><text x="270" y="108" class="svg-sub">all customer records</text>
+            <rect x="100" y="46" width="180" height="34" rx="7" fill="#1b3a5c" stroke="#80f0e8" stroke-width="2"/><text x="110" y="68" class="svg-label" fill="#80f0e8">Database</text><text x="290" y="68" class="svg-sub">all related files, linked</text>
+          </g>
+        </svg>
+        <figcaption>Character → Field → Record → File → Database. Each level is a group of the level below it.</figcaption>
+      </figure>
+      <ul>
+        <li><strong>Character</strong> — the smallest piece: a single letter, digit or symbol.</li>
+        <li><strong>Field</strong> — a group of characters forming one <em>attribute</em> (a fact about something), like a name, a salary, a job title.</li>
+        <li><strong>Record</strong> — all the fields describing one <em>entity</em> (one person, place, thing or event), like one customer's whole row of details.</li>
+        <li><strong>File (or table)</strong> — a group of related records, like every customer.</li>
+        <li><strong>Database</strong> — an integrated collection of logically related files and records, all linked together.</li>
+      </ul>
+      <div class="keypoint"><b>Two words you need:</b> an <strong>entity</strong> is a thing you track (a customer,
+      a product, a meter). An <strong>attribute</strong> is a characteristic of that entity (the customer's name,
+      the product's price). A field holds one attribute; a record holds all the attributes of one entity.</div>
+    </section>
+
+    <section id="fileproc">
+      <div class="kicker">Section 2 · exam favourite</div>
+      <h2 class="sec">Why loose files fail</h2>
+      <p class="lead-q">What was so bad about the old way of just keeping separate files?</p>
+      <p>In <strong>traditional file processing</strong>, every application kept its own private files. At BrewHaus
+      that would mean the till, the loyalty app and the accounts each storing their own customer list. That causes
+      four classic problems:</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Problem</th><th>What goes wrong</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Data redundancy</strong></td><td>The same data is duplicated across many files (the same customer stored three times).</td></tr>
+          <tr><td><strong>Lack of data integration</strong></td><td>Data is scattered, so you cannot easily combine it to answer a question.</td></tr>
+          <tr><td><strong>Data dependence</strong></td><td>Programs are tied to the exact file layout, so changing the data breaks the programs.</td></tr>
+          <tr><td><strong>Lack of integrity / standardisation</strong></td><td>The copies disagree and follow no common standard, so the data cannot be trusted.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>These four problems are exactly what the database approach was invented to solve.</p>
+    </section>
+
+    <section id="dbms">
+      <div class="kicker">Section 3</div>
+      <h2 class="sec">The database approach and the DBMS</h2>
+      <p class="lead-q">So what does the database approach do differently?</p>
+      <p>It <strong>consolidates the data into one shared database</strong> that many programs can use, instead of
+      many private files. Sitting between the users and that shared data is a piece of software called the
+      <strong>database management system (DBMS)</strong>.</p>
+      <figure>
+        <svg viewBox="0 0 560 200" role="img" aria-label="Programs and inquiries go through the DBMS to one shared database">
+          <rect x="20" y="20" width="120" height="34" rx="7" fill="#12243d" stroke="#4a93ff"/><text x="80" y="42" text-anchor="middle" class="svg-sub">Till app</text>
+          <rect x="160" y="20" width="120" height="34" rx="7" fill="#12243d" stroke="#4a93ff"/><text x="220" y="42" text-anchor="middle" class="svg-sub">Loyalty app</text>
+          <rect x="300" y="20" width="120" height="34" rx="7" fill="#12243d" stroke="#4a93ff"/><text x="360" y="42" text-anchor="middle" class="svg-sub">Accounts</text>
+          <rect x="440" y="20" width="100" height="34" rx="7" fill="#12243d" stroke="#4a93ff"/><text x="490" y="42" text-anchor="middle" class="svg-sub">Inquiry</text>
+          <rect x="60" y="86" width="440" height="38" rx="9" fill="#16304f" stroke="#33e0d4" stroke-width="2"/><text x="280" y="110" text-anchor="middle" class="svg-label" fill="#80f0e8">Database Management System (DBMS)</text>
+          <rect x="160" y="150" width="240" height="38" rx="9" fill="#1b3a5c" stroke="#80f0e8"/><text x="280" y="174" text-anchor="middle" class="svg-label" fill="#80f0e8">One shared database</text>
+          <g stroke="#7491b3" stroke-width="1.6">
+            <line x1="80" y1="54" x2="120" y2="85"/><line x1="220" y1="54" x2="240" y2="85"/><line x1="360" y1="54" x2="340" y2="85"/><line x1="490" y1="54" x2="440" y2="85"/>
+            <line x1="280" y1="124" x2="280" y2="149"/>
+          </g>
+        </svg>
+        <figcaption>Every program and every ad-hoc question goes through the DBMS to one shared database. The data
+        lives once, and the DBMS controls all access to it.</figcaption>
+      </figure>
+      <p>The DBMS does three core jobs, easy to remember as <strong>Create, Maintain, Use</strong>:</p>
+      <ul>
+        <li><strong>Create</strong> new databases and database applications.</li>
+        <li><strong>Maintain</strong> the quality of the data (add, update, correct, delete).</li>
+        <li><strong>Use</strong> the data to give end users the information they need (querying).</li>
+      </ul>
+    </section>
+
+    <section id="structures">
+      <div class="kicker">Section 4 · exam favourite</div>
+      <h2 class="sec">Ways to structure a database</h2>
+      <p class="lead-q">Is there only one way to organise the data inside a database?</p>
+      <p>No, there are five fundamental structures. The first two are mostly history; the third one won.</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Structure</th><th>How it organises data</th><th>Strength / weakness</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Hierarchical</strong></td><td>A tree; strict one-to-many (each child has one parent).</td><td>Good for routine transactions; cannot handle many-to-many.</td></tr>
+          <tr><td><strong>Network</strong></td><td>A web allowing many-to-many links.</td><td>More flexible than hierarchical; poor at one-off (ad hoc) requests.</td></tr>
+          <tr><td><strong>Relational</strong></td><td>Simple tables linked by a shared column.</td><td>Most widely used; easily answers ad hoc questions and is easy to maintain; slightly slower than the older two.</td></tr>
+          <tr><td><strong>Multidimensional</strong></td><td>Data viewed as cubes with several dimensions.</td><td>Great for analysis (powers OLAP, see below).</td></tr>
+          <tr><td><strong>Object-oriented</strong></td><td>Objects that bundle data with the operations on it, and support inheritance.</td><td>Good for complex data types and reuse.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="keypoint"><b>Why relational won:</b> it trades a little raw speed for huge gains in
+      <strong>flexibility and ease of asking ad-hoc questions</strong>. For most businesses that is the better deal,
+      which is why nearly every business database today is relational.</div>
+    </section>
+
+    <section id="relational">
+      <div class="kicker">Section 5 · exam favourite</div>
+      <h2 class="sec">The relational model up close</h2>
+      <p class="lead-q">What does "relational" actually look like?</p>
+      <p>Data sits in <strong>tables</strong>. In each table, a <strong>row is a record</strong> and a
+      <strong>column is a field</strong>. The magic is that you can <strong>relate one table to another whenever
+      they share a common column</strong> (a key). That shared column is how the database joins things up.</p>
+      <figure>
+        <svg viewBox="0 0 560 210" role="img" aria-label="Two relational tables joined by a shared Shop ID column">
+          <text x="20" y="20" class="svg-mono">CUSTOMER table</text>
+          <rect x="20" y="28" width="230" height="90" fill="#0e1c30" stroke="#2f5577"/>
+          <line x1="20" y1="52" x2="250" y2="52" stroke="#2f5577"/>
+          <line x1="150" y1="28" x2="150" y2="118" stroke="#2f5577"/>
+          <text x="30" y="45" class="svg-mono">Name</text><text x="160" y="45" class="svg-mono" fill="#f5b84a">ShopID</text>
+          <text x="30" y="72" class="svg-sub">Jones</text><text x="160" y="72" class="svg-sub" fill="#ffd27a">A</text>
+          <text x="30" y="94" class="svg-sub">Alvarez</text><text x="160" y="94" class="svg-sub" fill="#ffd27a">B</text>
+          <text x="30" y="114" class="svg-sub">Porter</text><text x="160" y="114" class="svg-sub" fill="#ffd27a">A</text>
+          <text x="320" y="20" class="svg-mono">SHOP table</text>
+          <rect x="320" y="28" width="220" height="90" fill="#0e1c30" stroke="#2f5577"/>
+          <line x1="320" y1="52" x2="540" y2="52" stroke="#2f5577"/>
+          <line x1="400" y1="28" x2="400" y2="118" stroke="#2f5577"/>
+          <text x="330" y="45" class="svg-mono" fill="#f5b84a">ShopID</text><text x="410" y="45" class="svg-mono">City</text>
+          <text x="330" y="72" class="svg-sub" fill="#ffd27a">A</text><text x="410" y="72" class="svg-sub">Cairo</text>
+          <text x="330" y="94" class="svg-sub" fill="#ffd27a">B</text><text x="410" y="94" class="svg-sub">Alexandria</text>
+          <path d="M250 70 C285 70 285 70 318 70" fill="none" stroke="#f5b84a" stroke-width="1.6" stroke-dasharray="4 3"/>
+          <text x="200" y="160" class="svg-sub">The shared <tspan fill="#ffd27a">ShopID</tspan> column links a customer to their shop.</text>
+        </svg>
+        <figcaption>Two tables, joined by the column they have in common. That shared key is the whole idea of the
+        relational model: keep data in tidy tables, and connect them through common columns.</figcaption>
+      </figure>
+    </section>
+
+    <section id="query">
+      <div class="kicker">Section 6</div>
+      <h2 class="sec">Asking the database questions</h2>
+      <p class="lead-q">How do you actually get answers out of a database?</p>
+      <p>You <em>interrogate</em> it, and you do not need to write a program. There are two main ways to ask, and
+      both give you a screen display or a printed report:</p>
+      <ul>
+        <li><strong>A query language</strong> for an immediate answer to a one-off (ad hoc) question.</li>
+        <li><strong>A report generator</strong> to lay out information as a formatted report.</li>
+      </ul>
+      <p>The standard query language is <strong>SQL</strong>, and its basic shape is worth memorising:</p>
+      <div class="keypoint"><b>SELECT … FROM … WHERE …</b><br>
+      <strong>SELECT</strong> which columns you want, <strong>FROM</strong> which table(s), <strong>WHERE</strong>
+      the condition that filters the rows. Example in plain words: "select the customer names, from the customer
+      table, where last month's orders is zero."</div>
+      <p>Because writing SQL by hand is fiddly, most database tools let you build a query by pointing and clicking
+      (called query-by-example), or even ask in near-plain English, and the tool writes the SQL for you. To narrow
+      a search you combine terms with <strong>Boolean operators: AND, OR, NOT</strong> (for example, "lattes AND
+      Cairo NOT decaf").</p>
+    </section>
+
+    <section id="types">
+      <div class="kicker">Section 7</div>
+      <h2 class="sec">The types of databases</h2>
+      <p class="lead-q">Is a database just one big thing, or are there different kinds?</p>
+      <p>There are several kinds, each for a different purpose:</p>
+      <ul>
+        <li><strong>Operational databases</strong> — hold the live data running the business day to day (customers,
+        inventory, payroll). Also called transaction or production databases.</li>
+        <li><strong>Distributed databases</strong> — copies or parts stored across several locations. Faster and
+        safer, but the copies must be kept in sync, by <strong>replication</strong> (find and apply each change
+        everywhere, complex) or <strong>duplication</strong> (copy one master to all sites after hours, simpler).</li>
+        <li><strong>External databases</strong> — data available from outside, often for a fee. Even Google is, in
+        effect, a giant external database.</li>
+        <li><strong>End-user databases</strong> — the small databases an individual builds for themselves.</li>
+        <li><strong>Hypermedia databases</strong> — the web pages, images, audio and video of a website, linked by
+        hyperlinks rather than by record keys.</li>
+        <li><strong>Data warehouses</strong> — the big analysis store, covered next.</li>
+      </ul>
+    </section>
+
+    <section id="warehouse">
+      <div class="kicker">Section 8 · exam favourite</div>
+      <h2 class="sec">Data warehouses</h2>
+      <p class="lead-q">Why copy data into yet another database just to analyse it?</p>
+      <p>Because your live operational databases are busy running the shop; hammering them with heavy analysis
+      would slow them down. So you build a separate <strong>data warehouse</strong>: a central store of
+      <strong>static</strong> data that has been <strong>extracted from other databases, then cleaned, transformed
+      and catalogued</strong>, ready for analysis and decision support. A warehouse can be sliced into
+      <strong>data marts</strong>, smaller subsets focused on one department or process (a marketing mart, a
+      finance mart).</p>
+      <p>The process that loads a warehouse is the part the exam likes. Raw data is captured from many sources, then
+      <strong>cleaned, transformed</strong> into a consistent format, transported and loaded:</p>
+      <figure>
+        <svg viewBox="0 0 600 130" role="img" aria-label="Data warehouse load path from sources through acquisition to analysis">
+          <rect x="10" y="45" width="120" height="44" rx="9" fill="#12243d" stroke="#4a93ff"/><text x="70" y="62" text-anchor="middle" class="svg-sub">Operational,</text><text x="70" y="78" text-anchor="middle" class="svg-sub">external sources</text>
+          <rect x="170" y="45" width="140" height="44" rx="9" fill="#13263f" stroke="#33e0d4"/><text x="240" y="62" text-anchor="middle" class="svg-label" fill="#80f0e8">Data acquisition</text><text x="240" y="80" text-anchor="middle" class="svg-sub">capture · clean · transform · load</text>
+          <rect x="350" y="45" width="120" height="44" rx="9" fill="#1b3a5c" stroke="#80f0e8" stroke-width="2"/><text x="410" y="62" text-anchor="middle" class="svg-label" fill="#80f0e8">Warehouse</text><text x="410" y="80" text-anchor="middle" class="svg-sub">+ data marts</text>
+          <rect x="500" y="45" width="90" height="44" rx="9" fill="#12243d" stroke="#4a93ff"/><text x="545" y="62" text-anchor="middle" class="svg-sub">Analyse,</text><text x="545" y="78" text-anchor="middle" class="svg-sub">query, mine</text>
+          <g stroke="#7491b3" stroke-width="2" marker-end="url(#arw)">
+            <line x1="130" y1="67" x2="168" y2="67"/><line x1="310" y1="67" x2="348" y2="67"/><line x1="470" y1="67" x2="498" y2="67"/>
+          </g>
+          <defs><marker id="arw" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#7491b3"/></marker></defs>
+        </svg>
+        <figcaption>The load path: pull data from many sources, clean and transform it into one consistent shape,
+        load it into the warehouse, then analyse and mine it. (This capture-clean-transform-load step is often
+        called ETL.)</figcaption>
+      </figure>
+    </section>
+
+    <section id="mining">
+      <div class="kicker">Section 9 · exam favourite</div>
+      <h2 class="sec">Data mining and OLAP</h2>
+      <p class="lead-q">Once the warehouse is full, how do you find the gold in it?</p>
+      <p><strong>Data mining</strong> means analysing the data in the warehouse to <strong>discover hidden patterns
+      and relationships</strong> you did not already know, then turning those patterns into business knowledge. The
+      pipeline runs like this:</p>
+      <figure>
+        <svg viewBox="0 0 600 110" role="img" aria-label="Data mining pipeline from databases to business knowledge">
+          <g font-family="Plus Jakarta Sans">
+            <rect x="6" y="40" width="96" height="40" rx="8" fill="#12243d" stroke="#4a93ff"/><text x="54" y="64" text-anchor="middle" class="svg-sub">Databases</text>
+            <rect x="124" y="40" width="96" height="40" rx="8" fill="#13243d" stroke="#4a93ff"/><text x="172" y="64" text-anchor="middle" class="svg-sub">Target data</text>
+            <rect x="242" y="40" width="110" height="40" rx="8" fill="#16304f" stroke="#33e0d4"/><text x="297" y="64" text-anchor="middle" class="svg-sub" fill="#80f0e8">Warehouse</text>
+            <rect x="374" y="40" width="96" height="40" rx="8" fill="#13243d" stroke="#4a93ff"/><text x="422" y="64" text-anchor="middle" class="svg-sub">Patterns</text>
+            <rect x="492" y="40" width="102" height="40" rx="8" fill="#1b3a5c" stroke="#80f0e8" stroke-width="2"/><text x="543" y="60" text-anchor="middle" class="svg-sub" fill="#80f0e8">Business</text><text x="543" y="74" text-anchor="middle" class="svg-sub" fill="#80f0e8">knowledge</text>
+          </g>
+          <g stroke="#7491b3" stroke-width="2" marker-end="url(#arm)">
+            <line x1="102" y1="60" x2="122" y2="60"/><line x1="220" y1="60" x2="240" y2="60"/><line x1="352" y1="60" x2="372" y2="60"/><line x1="470" y1="60" x2="490" y2="60"/>
+          </g>
+          <text x="113" y="32" text-anchor="middle" class="svg-sub">select</text>
+          <text x="231" y="32" text-anchor="middle" class="svg-sub">transform</text>
+          <text x="363" y="32" text-anchor="middle" class="svg-sub">mine</text>
+          <text x="481" y="32" text-anchor="middle" class="svg-sub">interpret</text>
+          <defs><marker id="arm" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#7491b3"/></marker></defs>
+        </svg>
+        <figcaption>Select the relevant data, transform it into the warehouse, mine it for patterns, then interpret
+        those patterns into actionable business knowledge.</figcaption>
+      </figure>
+      <p>For BrewHaus, mining might reveal that customers who buy oat lattes very often add an almond croissant, so
+      you bundle them as a deal.</p>
+      <div class="keypoint"><b>OLAP versus data mining (a favourite exam contrast).</b> <strong>OLAP (online
+      analytical processing)</strong> uses multidimensional "cubes" to let you <em>slice and view</em> data you
+      already understand from many angles (sales by product, by region, by month) — you are answering questions you
+      already have. <strong>Data mining</strong> goes further: it <em>discovers</em> patterns you did not know to
+      ask about. OLAP shows you the data; mining finds the surprises in it.</div>
+    </section>
+
+    <section id="develop">
+      <div class="kicker">Section 10</div>
+      <h2 class="sec">Building a database, and who owns it</h2>
+      <p class="lead-q">How is a database actually planned and built?</p>
+      <p>Through a five-step development process that moves from the business idea down to the physical storage:</p>
+      <ol>
+        <li><strong>Data planning</strong> — model the business processes.</li>
+        <li><strong>Requirements specification</strong> — capture what end users need.</li>
+        <li><strong>Conceptual design</strong> — draw it as a high-level model (an entity-relationship diagram
+        showing the entities and how they relate).</li>
+        <li><strong>Logical design</strong> — translate that into the database's data model (for example,
+        relational).</li>
+        <li><strong>Physical design</strong> — decide how and where the data is actually stored.</li>
+      </ol>
+      <p>The person responsible is the <strong>database administrator (DBA)</strong>, who guards the integrity and
+      security of the data, uses a <strong>data definition language (DDL)</strong> to specify its structure, and
+      records all those definitions in a <strong>data dictionary</strong> — a catalogue of "data about data," also
+      called <strong>metadata</strong>.</p>
+    </section>
+
+    <section id="confuse">
+      <div class="kicker">Watch out</div>
+      <h2 class="sec">Easy to confuse</h2>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>This</th><th>versus that</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Data warehouse</strong> — the cleaned store of history you analyse.</td><td><strong>Data mining</strong> — the act of finding patterns inside that store.</td></tr>
+          <tr><td><strong>OLAP</strong> — slice and view data from many angles (questions you have).</td><td><strong>Data mining</strong> — discover patterns you did not know to ask about.</td></tr>
+          <tr><td><strong>File processing</strong> — separate private files; redundant and inconsistent.</td><td><strong>Database approach</strong> — one shared database via a DBMS.</td></tr>
+          <tr><td><strong>Field</strong> — one attribute (a name).</td><td><strong>Record</strong> — all the fields of one entity (a whole customer).</td></tr>
+          <tr><td><strong>Replication</strong> — find and apply each change to every copy (complex).</td><td><strong>Duplication</strong> — copy one master to all sites after hours (simpler).</td></tr>
+          <tr><td><strong>Operational database</strong> — runs the live business.</td><td><strong>Data warehouse</strong> — static history kept for analysis.</td></tr>
+          <tr><td><strong>Metadata</strong> — data <em>about</em> the data (in the data dictionary).</td><td><strong>Data</strong> — the actual values themselves.</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="check">
+      <div class="kicker">Test yourself</div>
+      <h2 class="sec">Quick self-check</h2>
+      <p class="muted">Try to answer each in your head, then click to reveal.</p>
+      <div class="selfcheck">
+        <div class="q"><span class="qi">Q1</span><span>List the data hierarchy from smallest to largest.</span></div>
+        <div class="a">Character → field → record → file (table) → database.</div>
+        <div class="q"><span class="qi">Q2</span><span>What are the four problems of traditional file processing?</span></div>
+        <div class="a">Data redundancy, lack of data integration, data dependence, and lack of data
+        integrity/standardisation.</div>
+        <div class="q"><span class="qi">Q3</span><span>Why did the relational model become dominant?</span></div>
+        <div class="a">It stores data in simple tables linked by a common column, which makes it flexible and easy
+        to query for ad-hoc questions, even though it is slightly slower than older structures.</div>
+        <div class="q"><span class="qi">Q4</span><span>What is the basic shape of an SQL query?</span></div>
+        <div class="a">SELECT (which columns) … FROM (which tables) … WHERE (the filtering condition).</div>
+        <div class="q"><span class="qi">Q5</span><span>What is the difference between a data warehouse and data mining?</span></div>
+        <div class="a">A data warehouse is the cleaned, static store of historical data built for analysis; data
+        mining is the process of analysing that store to discover hidden patterns and turn them into business
+        knowledge.</div>
+        <div class="q"><span class="qi">Q6</span><span>How does OLAP differ from data mining?</span></div>
+        <div class="a">OLAP slices and views data you already understand from many dimensions (answering questions
+        you have); data mining discovers patterns you did not know to look for.</div>
+        <div class="q"><span class="qi">Q7</span><span>Describe the data warehouse load path.</span></div>
+        <div class="a">Capture data from operational and external sources, clean and transform it into a consistent
+        form, then load it into the warehouse (and its data marts) for analysis. This is often called ETL.</div>
+      </div>
+    </section>
+
+    <nav class="chnav">
+      <a class="prev" href="chapter-04.html"><small>Previous</small>Chapter 4 · Computer Software</a>
+      <a class="next" href="chapter-06.html"><small>Next</small>Chapter 6 · Telecommunications and Networks</a>
+    </nav>
+
+    <footer>Chapter 5 of 12 · IT Strategy, Explained Simply · plain-English study companion</footer>
+
+  </div>
+  </main>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
