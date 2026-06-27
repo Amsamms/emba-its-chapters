@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 1: Foundations of Information Systems | Explained Simply</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="backdrop"></div>
+<button class="menubtn">☰ Contents</button>
+
+<div class="wrap">
+  <aside class="side">
+    <a class="brand" href="index.html" style="text-decoration:none">
+      <span class="lg">IT</span>
+      <span><b>IT Strategy, Simply</b><small>Chapter 1 of 12</small></span>
+    </a>
+    <nav class="toc">
+      <div class="grp">On this page</div>
+      <a href="#story"><span class="n">★</span> The whole chapter as a story</a>
+      <a href="#why"><span class="n">1</span> Why bother with IS?</a>
+      <a href="#system"><span class="n">2</span> What is a "system"?</a>
+      <a href="#is"><span class="n">3</span> What is an information system?</a>
+      <a href="#parts"><span class="n">4</span> The 5 ingredients + 5 activities</a>
+      <a href="#data"><span class="n">5</span> Data vs information</a>
+      <a href="#types"><span class="n">6</span> The types of systems</a>
+      <a href="#trends"><span class="n">7</span> How IS grew over time</a>
+      <a href="#roles"><span class="n">8</span> What IS does for a business</a>
+      <a href="#build"><span class="n">9</span> How systems get built</a>
+      <a href="#ethics"><span class="n">10</span> Challenges, ethics, careers</a>
+      <a href="#confuse"><span class="n">⚖</span> Easy to confuse</a>
+      <a href="#check"><span class="n">✓</span> Quick self-check</a>
+    </nav>
+    <a class="home" href="index.html">← All 12 chapters</a>
+  </aside>
+
+  <main class="main">
+  <div class="reading">
+
+    <section class="hero" id="top">
+      <span class="tag"><span class="dot"></span> Chapter 1 &middot; Foundation</span>
+      <h1>Foundations of <span class="grad">Information Systems</span></h1>
+      <p class="lead">The starting point for everything that follows: what an "information system" actually
+      is, what it is made of, and the handful of jobs it does for a business.</p>
+    </section>
+
+    <details class="plain-english" id="story" open>
+      <summary>In plain English — the whole chapter as one story</summary>
+      <p><strong>Our running example:</strong> you own <em>BrewHaus</em>, a small chain of coffee shops.
+      We will follow BrewHaus through all twelve chapters. This first chapter just answers the most basic
+      question: <em>what is an "information system," and why should a coffee shop owner care?</em></p>
+
+      <h4>1. First, why does any of this matter?</h4>
+      <p>Information systems are not a nerdy side-topic. They are a vital part of any successful business.
+      They make the work more efficient, help you compete, and help managers make better decisions. If you
+      run BrewHaus blind, with no data, you are guessing. With good systems, you are deciding.</p>
+
+      <h4>2. What is a "system" in the first place?</h4>
+      <p>A system is just a set of parts that work together toward a shared goal, by taking in something
+      (input), changing it (processing), and putting out a result (output). A coffee machine is a tiny
+      system: beans and water in, hot coffee out. A clever system also checks its own results and adjusts.</p>
+
+      <h4>3. So what makes it an "information" system?</h4>
+      <p>An information system is an organised combination of <em>people, hardware, software, networks and
+      data</em> that takes in raw facts and turns them into useful information for the business. BrewHaus's
+      till plus the staff using it plus the sales data it stores is a small information system.</p>
+
+      <h4>4. It is always built from the same five ingredients</h4>
+      <p>Every information system, big or small, is made of five resources: <em>people, hardware, software,
+      data, and networks</em>. And it always does five activities with them: <em>input, processing, output,
+      storage, and control</em>. Once you can spot those, you can understand any system you meet.</p>
+
+      <h4>5. Data is not the same as information</h4>
+      <p>"450 cups sold" is <em>data</em>: a raw fact. "Saturdays sell double Tuesdays, so staff up" is
+      <em>information</em>: the same fact turned into something useful. Turning data into information is the
+      whole point of the system.</p>
+
+      <h4>6. There is a family of different system types</h4>
+      <p>Some systems support day-to-day operations (ringing up sales), others support managers making
+      decisions (sales dashboards). Knowing the family tree helps you pick the right tool.</p>
+
+      <h4>7. These systems have grown more powerful over the decades</h4>
+      <p>They started as simple number-crunchers in the 1950s and grew step by step into today's
+      company-wide, internet-connected systems. Each decade added a new layer of capability.</p>
+
+      <p class="connect"><strong>How the chapter connects:</strong> see why systems matter → learn what a
+      system is → add the word "information" → break it into its five ingredients and five activities →
+      see how raw data becomes useful information → meet the family of system types → and watch how they grew
+      over time. After this foundation, every later chapter is just a deeper look at one part of this picture.</p>
+    </details>
+
+    <section id="why">
+      <div class="kicker">Section 1</div>
+      <h2 class="sec">Why bother with information systems?</h2>
+      <p class="lead-q">You sell coffee, not computers — so why study this at all?</p>
+      <p>Because for almost any business today, information systems are a make-or-break part of being
+      successful. There are four big reasons they matter:</p>
+      <div class="grid g2">
+        <div class="card"><div class="ic">🏗️</div><h4>A vital part of any business</h4><p>They are not
+        optional plumbing; successful companies run on them.</p></div>
+        <div class="card"><div class="ic">⚙️</div><h4>They improve efficiency and effectiveness</h4><p>They
+        make business processes faster, cheaper and better.</p></div>
+        <div class="card"><div class="ic">🏆</div><h4>They strengthen your competitive position</h4><p>In
+        fast-changing markets, good systems help you stay ahead of rivals.</p></div>
+        <div class="card"><div class="ic">🧭</div><h4>They support decisions and teamwork</h4><p>They give
+        managers the information to decide well, and help teams work together.</p></div>
+      </div>
+      <p>For BrewHaus, that is the difference between "I think mornings are busy" and "I know exactly which
+      hours, drinks and shops make money, so I staff and stock accordingly."</p>
+    </section>
+
+    <section id="system">
+      <div class="kicker">Section 2</div>
+      <h2 class="sec">What is a "system" in the first place?</h2>
+      <p class="lead-q">Before "information system," what does the plain word "system" even mean?</p>
+      <p>A <strong>system</strong> is a set of interrelated parts, with a clear boundary, working together
+      toward a common goal, by <strong>taking inputs and producing outputs through an organised
+      transformation process</strong>. That last bit is the heart of it: input → processing → output.</p>
+
+      <figure>
+        <svg viewBox="0 0 640 170" role="img" aria-label="Input processing output with feedback and control">
+          <rect x="30" y="65" width="120" height="48" rx="9" fill="#12243d" stroke="#4a93ff"/>
+          <text x="90" y="94" text-anchor="middle" class="svg-label">Input</text>
+          <rect x="260" y="65" width="120" height="48" rx="9" fill="#16304f" stroke="#33e0d4" stroke-width="2"/>
+          <text x="320" y="94" text-anchor="middle" class="svg-label" fill="#80f0e8">Processing</text>
+          <rect x="490" y="65" width="120" height="48" rx="9" fill="#12243d" stroke="#4a93ff"/>
+          <text x="550" y="94" text-anchor="middle" class="svg-label">Output</text>
+          <line x1="150" y1="89" x2="258" y2="89" stroke="#7491b3" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="380" y1="89" x2="488" y2="89" stroke="#7491b3" stroke-width="2" marker-end="url(#ar)"/>
+          <rect x="260" y="10" width="120" height="34" rx="8" fill="#1a2c1a" stroke="#43dd92"/>
+          <text x="320" y="32" text-anchor="middle" class="svg-sub" fill="#43dd92">Control</text>
+          <path d="M550 65 L550 27 L382 27" fill="none" stroke="#43dd92" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#ar2)"/>
+          <text x="455" y="22" text-anchor="middle" class="svg-sub" fill="#43dd92">feedback</text>
+          <defs>
+            <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#7491b3"/></marker>
+            <marker id="ar2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#43dd92"/></marker>
+          </defs>
+        </svg>
+        <figcaption>Every system turns input into output. A self-checking ("cybernetic") system adds two
+        more parts: feedback (data about how it is doing) and control (adjusting based on that feedback).</figcaption>
+      </figure>
+
+      <p>A self-monitoring, self-adjusting system is called a <strong>cybernetic system</strong>. It adds
+      <strong>feedback</strong> (data about the system's own performance) and <strong>control</strong>
+      (watching that feedback and steering the system back toward its goal). Your home thermostat is the
+      classic example: it senses the temperature (feedback) and switches the heating on or off (control).</p>
+      <div class="analogy"><b>A business is itself a system.</b> It takes in resources (people, money,
+      materials), runs business processes on them, and outputs goods and services. Management sits in the
+      "control" seat, and information systems provide the feedback that lets managers steer.</div>
+    </section>
+
+    <section id="is">
+      <div class="kicker">Section 3</div>
+      <h2 class="sec">What makes it an information system?</h2>
+      <p class="lead-q">Add one word — "information" — and what changes?</p>
+      <p>An <strong>information system</strong> is any organised combination of:</p>
+      <ul>
+        <li><strong>People</strong> who use it,</li>
+        <li><strong>Hardware and software</strong> that run it,</li>
+        <li><strong>Communication networks</strong> that connect it,</li>
+        <li><strong>Data resources</strong> it works on, and</li>
+        <li><strong>Policies and procedures</strong> that govern it,</li>
+      </ul>
+      <p>that together <strong>store, retrieve, transform and share information</strong> inside an
+      organisation. Notice it is not just the computer. The people and the rules around it are part of the
+      system too. BrewHaus's loyalty programme is an information system: the app and servers (hardware and
+      software), the internet (network), the customer records (data), the baristas who run it (people), and
+      the rules about points and rewards (procedures).</p>
+    </section>
+
+    <section id="parts">
+      <div class="kicker">Section 4</div>
+      <h2 class="sec">The five ingredients and the five activities</h2>
+      <p class="lead-q">If I open up any information system, what will I always find inside?</p>
+      <p>Two short lists let you understand <em>any</em> information system. First, the five
+      <strong>resources</strong> (the ingredients it is built from):</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Resource</th><th>What it means</th><th>BrewHaus example</th></tr></thead>
+        <tbody>
+          <tr><td><strong>People</strong></td><td>End users and IT specialists.</td><td>Baristas, the manager, the app developer.</td></tr>
+          <tr><td><strong>Hardware</strong></td><td>Machines and media.</td><td>Tills, tablets, the server, receipt paper.</td></tr>
+          <tr><td><strong>Software</strong></td><td>Programs and procedures.</td><td>The point-of-sale app, the loyalty app.</td></tr>
+          <tr><td><strong>Data</strong></td><td>Data and knowledge bases.</td><td>Sales records, customer preferences.</td></tr>
+          <tr><td><strong>Networks</strong></td><td>Communication media and support.</td><td>Wi-Fi and the internet linking the shops.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>Second, the five <strong>activities</strong> every system performs on those resources:</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Activity</th><th>What happens</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Input</strong></td><td>Capture the raw data (a barista rings up a sale).</td></tr>
+          <tr><td><strong>Processing</strong></td><td>Turn that data into information (add up the day's totals).</td></tr>
+          <tr><td><strong>Output</strong></td><td>Present the useful result (a sales report).</td></tr>
+          <tr><td><strong>Storage</strong></td><td>Keep the data for later (save it in the database).</td></tr>
+          <tr><td><strong>Control</strong></td><td>Check it is all working correctly (flag a till that does not balance).</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="keypoint"><b>Memory hook.</b> Ingredients: <strong>People, Hardware, Software, Data,
+      Networks</strong>. Activities: <strong>Input, Processing, Output, Storage, Control</strong>. A business
+      professional should be able to look at any system and name these.</div>
+    </section>
+
+    <section id="data">
+      <div class="kicker">Section 5</div>
+      <h2 class="sec">Data versus information</h2>
+      <p class="lead-q">Aren't "data" and "information" the same thing?</p>
+      <p>No, and the difference is the whole reason these systems exist.</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Data</th><th>Information</th></tr></thead>
+        <tbody>
+          <tr><td>Raw facts. Plain measurements about things or transactions, with no context yet.</td>
+              <td>Data that has been turned into a <strong>meaningful and useful</strong> form: organised,
+              analysed, and placed in context so a person can act on it.</td></tr>
+          <tr><td><em>"Cup sold, 8:42am, oat latte, £3.80."</em></td>
+              <td><em>"Oat lattes are 40% of morning sales — never run out of oat milk before 9am."</em></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>The processing step is what carries you from the left column to the right. Mountains of data are
+      useless until a system turns them into a few clear pieces of information you can use.</p>
+    </section>
+
+    <section id="types">
+      <div class="kicker">Section 6</div>
+      <h2 class="sec">The family of information systems</h2>
+      <p class="lead-q">Is there just one kind of system, or several?</p>
+      <p>There is a whole family, and it splits into two main branches by who they help: systems that support
+      <strong>operations</strong> (the daily work) and systems that support <strong>management</strong>
+      (decision making).</p>
+
+      <h3>Operations support systems</h3>
+      <ul>
+        <li><strong>Transaction processing systems (TPS)</strong> — record and process everyday business
+        transactions like sales, inventory and accounting. (BrewHaus's till.)</li>
+        <li><strong>Process control systems</strong> — monitor and control physical processes using sensors
+        (for example, sensors watching a refinery, or a roaster controlling bean temperature).</li>
+        <li><strong>Enterprise collaboration systems</strong> — help teams communicate and work together,
+        such as email and video conferencing.</li>
+      </ul>
+
+      <h3>Management support systems</h3>
+      <ul>
+        <li><strong>Management information systems (MIS)</strong> — give managers regular, pre-set reports.</li>
+        <li><strong>Decision support systems (DSS)</strong> — let managers explore data interactively to
+        answer one-off questions.</li>
+        <li><strong>Executive information systems (EIS)</strong> — give top executives the critical, big-picture
+        information they need at a glance.</li>
+      </ul>
+
+      <h3>Other systems</h3>
+      <ul>
+        <li><strong>Expert systems</strong> — give expert-style advice (for example, a credit-application
+        advisor that recommends approve or decline).</li>
+        <li><strong>Knowledge management systems (KMS)</strong> — create, organise and share knowledge across
+        the company, such as an intranet of best practices.</li>
+      </ul>
+      <p class="muted">Each of these gets its own deeper chapter later (transactions and enterprise systems in
+      Chapter 7, decision support and AI in Chapter 9). Here you just need the map.</p>
+    </section>
+
+    <section id="trends">
+      <div class="kicker">Section 7</div>
+      <h2 class="sec">How information systems grew over time</h2>
+      <p class="lead-q">Why do today's systems do so much more than the ones from decades ago?</p>
+      <p>Because each era added a new layer of capability on top of the last. Reading from the bottom (oldest)
+      to the top (newest):</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Era</th><th>What systems could do</th></tr></thead>
+        <tbody>
+          <tr><td><strong>2000s–2010s</strong></td><td>Enterprise resource planning and business intelligence: company-wide systems, data mining, CRM, supply-chain management.</td></tr>
+          <tr><td><strong>1990s–2000s</strong></td><td>Electronic business and commerce over the internet, intranets and extranets.</td></tr>
+          <tr><td><strong>1980s–1990s</strong></td><td>Strategic and end-user support: personal productivity, executive information systems, expert systems, systems for competitive advantage.</td></tr>
+          <tr><td><strong>1970s–1980s</strong></td><td>Decision support: interactive, on-the-spot help for managers' decisions.</td></tr>
+          <tr><td><strong>1960s–1970s</strong></td><td>Management reporting: pre-set reports to support decision making (MIS).</td></tr>
+          <tr><td><strong>1950s–1960s</strong></td><td>Data processing: basic transaction processing, record-keeping and accounting.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>The trend is clear: from simply crunching numbers, to reporting, to supporting decisions, to creating
+      competitive advantage, to connecting whole companies over the internet.</p>
+      <div class="keypoint"><b>How a modern business uses all this together.</b> Inside the company, internal
+      networks (intranets) link engineering, manufacturing and accounting. Reaching out, partner networks
+      (extranets) connect suppliers through supply-chain management, and customers through customer
+      relationship management. The internet ties the whole picture together.</div>
+    </section>
+
+    <section id="roles">
+      <div class="kicker">Section 8</div>
+      <h2 class="sec">What the IS function does for a business</h2>
+      <p class="lead-q">Zooming out — what role does the whole information-systems function play?</p>
+      <p>Pulled together, information systems are:</p>
+      <ul>
+        <li>A major <strong>functional area</strong> of the business, as real as finance or marketing.</li>
+        <li>An important <strong>contributor to efficiency</strong>, employee productivity, morale and customer service.</li>
+        <li>A major <strong>source of information</strong> for decision making.</li>
+        <li>A <strong>vital ingredient</strong> in developing competitive products and services.</li>
+        <li>A <strong>dynamic career</strong> opportunity.</li>
+        <li>A key part of a modern <strong>networked business</strong>.</li>
+      </ul>
+      <p>And a small but important lesson from real life: good IT <em>processes</em> matter as much as the
+      hardware and software. A business that backs up its data, plans for failures, and follows sensible
+      procedures gets far more value (and far fewer disasters) than one with shiny tools and sloppy habits.</p>
+    </section>
+
+    <section id="build">
+      <div class="kicker">Section 9</div>
+      <h2 class="sec">How systems get built</h2>
+      <p class="lead-q">When a business needs a new system, how does it actually come into being?</p>
+      <p>Through a repeating cycle. You do not jump straight to building; you move through stages and then keep
+      maintaining what you built:</p>
+      <figure>
+        <svg viewBox="0 0 640 120" role="img" aria-label="The five stages of developing a system">
+          <g font-family="Plus Jakarta Sans">
+            <rect x="8" y="40" width="110" height="44" rx="9" fill="#12243d" stroke="#4a93ff"/><text x="63" y="67" text-anchor="middle" class="svg-label">Investigate</text>
+            <rect x="135" y="40" width="100" height="44" rx="9" fill="#12243d" stroke="#4a93ff"/><text x="185" y="67" text-anchor="middle" class="svg-label">Analyse</text>
+            <rect x="252" y="40" width="100" height="44" rx="9" fill="#12243d" stroke="#4a93ff"/><text x="302" y="67" text-anchor="middle" class="svg-label">Design</text>
+            <rect x="369" y="40" width="110" height="44" rx="9" fill="#12243d" stroke="#4a93ff"/><text x="424" y="67" text-anchor="middle" class="svg-label">Implement</text>
+            <rect x="496" y="40" width="120" height="44" rx="9" fill="#16304f" stroke="#33e0d4" stroke-width="2"/><text x="556" y="67" text-anchor="middle" class="svg-label" fill="#80f0e8">Maintain</text>
+          </g>
+          <g stroke="#7491b3" stroke-width="2" marker-end="url(#ar3)">
+            <line x1="118" y1="62" x2="133" y2="62"/><line x1="235" y1="62" x2="250" y2="62"/>
+            <line x1="352" y1="62" x2="367" y2="62"/><line x1="479" y1="62" x2="494" y2="62"/>
+          </g>
+          <path d="M556 40 L556 14 L63 14 L63 38" fill="none" stroke="#7491b3" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#ar3)"/>
+          <defs><marker id="ar3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#7491b3"/></marker></defs>
+        </svg>
+        <figcaption>The development cycle: investigate the need, analyse it, design a solution, implement it,
+        then maintain it (and the lessons loop back into the next round). Chapter 10 covers this in depth.</figcaption>
+      </figure>
+    </section>
+
+    <section id="ethics">
+      <div class="kicker">Section 10</div>
+      <h2 class="sec">Challenges, ethics and careers</h2>
+      <p class="lead-q">Is technology all upside?</p>
+      <p>No. Technology brings real risks alongside its benefits, so businesses must manage it responsibly.
+      The chapter frames it as risks and responses:</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Potential risks of IT</th><th>Possible responses</th></tr></thead>
+        <tbody>
+          <tr><td>Consumer boycotts, work stoppages, government intervention.</td>
+              <td>Codes of ethics, incentives for good behaviour, professional certification.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>On careers, the outlook is mixed but mostly positive: economic downturns and the shift of some jobs to
+      lower-cost regions are real pressures, yet information systems remain a major functional area with strong,
+      growing demand and frequent shortages of skilled people. (Ethics and security get a full treatment in
+      Chapter 11.)</p>
+    </section>
+
+    <section id="confuse">
+      <div class="kicker">Watch out</div>
+      <h2 class="sec">Easy to confuse</h2>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>This</th><th>versus that</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Data</strong> — raw, context-free facts.</td>
+              <td><strong>Information</strong> — data made meaningful and useful.</td></tr>
+          <tr><td><strong>A system</strong> — any parts working together (input → processing → output).</td>
+              <td><strong>A cybernetic system</strong> — a system that also has feedback and control to self-adjust.</td></tr>
+          <tr><td><strong>Resources of an IS</strong> — what it is built from: people, hardware, software, data, networks.</td>
+              <td><strong>Activities of an IS</strong> — what it does: input, processing, output, storage, control.</td></tr>
+          <tr><td><strong>Operations support systems</strong> — run the daily work (TPS, process control, collaboration).</td>
+              <td><strong>Management support systems</strong> — help managers decide (MIS, DSS, EIS).</td></tr>
+          <tr><td><strong>MIS</strong> — regular, pre-set reports.</td>
+              <td><strong>DSS</strong> — interactive, answer a one-off question.</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="check">
+      <div class="kicker">Test yourself</div>
+      <h2 class="sec">Quick self-check</h2>
+      <p class="muted">Try to answer each in your head, then click to reveal.</p>
+      <div class="selfcheck">
+        <div class="q"><span class="qi">Q1</span><span>What are the four reasons information systems matter to a business?</span></div>
+        <div class="a">They are a vital part of business; they improve efficiency and effectiveness; they
+        strengthen competitive position; and they support decision making and collaboration.</div>
+        <div class="q"><span class="qi">Q2</span><span>Define a "system" in one sentence.</span></div>
+        <div class="a">A set of interrelated parts, with a boundary, working together toward a common goal by
+        taking inputs and producing outputs through a transformation process.</div>
+        <div class="q"><span class="qi">Q3</span><span>Name the five resources and the five activities of an information system.</span></div>
+        <div class="a">Resources: people, hardware, software, data, networks. Activities: input, processing,
+        output, storage, control.</div>
+        <div class="q"><span class="qi">Q4</span><span>What is the difference between data and information?</span></div>
+        <div class="a">Data are raw facts; information is data that has been organised, analysed and put into
+        a meaningful, useful context for a person to act on.</div>
+        <div class="q"><span class="qi">Q5</span><span>What extra two parts does a cybernetic system have?</span></div>
+        <div class="a">Feedback (data about its own performance) and control (using that feedback to steer the
+        system toward its goal).</div>
+        <div class="q"><span class="qi">Q6</span><span>Give the two main branches of the information-systems family and an example of each.</span></div>
+        <div class="a">Operations support systems (for example a transaction processing system / till) and
+        management support systems (for example a management information system that produces reports).</div>
+      </div>
+    </section>
+
+    <nav class="chnav">
+      <a class="prev" href="index.html"><small>Back to</small>All 12 chapters (hub)</a>
+      <a class="next" href="chapter-02.html"><small>Next</small>Chapter 2 · Competing with Information Technology</a>
+    </nav>
+
+    <footer>Chapter 1 of 12 · IT Strategy, Explained Simply · plain-English study companion</footer>
+
+  </div>
+  </main>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
