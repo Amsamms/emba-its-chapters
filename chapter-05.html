@@ -53,7 +53,7 @@
     </section>
 
     <details class="plain-english" id="story" open>
-      <summary>In plain English — the whole chapter as one story</summary>
+      <summary>In plain English - the whole chapter as one story</summary>
       <p><strong>Our running example:</strong> BrewHaus, your coffee chain. Every sale, every loyalty member,
       every stock count is <em>data</em>. This chapter is about treating that data as a real asset and getting
       value out of it, instead of letting it sit in messy piles.</p>
@@ -108,11 +108,11 @@
         <figcaption>Character → Field → Record → File → Database. Each level is a group of the level below it.</figcaption>
       </figure>
       <ul>
-        <li><strong>Character</strong> — the smallest piece: a single letter, digit or symbol.</li>
-        <li><strong>Field</strong> — a group of characters forming one <em>attribute</em> (a fact about something), like a name, a salary, a job title.</li>
-        <li><strong>Record</strong> — all the fields describing one <em>entity</em> (one person, place, thing or event), like one customer's whole row of details.</li>
-        <li><strong>File (or table)</strong> — a group of related records, like every customer.</li>
-        <li><strong>Database</strong> — an integrated collection of logically related files and records, all linked together.</li>
+        <li><strong>Character</strong> - the smallest piece: a single letter, digit or symbol.</li>
+        <li><strong>Field</strong> - a group of characters forming one <em>attribute</em> (a fact about something), like a name, a salary, a job title.</li>
+        <li><strong>Record</strong> - all the fields describing one <em>entity</em> (one person, place, thing or event), like one customer's whole row of details.</li>
+        <li><strong>File (or table)</strong> - a group of related records, like every customer.</li>
+        <li><strong>Database</strong> - an integrated collection of logically related files and records, all linked together.</li>
       </ul>
       <div class="keypoint"><b>Two words you need:</b> an <strong>entity</strong> is a thing you track (a customer,
       a product, a meter). An <strong>attribute</strong> is a characteristic of that entity (the customer's name,
@@ -252,17 +252,17 @@
       <p class="lead-q">Is a database just one big thing, or are there different kinds?</p>
       <p>There are several kinds, each for a different purpose:</p>
       <ul>
-        <li><strong>Operational databases</strong> — hold the live data running the business day to day (customers,
+        <li><strong>Operational databases</strong> - hold the live data running the business day to day (customers,
         inventory, payroll). Also called transaction or production databases.</li>
-        <li><strong>Distributed databases</strong> — copies or parts stored across several locations. Faster and
+        <li><strong>Distributed databases</strong> - copies or parts stored across several locations. Faster and
         safer, but the copies must be kept in sync, by <strong>replication</strong> (find and apply each change
         everywhere, complex) or <strong>duplication</strong> (copy one master to all sites after hours, simpler).</li>
-        <li><strong>External databases</strong> — data available from outside, often for a fee. Even Google is, in
+        <li><strong>External databases</strong> - data available from outside, often for a fee. Even Google is, in
         effect, a giant external database.</li>
-        <li><strong>End-user databases</strong> — the small databases an individual builds for themselves.</li>
-        <li><strong>Hypermedia databases</strong> — the web pages, images, audio and video of a website, linked by
+        <li><strong>End-user databases</strong> - the small databases an individual builds for themselves.</li>
+        <li><strong>Hypermedia databases</strong> - the web pages, images, audio and video of a website, linked by
         hyperlinks rather than by record keys.</li>
-        <li><strong>Data warehouses</strong> — the big analysis store, covered next.</li>
+        <li><strong>Data warehouses</strong> - the big analysis store, covered next.</li>
       </ul>
     </section>
 
@@ -327,7 +327,7 @@
       you bundle them as a deal.</p>
       <div class="keypoint"><b>OLAP versus data mining (a favourite exam contrast).</b> <strong>OLAP (online
       analytical processing)</strong> uses multidimensional "cubes" to let you <em>slice and view</em> data you
-      already understand from many angles (sales by product, by region, by month) — you are answering questions you
+      already understand from many angles (sales by product, by region, by month) - you are answering questions you
       already have. <strong>Data mining</strong> goes further: it <em>discovers</em> patterns you did not know to
       ask about. OLAP shows you the data; mining finds the surprises in it.</div>
     </section>
@@ -338,17 +338,17 @@
       <p class="lead-q">How is a database actually planned and built?</p>
       <p>Through a five-step development process that moves from the business idea down to the physical storage:</p>
       <ol>
-        <li><strong>Data planning</strong> — model the business processes.</li>
-        <li><strong>Requirements specification</strong> — capture what end users need.</li>
-        <li><strong>Conceptual design</strong> — draw it as a high-level model (an entity-relationship diagram
+        <li><strong>Data planning</strong> - model the business processes.</li>
+        <li><strong>Requirements specification</strong> - capture what end users need.</li>
+        <li><strong>Conceptual design</strong> - draw it as a high-level model (an entity-relationship diagram
         showing the entities and how they relate).</li>
-        <li><strong>Logical design</strong> — translate that into the database's data model (for example,
+        <li><strong>Logical design</strong> - translate that into the database's data model (for example,
         relational).</li>
-        <li><strong>Physical design</strong> — decide how and where the data is actually stored.</li>
+        <li><strong>Physical design</strong> - decide how and where the data is actually stored.</li>
       </ol>
       <p>The person responsible is the <strong>database administrator (DBA)</strong>, who guards the integrity and
       security of the data, uses a <strong>data definition language (DDL)</strong> to specify its structure, and
-      records all those definitions in a <strong>data dictionary</strong> — a catalogue of "data about data," also
+      records all those definitions in a <strong>data dictionary</strong> - a catalogue of "data about data," also
       called <strong>metadata</strong>.</p>
     </section>
 
@@ -359,13 +359,13 @@
       <table>
         <thead><tr><th>This</th><th>versus that</th></tr></thead>
         <tbody>
-          <tr><td><strong>Data warehouse</strong> — the cleaned store of history you analyse.</td><td><strong>Data mining</strong> — the act of finding patterns inside that store.</td></tr>
-          <tr><td><strong>OLAP</strong> — slice and view data from many angles (questions you have).</td><td><strong>Data mining</strong> — discover patterns you did not know to ask about.</td></tr>
-          <tr><td><strong>File processing</strong> — separate private files; redundant and inconsistent.</td><td><strong>Database approach</strong> — one shared database via a DBMS.</td></tr>
-          <tr><td><strong>Field</strong> — one attribute (a name).</td><td><strong>Record</strong> — all the fields of one entity (a whole customer).</td></tr>
-          <tr><td><strong>Replication</strong> — find and apply each change to every copy (complex).</td><td><strong>Duplication</strong> — copy one master to all sites after hours (simpler).</td></tr>
-          <tr><td><strong>Operational database</strong> — runs the live business.</td><td><strong>Data warehouse</strong> — static history kept for analysis.</td></tr>
-          <tr><td><strong>Metadata</strong> — data <em>about</em> the data (in the data dictionary).</td><td><strong>Data</strong> — the actual values themselves.</td></tr>
+          <tr><td><strong>Data warehouse</strong> - the cleaned store of history you analyse.</td><td><strong>Data mining</strong> - the act of finding patterns inside that store.</td></tr>
+          <tr><td><strong>OLAP</strong> - slice and view data from many angles (questions you have).</td><td><strong>Data mining</strong> - discover patterns you did not know to ask about.</td></tr>
+          <tr><td><strong>File processing</strong> - separate private files; redundant and inconsistent.</td><td><strong>Database approach</strong> - one shared database via a DBMS.</td></tr>
+          <tr><td><strong>Field</strong> - one attribute (a name).</td><td><strong>Record</strong> - all the fields of one entity (a whole customer).</td></tr>
+          <tr><td><strong>Replication</strong> - find and apply each change to every copy (complex).</td><td><strong>Duplication</strong> - copy one master to all sites after hours (simpler).</td></tr>
+          <tr><td><strong>Operational database</strong> - runs the live business.</td><td><strong>Data warehouse</strong> - static history kept for analysis.</td></tr>
+          <tr><td><strong>Metadata</strong> - data <em>about</em> the data (in the data dictionary).</td><td><strong>Data</strong> - the actual values themselves.</td></tr>
         </tbody>
       </table>
       </div>
