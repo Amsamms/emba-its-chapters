@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 9: Decision Support Systems | Explained Simply</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="backdrop"></div>
+<button class="menubtn">☰ Contents</button>
+
+<div class="wrap">
+  <aside class="side">
+    <a class="brand" href="index.html" style="text-decoration:none">
+      <span class="lg">IT</span>
+      <span><b>IT Strategy, Simply</b><small>Chapter 9 of 12</small></span>
+    </a>
+    <nav class="toc">
+      <div class="grp">On this page</div>
+      <a href="#story"><span class="n">★</span> The whole chapter as a story</a>
+      <a href="#levels"><span class="n">1</span> Three levels of decisions</a>
+      <a href="#quality"><span class="n">2</span> What makes info good</a>
+      <a href="#mis"><span class="n">3</span> MIS and its reports</a>
+      <a href="#dss"><span class="n">4</span> DSS and modelling</a>
+      <a href="#olap"><span class="n">5</span> OLAP vs data mining</a>
+      <a href="#eis"><span class="n">6</span> EIS and portals</a>
+      <a href="#ai"><span class="n">7</span> Artificial intelligence</a>
+      <a href="#expert"><span class="n">8</span> Expert systems</a>
+      <a href="#otherai"><span class="n">9</span> Neural nets, fuzzy, agents</a>
+      <a href="#confuse"><span class="n">⚖</span> Easy to confuse</a>
+      <a href="#check"><span class="n">✓</span> Quick self-check</a>
+    </nav>
+    <a class="home" href="index.html">← All 12 chapters</a>
+  </aside>
+
+  <main class="main">
+  <div class="reading">
+
+    <section class="hero" id="top">
+      <span class="tag"><span class="dot"></span> Chapter 9 &middot; Exam favourite</span>
+      <h1>Decision Support <span class="grad">Systems</span></h1>
+      <p class="lead">The systems that help people decide: from simple reports, to interactive "what-if" models,
+      to executive dashboards, all the way to artificial intelligence and expert systems.</p>
+      <div class="exam" style="margin-top:18px"><b>Exam radar:</b> heavily examined, and three contrasts come up
+      again and again: <b>MIS vs DSS</b>, <b>OLAP vs data mining</b>, and <b>expert systems vs data mining</b>.
+      Each is spelled out below. Also know the three <b>decision levels</b>.</div>
+    </section>
+
+    <details class="plain-english" id="story" open>
+      <summary>In plain English — the whole chapter as one story</summary>
+      <p><strong>Our running example:</strong> BrewHaus managers make decisions all day, from "reorder milk?" to
+      "which new city next?" This chapter is about the systems that help them decide well, and how those systems
+      climb from simple to genuinely intelligent.</p>
+
+      <h4>1. Decisions come in three difficulty levels</h4>
+      <p>Some are routine and rule-based (reorder when stock hits 10) — those are <em>structured</em>. Some are
+      wide-open judgement calls (should we expand abroad?) — <em>unstructured</em>. Many sit in between. Higher up
+      the company, the more open-ended the decisions get.</p>
+
+      <h4>2. A report is only useful if the information is good</h4>
+      <p>Right time, right content, right form. A perfect figure that arrives a week late, or buried in noise, is
+      worthless.</p>
+
+      <h4>3. MIS gives you the standard reports</h4>
+      <p>The original decision-support tool just produces regular, pre-set reports for routine decisions: today's
+      sales, this week's stock. Reliable, but rigid.</p>
+
+      <h4>4. DSS lets you play with the numbers</h4>
+      <p>For trickier decisions you want to ask "what if?" interactively. A DSS lets a manager model scenarios:
+      "what if we cut prices 10%?" Flexible, exploratory, manager-driven.</p>
+
+      <h4>5. OLAP shows you the data; mining finds the surprises</h4>
+      <p>OLAP lets you slice sales by city, month and product to answer questions you have. Data mining digs
+      through history to find patterns you did not know to ask about (oat-latte buyers love almond croissants).</p>
+
+      <h4>6. At the top end, the computer starts to think</h4>
+      <p>Executive dashboards summarise everything for the boss. And artificial intelligence, especially expert
+      systems, lets a computer give expert-style advice by following rules captured from human experts.</p>
+
+      <p class="connect"><strong>How the chapter connects:</strong> decisions range from structured to unstructured
+      → good information makes them possible → MIS delivers routine reports → DSS adds interactive what-if
+      modelling → OLAP and data mining dig into the data (viewing vs discovering) → executive systems and portals
+      summarise it for leaders → and AI, led by expert systems, lets the machine itself advise. The tools climb
+      from reporting to genuine reasoning.</p>
+    </details>
+
+    <section id="levels">
+      <div class="kicker">Section 1 · exam favourite</div>
+      <h2 class="sec">The three levels of decision making</h2>
+      <p class="lead-q">Are all business decisions the same kind of problem?</p>
+      <p>No. They sort into three levels, which line up with three layers of management. The key idea: the higher up
+      you go, the <em>less structured</em> the decisions and the more <em>summarised and forward-looking</em> the
+      information needs to be.</p>
+      <figure>
+        <svg viewBox="0 0 560 230" role="img" aria-label="Pyramid of decision levels">
+          <polygon points="280,15 360,80 200,80" fill="#16304f" stroke="#80f0e8" stroke-width="2"/>
+          <text x="280" y="58" text-anchor="middle" class="svg-label" fill="#80f0e8">Strategic</text>
+          <polygon points="200,80 360,80 410,150 150,150" fill="#13263f" stroke="#33e0d4"/>
+          <text x="280" y="120" text-anchor="middle" class="svg-label" fill="#80f0e8">Tactical</text>
+          <polygon points="150,150 410,150 460,220 100,220" fill="#12243d" stroke="#4a93ff"/>
+          <text x="280" y="192" text-anchor="middle" class="svg-label">Operational</text>
+          <text x="475" y="50" class="svg-sub" fill="#80f0e8">Unstructured ▲</text>
+          <text x="475" y="120" class="svg-sub">Semi-structured</text>
+          <text x="475" y="195" class="svg-sub">Structured ▼</text>
+          <text x="20" y="50" class="svg-sub" fill="#80f0e8">summarised,</text>
+          <text x="20" y="65" class="svg-sub" fill="#80f0e8">forward-looking</text>
+          <text x="20" y="195" class="svg-sub">detailed,</text>
+          <text x="20" y="210" class="svg-sub">historical</text>
+        </svg>
+        <figcaption>Top = strategic, unstructured decisions needing summarised, ad-hoc, forward-looking,
+        wide-scope information. Bottom = operational, structured decisions needing detailed, scheduled, historical,
+        narrow information.</figcaption>
+      </figure>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Decision type</th><th>Level</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Structured</strong></td><td>Operational</td><td>The steps to decide <em>can</em> be specified in advance (reorder when stock hits 10).</td></tr>
+          <tr><td><strong>Semi-structured</strong></td><td>Tactical</td><td>Some steps can be pre-set, but not enough to reach the right answer automatically.</td></tr>
+          <tr><td><strong>Unstructured</strong></td><td>Strategic</td><td>The steps <em>cannot</em> be specified in advance (should we enter a new country?).</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="quality">
+      <div class="kicker">Section 2</div>
+      <h2 class="sec">What makes information good</h2>
+      <p class="lead-q">Why is one report useful and another useless, even with the same facts?</p>
+      <p>Because the <em>quality</em> of information has three dimensions, and a report can fail on any of them:</p>
+      <div class="grid g3">
+        <div class="card"><div class="ic">⏰</div><h4>Time</h4><p>Timely, current, frequent enough, covering the
+        right period.</p></div>
+        <div class="card"><div class="ic">📦</div><h4>Content</h4><p>Accurate, relevant, complete, concise, the
+        right scope.</p></div>
+        <div class="card"><div class="ic">🎨</div><h4>Form</h4><p>Clear, right level of detail, well ordered,
+        well presented.</p></div>
+      </div>
+      <p>A spot-on sales figure that reaches a BrewHaus manager a week late (bad <em>time</em>) or buried in a
+      hundred-page dump (bad <em>form</em>) has lost almost all its value.</p>
+    </section>
+
+    <section id="mis">
+      <div class="kicker">Section 3</div>
+      <h2 class="sec">MIS: the standard reports</h2>
+      <p class="lead-q">What was the original tool for supporting managers?</p>
+      <p>The <strong>Management Information System (MIS)</strong> is the original decision-support tool. It produces
+      regular <strong>reports, displays and responses</strong> to meet day-to-day needs, serving operational and
+      tactical managers who face <em>structured</em> decisions. Its reports come in four flavours:</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Report type</th><th>When it appears</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Periodic scheduled</strong></td><td>A fixed format on a regular schedule (the daily sales report).</td></tr>
+          <tr><td><strong>Exception</strong></td><td>Only when something unusual happens (a shop misses target).</td></tr>
+          <tr><td><strong>Demand</strong></td><td>On request, whenever the manager asks for it.</td></tr>
+          <tr><td><strong>Push</strong></td><td>Sent to the manager automatically, without being asked.</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="dss">
+      <div class="kicker">Section 4 · exam favourite</div>
+      <h2 class="sec">DSS: playing with the numbers</h2>
+      <p class="lead-q">What if a manager needs to explore, not just read a fixed report?</p>
+      <p>That is what a <strong>Decision Support System (DSS)</strong> is for. It supports <em>semi-structured</em>
+      decisions through an <strong>interactive modelling process</strong>: the manager uses analytical models, special
+      databases and their own judgement to explore options on the fly. Crucially, DSS users are <strong>not asking
+      for a pre-set report</strong> — they are testing scenarios. Here is how it differs from MIS, the exam's
+      favourite comparison:</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>&nbsp;</th><th>MIS</th><th>DSS</th></tr></thead>
+        <tbody>
+          <tr><td><strong>What it gives</strong></td><td>Information about how the organisation is performing.</td><td>Tools and techniques to analyse a specific problem.</td></tr>
+          <tr><td><strong>Form &amp; frequency</strong></td><td>Periodic, scheduled, pre-set reports.</td><td>Interactive inquiries and responses.</td></tr>
+          <tr><td><strong>Format</strong></td><td>Fixed, pre-specified.</td><td>Ad-hoc, flexible, adaptable.</td></tr>
+          <tr><td><strong>How it works</strong></td><td>Extracts and manipulates business data.</td><td>Analytical <em>modelling</em> of business data.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>The heart of a DSS is its <strong>model base</strong>, and there are four classic kinds of analysis a
+      manager runs with it:</p>
+      <ul>
+        <li><strong>What-if analysis</strong> — change a variable and see what happens ("what if we cut advertising 10%?").</li>
+        <li><strong>Sensitivity analysis</strong> — a special what-if: change <em>one</em> variable repeatedly to see how sensitive the result is to it.</li>
+        <li><strong>Goal-seeking analysis</strong> — the reverse: set a target and let the system find the input needed ("what sales hit £1m profit?").</li>
+        <li><strong>Optimisation analysis</strong> — go further: find the <em>best</em> value given constraints (maximise profit within a budget).</li>
+      </ul>
+    </section>
+
+    <section id="olap">
+      <div class="kicker">Section 5 · exam favourite</div>
+      <h2 class="sec">OLAP versus data mining</h2>
+      <p class="lead-q">Both dig into data, so how are they different?</p>
+      <p><strong>OLAP (online analytical processing)</strong> lets you examine data interactively from many angles,
+      in real time. It has three signature operations:</p>
+      <ul>
+        <li><strong>Consolidation (roll-up)</strong> — aggregate up to a higher level (shop sales rolled up to city level).</li>
+        <li><strong>Drill-down</strong> — the reverse: go into the underlying detail (city totals broken down per product).</li>
+        <li><strong>Slice and dice</strong> — view the data from different angles (the same sales by time, by region, by product).</li>
+      </ul>
+      <p><strong>Data mining</strong> is different. It provides decision support through <strong>knowledge
+      discovery</strong>: it digs through vast historical data to find <em>patterns, trends and correlations you did
+      not know were there</em>. A common use is <strong>market basket analysis</strong>, finding which products are
+      bought together (used for cross-selling and product placement).</p>
+      <div class="keypoint"><b>The exam contrast, cleanly.</b> <strong>OLAP</strong> is <em>user-driven</em>: you
+      already have the question and you slice the data to answer it ("show me sales by city by month"). <strong>Data
+      mining</strong> is <em>discovery-driven</em>: it finds the surprises you did not think to ask about. OLAP shows
+      you the data; mining finds the hidden gold in it.</div>
+    </section>
+
+    <section id="eis">
+      <div class="kicker">Section 6</div>
+      <h2 class="sec">Executive systems and portals</h2>
+      <p class="lead-q">What does the boss at the top of BrewHaus use?</p>
+      <p>An <strong>Executive Information System (EIS)</strong>, which <strong>combines features of MIS and
+      DSS</strong> to give top executives immediate, easy access to the information critical to their strategic
+      goals. Its hallmark features are tailored dashboards, exception reports, trend analysis, and
+      <strong>drill-down</strong> (start at the big summary, click into the detail). EIS proved so useful it spread
+      beyond executives to managers and analysts.</p>
+      <p>Pull it all together and you get an <strong>enterprise information portal</strong> (also called an
+      enterprise knowledge portal): a single web front door that integrates MIS, DSS, EIS, OLAP and data-mining
+      tools, personalised per user, often with a digital dashboard. Two specialised cousins worth a mention:
+      <strong>geographic information systems (GIS)</strong> that put data on maps for location decisions, and
+      <strong>data visualisation systems</strong> that let you explore data as interactive 3-D graphics.</p>
+    </section>
+
+    <section id="ai">
+      <div class="kicker">Section 7</div>
+      <h2 class="sec">Artificial intelligence</h2>
+      <p class="lead-q">What happens when we want the computer itself to act intelligently?</p>
+      <p>That is <strong>artificial intelligence (AI)</strong>: a multidisciplinary field (drawing on computer
+      science, maths, biology, linguistics, psychology and engineering) aiming to make computers think, see, hear,
+      talk and reason like people. AI splits into three application areas:</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>AI domain</th><th>What it covers</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Cognitive science</strong></td><td>The "thinking" branch: expert systems, neural networks, fuzzy logic, genetic algorithms, intelligent agents, learning systems.</td></tr>
+          <tr><td><strong>Robotics</strong></td><td>The "doing" branch: vision, touch, dexterity, locomotion, navigation.</td></tr>
+          <tr><td><strong>Natural interfaces</strong></td><td>The "communicating" branch: natural language, speech recognition, virtual reality.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>For business decisions, the most important member of the cognitive-science branch is the expert system.</p>
+    </section>
+
+    <section id="expert">
+      <div class="kicker">Section 8 · exam favourite</div>
+      <h2 class="sec">Expert systems</h2>
+      <p class="lead-q">How can a computer give expert advice?</p>
+      <p>An <strong>expert system</strong> is a knowledge-based system that holds the knowledge of a specific, complex
+      area and acts as an <strong>expert consultant</strong> to its users. It is built from four components:</p>
+      <figure>
+        <svg viewBox="0 0 560 130" role="img" aria-label="Expert system components">
+          <rect x="20" y="45" width="100" height="44" rx="9" fill="#12243d" stroke="#4a93ff"/><text x="70" y="71" text-anchor="middle" class="svg-sub">User +</text>
+          <rect x="150" y="45" width="120" height="44" rx="9" fill="#13263f" stroke="#33e0d4"/><text x="210" y="65" text-anchor="middle" class="svg-sub" fill="#80f0e8">User interface</text><text x="210" y="80" text-anchor="middle" class="svg-sub" fill="#80f0e8">+ inference engine</text>
+          <rect x="300" y="45" width="120" height="44" rx="9" fill="#16304f" stroke="#f5b84a"/><text x="360" y="71" text-anchor="middle" class="svg-label" fill="#ffd27a">Knowledge base</text>
+          <rect x="450" y="45" width="100" height="44" rx="9" fill="#12243d" stroke="#4a93ff"/><text x="500" y="65" text-anchor="middle" class="svg-sub">Knowledge</text><text x="500" y="80" text-anchor="middle" class="svg-sub">acquisition</text>
+          <g stroke="#7491b3" stroke-width="2">
+            <line x1="120" y1="67" x2="148" y2="67"/><line x1="270" y1="67" x2="298" y2="67"/><line x1="448" y1="67" x2="422" y2="67"/>
+          </g>
+          <text x="500" y="35" text-anchor="middle" class="svg-sub">(loads expertise in)</text>
+        </svg>
+        <figcaption>The four parts: a knowledge base of expertise, an inference engine that reasons over it, a user
+        interface, and a knowledge-acquisition facility that loads the expert's knowledge in.</figcaption>
+      </figure>
+      <p>The knowledge is usually stored as <strong>IF-THEN rules</strong> captured from human experts by a
+      <strong>knowledge engineer</strong>. The easy way to build one is an <strong>expert system shell</strong>:
+      a ready-made system with the inference engine and interface already built, into which you pour your own
+      knowledge base.</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Benefits</th><th>Limitations</th></tr></thead>
+        <tbody>
+          <tr><td>Captures and preserves expert knowledge; faster and more consistent than a person; never tired; can hold several experts' knowledge.</td>
+              <td>Narrow focus; <strong>cannot learn on its own</strong>; costly to build and maintain; only works in a small, well-defined domain.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="keypoint"><b>Expert system versus data mining (a classic exam question).</b> An <strong>expert
+      system reasons forward from knowledge a human expert put in</strong> (rules), to give advice; it does not
+      discover anything new and cannot learn. <strong>Data mining works the opposite way</strong>: it discovers new
+      patterns out of raw data; knowledge is the <em>output</em>, not the input. One applies known expertise; the
+      other finds unknown patterns.</div>
+    </section>
+
+    <section id="otherai">
+      <div class="kicker">Section 9</div>
+      <h2 class="sec">Neural networks, fuzzy logic and friends</h2>
+      <p class="lead-q">What other kinds of AI are there, and how do they differ from expert systems?</p>
+      <ul>
+        <li><strong>Neural networks</strong> — computing modelled on the brain's web of neurons. Unlike an expert
+        system, a neural network <strong>learns</strong> patterns directly from data. (This "can it learn?" point is
+        the key contrast: expert system = no, neural network = yes.)</li>
+        <li><strong>Fuzzy logic</strong> — reasoning with vague, imprecise information using terms like "very high"
+        instead of exact numbers, much closer to how humans actually reason. Used in controllers for trains,
+        elevators and cars.</li>
+        <li><strong>Genetic algorithms</strong> — "survival of the fittest" software that evolves better and better
+        solutions, useful when thousands of possible answers exist.</li>
+        <li><strong>Intelligent agents</strong> — software "bots" that act on your behalf, using built-in and learned
+        knowledge to carry out tasks (filtering email, searching, navigating).</li>
+        <li><strong>Virtual reality</strong> — computer-simulated, multi-sensory 3-D environments (also called
+        telepresence), used in design, training, medicine and simulation.</li>
+      </ul>
+    </section>
+
+    <section id="confuse">
+      <div class="kicker">Watch out</div>
+      <h2 class="sec">Easy to confuse</h2>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>This</th><th>versus that</th></tr></thead>
+        <tbody>
+          <tr><td><strong>MIS</strong> — fixed, periodic reports for structured decisions.</td><td><strong>DSS</strong> — interactive, ad-hoc modelling for semi-structured decisions.</td></tr>
+          <tr><td><strong>OLAP</strong> — user-driven slicing of data you already understand.</td><td><strong>Data mining</strong> — discovery of patterns you did not know to ask about.</td></tr>
+          <tr><td><strong>Expert system</strong> — applies rules from a human expert; cannot learn.</td><td><strong>Neural network</strong> — learns patterns from data on its own.</td></tr>
+          <tr><td><strong>Expert system</strong> — knowledge in, advice out (known expertise).</td><td><strong>Data mining</strong> — data in, knowledge out (unknown patterns).</td></tr>
+          <tr><td><strong>What-if analysis</strong> — change inputs, see the outcome.</td><td><strong>Goal-seeking</strong> — set the outcome, find the input needed.</td></tr>
+          <tr><td><strong>Structured decision</strong> — steps known in advance (operational).</td><td><strong>Unstructured decision</strong> — steps cannot be pre-set (strategic).</td></tr>
+          <tr><td><strong>EIS</strong> — combines MIS + DSS for executives, with drill-down.</td><td><strong>DSS</strong> — interactive modelling for any manager.</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="check">
+      <div class="kicker">Test yourself</div>
+      <h2 class="sec">Quick self-check</h2>
+      <p class="muted">Try to answer each in your head, then click to reveal.</p>
+      <div class="selfcheck">
+        <div class="q"><span class="qi">Q1</span><span>Name the three decision-structure types and the management level of each.</span></div>
+        <div class="a">Structured (operational), semi-structured (tactical), and unstructured (strategic). Higher up
+        the company, the less structured the decisions.</div>
+        <div class="q"><span class="qi">Q2</span><span>Give the main differences between MIS and DSS.</span></div>
+        <div class="a">MIS gives fixed, periodic, pre-specified reports about organisational performance; DSS gives
+        interactive, ad-hoc, flexible analytical modelling to explore a specific problem.</div>
+        <div class="q"><span class="qi">Q3</span><span>List the four kinds of DSS analytical modelling.</span></div>
+        <div class="a">What-if, sensitivity, goal-seeking, and optimisation. (Sensitivity is a special what-if;
+        goal-seeking is the reverse of what-if; optimisation extends goal-seeking.)</div>
+        <div class="q"><span class="qi">Q4</span><span>What are the three OLAP operations, and how does OLAP differ from data mining?</span></div>
+        <div class="a">Consolidation (roll-up), drill-down, and slice-and-dice. OLAP is user-driven exploration of
+        data you understand; data mining is discovery-driven, finding hidden patterns you did not know to ask about.</div>
+        <div class="q"><span class="qi">Q5</span><span>What are the four components of an expert system?</span></div>
+        <div class="a">A knowledge base, an inference engine, a user interface, and a knowledge-acquisition facility.</div>
+        <div class="q"><span class="qi">Q6</span><span>How do an expert system and data mining differ?</span></div>
+        <div class="a">An expert system applies knowledge a human expert put in (rules in, advice out) and cannot
+        learn; data mining discovers new patterns from raw data (data in, knowledge out).</div>
+        <div class="q"><span class="qi">Q7</span><span>What makes a neural network different from an expert system?</span></div>
+        <div class="a">A neural network learns patterns directly from data; an expert system only applies pre-loaded
+        rules and cannot learn on its own.</div>
+      </div>
+    </section>
+
+    <nav class="chnav">
+      <a class="prev" href="chapter-08.html"><small>Previous</small>Chapter 8 · E-Commerce Systems</a>
+      <a class="next" href="chapter-10.html"><small>Next</small>Chapter 10 · Developing Business/IT Solutions</a>
+    </nav>
+
+    <footer>Chapter 9 of 12 · IT Strategy, Explained Simply · plain-English study companion</footer>
+
+  </div>
+  </main>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
