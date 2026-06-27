@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 4: Computer Software | Explained Simply</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="backdrop"></div>
+<button class="menubtn">☰ Contents</button>
+
+<div class="wrap">
+  <aside class="side">
+    <a class="brand" href="index.html" style="text-decoration:none">
+      <span class="lg">IT</span>
+      <span><b>IT Strategy, Simply</b><small>Chapter 4 of 12</small></span>
+    </a>
+    <nav class="toc">
+      <div class="grp">On this page</div>
+      <a href="#story"><span class="n">★</span> The whole chapter as a story</a>
+      <a href="#two"><span class="n">1</span> The two kinds of software</a>
+      <a href="#app"><span class="n">2</span> Application software</a>
+      <a href="#suites"><span class="n">3</span> Suites vs integrated packages</a>
+      <a href="#system"><span class="n">4</span> System software</a>
+      <a href="#os"><span class="n">5</span> The operating system</a>
+      <a href="#lang"><span class="n">6</span> Programming languages</a>
+      <a href="#open"><span class="n">7</span> Open source software</a>
+      <a href="#getting"><span class="n">8</span> Build, buy, or rent (SaaS)</a>
+      <a href="#confuse"><span class="n">⚖</span> Easy to confuse</a>
+      <a href="#check"><span class="n">✓</span> Quick self-check</a>
+    </nav>
+    <a class="home" href="index.html">← All 12 chapters</a>
+  </aside>
+
+  <main class="main">
+  <div class="reading">
+
+    <section class="hero" id="top">
+      <span class="tag"><span class="dot"></span> Chapter 4 &middot; Foundation</span>
+      <h1>Computer <span class="grad">Software</span></h1>
+      <p class="lead">The programs that bring the hardware to life: the apps people use to do their work, and
+      the system software that runs the machine underneath. The "mind" to Chapter 3's "body."</p>
+      <div class="exam" style="margin-top:18px"><b>Good to know:</b> like hardware, software is a background
+      chapter rarely asked about directly in the exam. Read it for comfort with the vocabulary. The one idea
+      that does keep coming up elsewhere is the build-vs-buy-vs-rent decision at the end.</div>
+    </section>
+
+    <details class="plain-english" id="story" open>
+      <summary>In plain English — the whole chapter as one story</summary>
+      <p><strong>Our running example:</strong> BrewHaus. Chapter 3 was the physical machine. This chapter is
+      everything that <em>runs</em> on that machine: the software.</p>
+
+      <h4>1. All software splits into two big families</h4>
+      <p><em>Application software</em> does a job for you (the app that takes a coffee order). <em>System
+      software</em> runs the computer itself (the operating system that makes the app work at all). Everything
+      else in the chapter sits under one of those two.</p>
+
+      <h4>2. Application software: the tools you actually touch</h4>
+      <p>Some apps are general-purpose, useful to anyone (word processors, spreadsheets, email, browsers).
+      Others are built for a specific job (a coffee-shop point-of-sale app, an accounting package).</p>
+
+      <h4>3. System software: the stuff working quietly underneath</h4>
+      <p>The most important piece is the <em>operating system</em>, the master program that has to be running
+      before anything else can. It manages the hardware, the files, and the tasks, so your apps do not have to.</p>
+
+      <h4>4. Software has to be written, and there are easier and harder ways</h4>
+      <p>Programming languages range from raw machine code (all 0s and 1s) up to languages that read almost
+      like English. The closer to English, the easier for humans, the more translation the computer does.</p>
+
+      <h4>5. You do not always have to write or even buy it</h4>
+      <p>BrewHaus could build its own loyalty app, buy a ready-made one, or simply rent one over the internet
+      and pay monthly. That last option, renting software as a service, is the big modern shift.</p>
+
+      <p class="connect"><strong>How the chapter connects:</strong> software divides into application and system
+      → application software is your everyday tools → system software (led by the operating system) runs the
+      machine → all of it is written in programming languages of varying friendliness → some of it is free and
+      open-source → and increasingly you rent it over the internet rather than owning it. That is the software
+      landscape.</p>
+    </details>
+
+    <section id="two">
+      <div class="kicker">Section 1</div>
+      <h2 class="sec">The two kinds of software</h2>
+      <p class="lead-q">When people say "software," what are they really talking about?</p>
+      <p>Everything called software falls into one of two families, and keeping them straight makes the whole
+      chapter simple:</p>
+      <div class="grid g2">
+        <div class="card"><div class="ic">🧰</div><h4>Application software</h4><p>Performs information-processing
+        tasks <strong>for the end user</strong>. The programs that do <em>your</em> work: writing, calculating,
+        ordering, emailing.</p></div>
+        <div class="card"><div class="ic">⚙️</div><h4>System software</h4><p>Manages and supports the
+        <strong>operations of the computer</strong> itself. The programs that run the machine so the apps can
+        run on it.</p></div>
+      </div>
+      <p>A simple test: if it helps a <em>person</em> get a job done, it is application software. If it helps the
+      <em>computer</em> function, it is system software.</p>
+    </section>
+
+    <section id="app">
+      <div class="kicker">Section 2</div>
+      <h2 class="sec">Application software: the tools you use</h2>
+      <p class="lead-q">What kinds of apps are there?</p>
+      <p>Application software splits again into two groups:</p>
+      <ul>
+        <li><strong>General-purpose programs</strong> — useful to almost anyone: word processors, spreadsheets,
+        presentation graphics, database managers, email, web browsers, personal information managers (calendar
+        and contacts), and groupware (tools for teams to collaborate).</li>
+        <li><strong>Application-specific programs</strong> — built for a particular job. In business these
+        include the big four you will meet again in Chapter 7: <strong>CRM</strong> (customer relationships),
+        <strong>ERP</strong> (running the whole enterprise), <strong>SCM</strong> (supply chain), and
+        web-based e-commerce.</li>
+      </ul>
+      <p>Two general-purpose tools worth a special mention, because they show up everywhere:</p>
+      <ul>
+        <li><strong>Spreadsheets</strong> — rows and columns of data with formulas linking them. Their superpower
+        is answering <em>"what if?"</em> questions: change one number and watch everything recalculate. BrewHaus
+        uses one to model "what if I open a fourth shop?"</li>
+        <li><strong>Web browsers</strong> — increasingly the universal launchpad: you do email, searches and apps
+        all inside the browser. Search engines reached through the browser have become indispensable.</li>
+      </ul>
+    </section>
+
+    <section id="suites">
+      <div class="kicker">Section 3</div>
+      <h2 class="sec">Suites versus integrated packages</h2>
+      <p class="lead-q">Why does office software come in a big bundle?</p>
+      <p>Two ways to package productivity tools, with a clear trade-off:</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>&nbsp;</th><th>Software suite</th><th>Integrated package</th></tr></thead>
+        <tbody>
+          <tr><td><strong>What it is</strong></td><td>Several full, separate programs bundled together (e.g. a word processor + spreadsheet + presentation + database + calendar).</td><td>One program that does several jobs in a simpler way.</td></tr>
+          <tr><td><strong>Upside</strong></td><td>Cheaper than buying each alone; shared look-and-feel; programs work well together.</td><td>Many functions for a low price; light on disk space; often pre-installed.</td></tr>
+          <tr><td><strong>Downside</strong></td><td>You never use all the features, and it eats disk space ("bloatware").</td><td>Limited power.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>The classic suite is the office bundle (a word processor, a spreadsheet, a presentation tool, a database
+      and a calendar app, all sharing one style). An integrated package trades power for simplicity and price.</p>
+    </section>
+
+    <section id="system">
+      <div class="kicker">Section 4</div>
+      <h2 class="sec">System software: working underneath</h2>
+      <p class="lead-q">If application software does my work, what is system software doing?</p>
+      <p>System software sits as a <strong>middle layer between your apps and the bare hardware</strong>. You
+      never touch the hardware directly; the layers handle that for you:</p>
+      <figure>
+        <svg viewBox="0 0 420 230" role="img" aria-label="Software layers between user and hardware">
+          <rect x="20" y="20" width="380" height="190" rx="10" fill="none" stroke="#7491b3"/>
+          <text x="210" y="40" text-anchor="middle" class="svg-sub">End users</text>
+          <rect x="55" y="52" width="310" height="150" rx="9" fill="#0e1c30" stroke="#4a93ff"/>
+          <text x="210" y="72" text-anchor="middle" class="svg-label" fill="#7fb1ff">Application software</text>
+          <rect x="95" y="84" width="230" height="110" rx="9" fill="#12243d" stroke="#33e0d4"/>
+          <text x="210" y="104" text-anchor="middle" class="svg-label" fill="#80f0e8">System software</text>
+          <rect x="135" y="116" width="150" height="70" rx="9" fill="#16304f" stroke="#f5b84a"/>
+          <text x="210" y="155" text-anchor="middle" class="svg-label" fill="#ffd27a">Hardware</text>
+        </svg>
+        <figcaption>The layers: the user works with applications, applications sit on system software, and
+        system software talks to the hardware in the middle. Each layer shields the one outside it.</figcaption>
+      </figure>
+      <p>System software itself comes in two groups:</p>
+      <ul>
+        <li><strong>System management programs</strong> — run the resources: the operating system, network
+        management, database management systems, utilities (housekeeping like backup and virus protection),
+        performance and security monitors, and application servers that connect apps to the web.</li>
+        <li><strong>System development programs</strong> — help people build software: language translators,
+        programming editors and tools, and CASE tools (which combine many programming tools in one).</li>
+      </ul>
+    </section>
+
+    <section id="os">
+      <div class="kicker">Section 5</div>
+      <h2 class="sec">The operating system: the master program</h2>
+      <p class="lead-q">What is the single most important piece of software on any computer?</p>
+      <p>The <strong>operating system (OS)</strong>. It must be loaded and running <em>before any other program
+      can do anything</em>. It is the manager that handles four core jobs, plus the way you interact with the
+      machine:</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>OS job</th><th>What it manages</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Resource management</strong></td><td>The use of the hardware (processor, memory, devices).</td></tr>
+          <tr><td><strong>Task management</strong></td><td>Getting the computer's tasks done, juggling several at once.</td></tr>
+          <tr><td><strong>File management</strong></td><td>Organising data and program files.</td></tr>
+          <tr><td><strong>Utilities and support</strong></td><td>A range of background support services.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>The <strong>user interface</strong> is how you give it instructions: old <em>command-driven</em> (type
+      commands), <em>menu-driven</em> (pick from lists), or the modern <em>graphical user interface (GUI)</em>
+      (click icons and windows). The familiar operating systems are <strong>Windows</strong>, <strong>Unix</strong>
+      (portable, runs on everything), <strong>Linux</strong> (low-cost, open-source, Unix-like) and
+      <strong>Mac OS X</strong> (Apple's).</p>
+    </section>
+
+    <section id="lang">
+      <div class="kicker">Section 6</div>
+      <h2 class="sec">Programming languages</h2>
+      <p class="lead-q">How is software actually written, and why are there so many languages?</p>
+      <p>Software is written in programming languages, and they come in "generations" that climb from the
+      computer's native tongue toward human language:</p>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Generation</th><th>What it looks like</th><th>Friendliness</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1st: Machine language</strong></td><td>Raw binary (0s and 1s) unique to each computer.</td><td>Hardest for humans, closest to the hardware.</td></tr>
+          <tr><td><strong>2nd: Assembler language</strong></td><td>Short symbolic abbreviations (mnemonics) instead of binary.</td><td>A little easier; needs an "assembler" to translate.</td></tr>
+          <tr><td><strong>3rd: High-level language</strong></td><td>Readable statements and arithmetic (BASIC, COBOL, FORTRAN).</td><td>Much friendlier; needs a compiler or interpreter.</td></tr>
+          <tr><td><strong>4th: 4GL</strong></td><td>Near-English: you say <em>what</em> you want, not <em>how</em> ("sum the following numbers").</td><td>Friendliest; the computer works out the steps.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>Two more ideas you should recognise:</p>
+      <ul>
+        <li><strong>Object-oriented languages</strong> (Java, C++, Visual Basic) are today's most popular. They
+        bundle data together with the operations that act on it into reusable "objects," so a piece built for one
+        program can be reused in another.</li>
+        <li><strong>Web languages</strong>: <strong>HTML</strong> describes how a web page looks;
+        <strong>XML</strong> labels what the data <em>means</em> so different systems can share it; and
+        <strong>Java</strong> runs the same little program on any computer.</li>
+      </ul>
+      <div class="keypoint"><b>Translators turn human-written code into machine code.</b> An <strong>assembler</strong>
+      translates assembly language; a <strong>compiler</strong> translates a whole high-level program before it
+      runs; an <strong>interpreter</strong> translates and runs it one line at a time.</div>
+    </section>
+
+    <section id="open">
+      <div class="kicker">Section 7</div>
+      <h2 class="sec">Open source software</h2>
+      <p class="lead-q">What does "open source" actually mean, and is it just "free software"?</p>
+      <p><strong>Open source software</strong> ships with its source code, so anyone can read, modify and
+      redistribute it. Because many people can improve it, it can evolve very fast. But "open source" is not the
+      same as "free":</p>
+      <ul>
+        <li>It is <strong>not</strong> simply shareware, freeware, or public-domain software.</li>
+        <li>It <strong>is</strong> copyrighted and comes with license terms, and it can even carry a fee for
+        packaging, distribution or support.</li>
+      </ul>
+      <p>Familiar examples include the Linux operating system and OpenOffice. The big idea for a business: open
+      source can cut licensing costs and avoid lock-in to one vendor, at the price of taking on more
+      responsibility for support yourself.</p>
+    </section>
+
+    <section id="getting">
+      <div class="kicker">Section 8</div>
+      <h2 class="sec">Build, buy, or rent it (SaaS)</h2>
+      <p class="lead-q">When BrewHaus needs new software, what are its options? (This part does matter later.)</p>
+      <p>There are three broad ways to get software, and choosing between them is a recurring business decision:</p>
+      <div class="grid g3">
+        <div class="card"><div class="ic">🔨</div><h4>Build it</h4><p>Write your own, in-house or outsourced.
+        Fits you exactly, but costly and slow, and you maintain it forever.</p></div>
+        <div class="card"><div class="ic">🛒</div><h4>Buy it</h4><p>Purchase a ready-made package. Faster and
+        cheaper, but you adapt to how it works.</p></div>
+        <div class="card"><div class="ic">☁️</div><h4>Rent it (SaaS)</h4><p>Use software over the internet for a
+        monthly fee. No hardware to run, scales instantly, cancel anytime.</p></div>
+      </div>
+      <p>That third option is the modern shift. <strong>Software-as-a-service (SaaS)</strong>, delivered through
+      <strong>cloud computing</strong>, means the software and even the hardware live on someone else's servers
+      and you simply pay for what you use. A few key points:</p>
+      <ul>
+        <li>It is <strong>pay-as-you-go</strong>, avoiding big upfront purchases.</li>
+        <li>Capacity scales up almost instantly when you grow.</li>
+        <li>Favour <strong>configuration over customisation</strong>: keeping the software standard keeps you
+        agile; bending it heavily to your needs adds cost and risk.</li>
+        <li>Always keep a way to back up your data in case the provider disappears.</li>
+      </ul>
+      <div class="keypoint"><b>One licensing point people miss:</b> when you "buy" packaged software, you do not
+      own it. You buy a <strong>licence to use it</strong>; the vendor keeps the ownership rights.</div>
+    </section>
+
+    <section id="confuse">
+      <div class="kicker">Watch out</div>
+      <h2 class="sec">Easy to confuse</h2>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>This</th><th>versus that</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Application software</strong> — does a job for the user.</td><td><strong>System software</strong> — runs the computer itself.</td></tr>
+          <tr><td><strong>Software suite</strong> — several full programs bundled together.</td><td><strong>Integrated package</strong> — one simpler program doing several jobs.</td></tr>
+          <tr><td><strong>Compiler</strong> — translates the whole program before it runs.</td><td><strong>Interpreter</strong> — translates and runs it one line at a time.</td></tr>
+          <tr><td><strong>General-purpose software</strong> — useful to anyone (word processor).</td><td><strong>Application-specific software</strong> — built for one job (a CRM system).</td></tr>
+          <tr><td><strong>Buying software</strong> — you buy a licence to use it.</td><td><strong>SaaS</strong> — you rent it over the internet and pay as you go.</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="check">
+      <div class="kicker">Test yourself</div>
+      <h2 class="sec">Quick self-check</h2>
+      <p class="muted">Try to answer each in your head, then click to reveal.</p>
+      <div class="selfcheck">
+        <div class="q"><span class="qi">Q1</span><span>What is the difference between application and system software?</span></div>
+        <div class="a">Application software does information-processing tasks for the end user; system software
+        manages and runs the computer itself so the applications can work.</div>
+        <div class="q"><span class="qi">Q2</span><span>What are the four core jobs of an operating system?</span></div>
+        <div class="a">Resource management, task management, file management, and utilities/support services. It
+        also provides the user interface and must load before any other program runs.</div>
+        <div class="q"><span class="qi">Q3</span><span>Put the language generations in order from hardest to friendliest.</span></div>
+        <div class="a">Machine language (binary), assembler language, high-level language, then fourth-generation
+        (near-English) language.</div>
+        <div class="q"><span class="qi">Q4</span><span>Compiler versus interpreter?</span></div>
+        <div class="a">A compiler translates the whole program into machine code before running it; an interpreter
+        translates and executes one line at a time.</div>
+        <div class="q"><span class="qi">Q5</span><span>What are the three ways to obtain software?</span></div>
+        <div class="a">Build it (in-house or outsourced), buy a ready-made package, or rent it as a service (SaaS)
+        over the internet.</div>
+        <div class="q"><span class="qi">Q6</span><span>When you "buy" commercial software, what do you actually get?</span></div>
+        <div class="a">A licence to use it, not ownership. The vendor keeps the intellectual-property rights.</div>
+      </div>
+    </section>
+
+    <nav class="chnav">
+      <a class="prev" href="chapter-03.html"><small>Previous</small>Chapter 3 · Computer Hardware</a>
+      <a class="next" href="chapter-05.html"><small>Next</small>Chapter 5 · Data Resource Management</a>
+    </nav>
+
+    <footer>Chapter 4 of 12 · IT Strategy, Explained Simply · plain-English study companion</footer>
+
+  </div>
+  </main>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
