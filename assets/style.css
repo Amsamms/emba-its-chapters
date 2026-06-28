@@ -202,6 +202,16 @@ a.paper p{color:var(--muted);font-size:13.5px;margin:0;line-height:1.55}
   color:#04101f;background:var(--amber-soft);border-radius:4px;padding:1px 5px;margin-left:5px;vertical-align:middle}
 .note-verify{background:rgba(245,184,74,.08);border:1px dashed rgba(245,184,74,.4);border-radius:9px;padding:10px 15px;margin:14px 0;font-size:.9em;color:var(--amber-soft)}
 
+/* ---------- real exam scan images ---------- */
+.scan{margin:20px 0 6px}
+.scan .scanlabel{font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+.scan figure{margin:0;padding:10px;background:#0b1626}
+.scan img{display:block;width:100%;max-width:540px;margin:0 auto;border:1px solid var(--line2);border-radius:8px;background:#fff}
+.scan figcaption{color:var(--faint);font-size:.85em;margin-top:10px;text-align:center}
+.scan figcaption .open{font-family:var(--mono);font-size:11px;color:var(--cyan-soft)}
+.scan .twin{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(max-width:680px){.scan .twin{grid-template-columns:1fr}}
+
 /* ---------- mobile ---------- */
 .menubtn{display:none}
 @media(max-width:900px){
