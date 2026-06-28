@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 24 True/False Statements, Answered | IT Strategy Exams</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  td .tf{font-family:var(--mono);font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;white-space:nowrap}
+  .tf.t{background:rgba(67,221,146,.16);color:#8ef0bf;border:1px solid rgba(67,221,146,.35)}
+  .tf.f{background:rgba(255,123,123,.16);color:#ffb0b0;border:1px solid rgba(255,123,123,.35)}
+</style>
+</head>
+<body>
+<div class="backdrop"></div>
+<button class="menubtn">☰ Sections</button>
+
+<div class="wrap">
+  <aside class="side">
+    <a class="brand" href="exams.html" style="text-decoration:none">
+      <span class="lg">IT</span>
+      <span><b>Exam room</b><small>True / False block</small></span>
+    </a>
+    <nav class="toc">
+      <div class="grp">This sheet</div>
+      <a href="#how"><span class="n">i</span> How this block works</a>
+      <a href="#answers"><span class="n">1</span> All 24, answered</a>
+      <a href="#traps"><span class="n">⚖</span> The common traps</a>
+    </nav>
+    <a class="home" href="exams.html">← All papers</a>
+  </aside>
+
+  <main class="main">
+  <div class="reading">
+
+    <section class="hero" id="top">
+      <span class="tag"><span class="dot"></span> Objective section &middot; Enppi sitting</span>
+      <h1>The 24 <span class="grad">True / False</span> statements</h1>
+      <p class="lead">The one objective block she has used (on the Enppi paper). The instruction is "answer True
+      or False and correct the false ones", so a wrong statement still needs the right fix. Every item below has
+      the verdict and, where false, the correction.</p>
+      <div class="exam" style="margin-top:18px"><b>Where it comes from:</b> almost all of it is <b>Chapter 5</b>
+      (data, warehouses, mining) and <b>Chapter 9</b> (MIS/DSS/KMS, AI), with a few from <b>Chapter 7</b>
+      (ERP/CRM/SCM) and <b>Chapter 1</b> (the system model).</div>
+    </section>
+
+    <section id="how">
+      <div class="kicker">How this block works</div>
+      <h2 class="sec">Mark it, then fix it</h2>
+      <p>Marking "False" alone earns little, you must say what makes it false. The corrections below are the
+      one-line fixes she is looking for. Green = True as written. Red = False, with the fix.</p>
+    </section>
+
+    <section id="answers">
+      <div class="kicker">All 24, answered</div>
+      <h2 class="sec">The answer key</h2>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th style="width:28px">#</th><th>Statement</th><th style="width:64px">Verdict</th><th>If false, the correction</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Data cleansing involves identifying and fixing errors or inconsistencies in datasets.</td><td><span class="tf t">TRUE</span></td><td>-</td></tr>
+          <tr><td>2</td><td>A data warehouse stores only current data and allows it to be altered by users.</td><td><span class="tf f">FALSE</span></td><td>A data warehouse stores <strong>historical</strong> data and is read-only / non-volatile; users analyse it, they do not alter it.</td></tr>
+          <tr><td>3</td><td>Data mining is used to find hidden patterns and relationships in large datasets.</td><td><span class="tf t">TRUE</span></td><td>-</td></tr>
+          <tr><td>4</td><td>Explicit knowledge is knowledge that can be documented and easily shared through formal means.</td><td><span class="tf t">TRUE</span></td><td>- (Contrast with <em>tacit</em> knowledge, which is hard to write down.)</td></tr>
+          <tr><td>5</td><td>Data refers to raw facts without context, which need to be processed to become useful information.</td><td><span class="tf t">TRUE</span></td><td>-</td></tr>
+          <tr><td>6</td><td>A KMS is primarily focused on managing structured data, such as databases or spreadsheets.</td><td><span class="tf f">FALSE</span></td><td>A Knowledge Management System manages <strong>knowledge, including unstructured and tacit</strong> knowledge (documents, expertise, lessons learned), not mainly structured data.</td></tr>
+          <tr><td>7</td><td>Management Information Systems (MIS) provide valuable reports to track performance and assist in decision-making.</td><td><span class="tf t">TRUE</span></td><td>-</td></tr>
+          <tr><td>8</td><td>CRM systems only track customer data and do not provide insights or recommendations for improving customer relationships.</td><td><span class="tf f">FALSE</span></td><td>CRM also <strong>analyses</strong> customer data and provides insights and recommendations to improve relationships, it is not just storage.</td></tr>
+          <tr><td>9</td><td>Big Data refers to datasets that can be easily processed and analyzed.</td><td><span class="tf f">FALSE</span></td><td>Big Data is datasets so <strong>large and complex that traditional tools cannot easily</strong> process them (volume, velocity, variety).</td></tr>
+          <tr><td>10</td><td>Integrating ERP, SCM and CRM into a unified enterprise system can enhance efficiency, customer satisfaction and performance through seamless data flow.</td><td><span class="tf t">TRUE</span></td><td>-</td></tr>
+          <tr><td>11</td><td>AI technologies, such as machine learning, can be used to analyze and extract insights from data stored in databases.</td><td><span class="tf t">TRUE</span></td><td>-</td></tr>
+          <tr><td>12</td><td>ERP systems are only used for financial reporting and do not support other business functions.</td><td><span class="tf f">FALSE</span></td><td>ERP supports <strong>many functions</strong>, procurement, inventory, manufacturing, maintenance, HR and sales, not just finance.</td></tr>
+          <tr><td>13</td><td>Clustering is a type of data mining that groups similar data points together based on certain characteristics.</td><td><span class="tf t">TRUE</span></td><td>-</td></tr>
+          <tr><td>14</td><td>Predictive modeling uses data mining to predict classification categories but not numerical outcomes.</td><td><span class="tf f">FALSE</span></td><td>Predictive modelling predicts <strong>both</strong> categorical (classification) <strong>and</strong> numerical (regression) outcomes.</td></tr>
+          <tr><td>15</td><td>Text mining involves processing and analyzing database tables to extract useful patterns, trends and insights.</td><td><span class="tf f">FALSE</span></td><td>Text mining analyses <strong>unstructured text</strong> (documents, emails, reports), not database tables.</td></tr>
+          <tr><td>16</td><td>SCM systems help improve inventory management, reduce operational costs and enhance supplier relationships.</td><td><span class="tf t">TRUE</span></td><td>-</td></tr>
+          <tr><td>17</td><td>ERP systems often rely on highly customized configurations to meet a company's unique needs, which can cause integration challenges and high implementation costs.</td><td><span class="tf t">TRUE</span></td><td>-</td></tr>
+          <tr><td>18</td><td>DSS and KMS both aid decision-making, but KMS focuses on real-time data analytics while DSS focuses on sharing organizational knowledge.</td><td><span class="tf f">FALSE</span></td><td>It is <strong>reversed</strong>: <strong>DSS</strong> focuses on data analytics and modelling for decisions; <strong>KMS</strong> focuses on sharing organisational knowledge.</td></tr>
+          <tr><td>19</td><td>The three dimensions of Information Systems are: input, processing and output.</td><td><span class="tf f">FALSE</span></td><td>Those are three <em>system activities</em>. An information system has <strong>five</strong> activities, input, processing, output, <strong>storage</strong> and <strong>control</strong>, and uses five resources (people, hardware, software, data, networks).</td></tr>
+          <tr><td>20</td><td>We do not need any feedback with information systems since they are computerized.</td><td><span class="tf f">FALSE</span></td><td>Feedback and <strong>control</strong> are essential to any system; without feedback it cannot self-correct.</td></tr>
+          <tr><td>21</td><td>ESS represents available data in graphical form which helps to understand it quickly.</td><td><span class="tf t">TRUE</span></td><td>- (Executive Support Systems use dashboards and visualisation.)</td></tr>
+          <tr><td>22</td><td>ERP systems include a single database shared between all organization functions.</td><td><span class="tf t">TRUE</span></td><td>-</td></tr>
+          <tr><td>23</td><td>TPS inserts data into data warehouses.</td><td><span class="tf f">FALSE</span></td><td>A Transaction Processing System feeds <strong>operational databases</strong>; data is then moved to the warehouse by an <strong>ETL</strong> (extract, transform, load) process, not directly by the TPS.</td></tr>
+          <tr><td>24</td><td>If managers rely on forecasts, best guesses and luck, they will take a good decision.</td><td><span class="tf f">FALSE</span></td><td>Good decisions need <strong>good information and analysis</strong>; guesses and luck do not reliably produce good decisions.</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="traps">
+      <div class="kicker">Watch out</div>
+      <h2 class="sec">The traps she builds in</h2>
+      <p>Most false statements use the same three tricks. Spot the trick and the correction writes itself:</p>
+      <ul>
+        <li><strong>"Only" / "do not"</strong> (8, 12, 20): she narrows a system that is actually broad. ERP is
+        not "only finance"; CRM does not "only" store; we <em>do</em> need feedback.</li>
+        <li><strong>Swapped definitions</strong> (18): she crosses two terms over. DSS and KMS are real but
+        described back-to-front.</li>
+        <li><strong>"Easily"</strong> (9): Big Data is the opposite of easy; that word is the tell.</li>
+        <li><strong>Wrong target</strong> (2, 15, 23): a data warehouse is not editable current data; text mining
+        is not database tables; TPS does not load the warehouse directly.</li>
+      </ul>
+    </section>
+
+    <nav class="chnav">
+      <a class="prev" href="exam-model2.html"><small>Previous paper</small>Model 2: e-commerce &amp; e-government</a>
+      <a class="next" href="exam-predicted.html"><small>Next</small>The predicted paper &amp; playbook</a>
+    </nav>
+
+    <footer>Exam companion · IT Strategy · answers built from the course material<br><span style="opacity:.85">Made by <strong>Ahmed Mohamed Sabri</strong> · signed <strong>amsamms</strong></span></footer>
+
+  </div>
+  </main>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

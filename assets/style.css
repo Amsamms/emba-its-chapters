@@ -142,6 +142,66 @@ a.chcard .badge{display:inline-block;margin-top:10px;font-family:var(--mono);fon
 
 footer{padding:30px 0;color:var(--faint);font-size:13px;text-align:center}
 
+/* ---------- top nav bar (Material | Exams) ---------- */
+.topnav{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:6px;
+  padding:11px clamp(16px,4vw,40px);background:rgba(8,18,34,.82);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line)}
+.topnav .home-link{font-family:var(--display);color:#fff;font-size:16px;margin-right:auto;display:flex;align-items:center;gap:9px}
+.topnav .home-link .lg{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:#04101f;font-weight:700;font-size:14px}
+.topnav a.navlink{font-family:var(--mono);font-size:12.5px;letter-spacing:.5px;color:var(--muted);padding:7px 14px;border-radius:9px;border:1px solid transparent}
+.topnav a.navlink:hover{color:var(--ink);background:var(--panel);text-decoration:none}
+.topnav a.navlink.on{color:var(--cyan-soft);background:var(--panel);border-color:var(--line2)}
+
+/* ---------- big landing doors ---------- */
+a.door{display:block;background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);
+  border-radius:18px;padding:30px 30px 26px;transition:.2s;color:var(--ink);position:relative;overflow:hidden}
+a.door:hover{border-color:var(--cyan);transform:translateY(-4px);text-decoration:none;box-shadow:0 14px 40px rgba(0,0,0,.3)}
+a.door .ic{font-size:34px;margin-bottom:12px;display:block}
+a.door h3{font-family:var(--display);font-size:26px;color:#fff;margin:0 0 8px}
+a.door p{color:var(--muted);font-size:14.5px;margin:0 0 14px;line-height:1.6}
+a.door .go{font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--cyan-soft);text-transform:uppercase}
+a.door ul{margin:8px 0 0 18px}a.door li{font-size:13.5px;color:var(--muted)}
+
+/* ---------- exam paper cards ---------- */
+a.paper{display:block;background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:.2s;color:var(--ink)}
+a.paper:hover{border-color:var(--cyan);transform:translateY(-3px);text-decoration:none}
+a.paper .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+a.paper h3{font-family:var(--display);font-size:18px;color:#fff;margin:0 0 5px}
+a.paper p{color:var(--muted);font-size:13.5px;margin:0;line-height:1.55}
+.pill{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+.pill.most{background:rgba(255,123,123,.16);color:#ffb0b0;border:1px solid rgba(255,123,123,.35)}
+.pill.core{background:rgba(245,184,74,.16);color:var(--amber-soft);border:1px solid rgba(245,184,74,.3)}
+.pill.repeat{background:rgba(67,221,146,.14);color:#8ef0bf;border:1px solid rgba(67,221,146,.3)}
+.pill.objective{background:rgba(116,145,179,.16);color:var(--muted);border:1px solid var(--line2)}
+
+/* ---------- exam Q + answer blocks ---------- */
+.qbox{background:rgba(8,18,34,.6);border:1px solid var(--line2);border-radius:12px;padding:16px 20px;margin:26px 0 4px;position:relative}
+.qbox .qlabel{font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+.qbox h3{font-family:var(--display);color:#fff;font-size:19px;margin:0 0 7px}
+.qbox .hook{color:var(--amber-soft);font-style:italic;margin:4px 0 10px}
+.qbox ol,.qbox ul{margin:8px 0 4px 20px}.qbox li{color:var(--ink);font-size:.96em}
+.qbox.verbatim{border-left:4px solid var(--faint)}
+
+.howto{border-left:5px solid var(--blue);background:linear-gradient(180deg,rgba(74,147,255,.10),rgba(74,147,255,.03));
+  border-radius:8px;padding:6px 20px 14px;margin:10px 0 8px}
+.howto>.hd{font-family:var(--display);color:var(--blue-soft);font-size:1.06rem;font-weight:600;padding:13px 0 6px;display:flex;align-items:center;gap:9px}
+.howto>.hd::before{content:"\1F9ED";font-size:1.05em}
+.howto p,.howto li{font-size:.96rem;line-height:1.66}
+.howto .time{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.5px}
+
+.model{border-left:5px solid var(--green);background:linear-gradient(180deg,rgba(67,221,146,.09),rgba(67,221,146,.02));
+  border-radius:8px;padding:6px 20px 14px;margin:8px 0 14px}
+.model>.hd{font-family:var(--display);color:#8ef0bf;font-size:1.06rem;font-weight:600;padding:13px 0 6px;display:flex;align-items:center;gap:9px}
+.model>.hd::before{content:"\270D";font-size:1.05em}
+.model p,.model li{font-size:.96rem;line-height:1.68}
+.model .co{color:var(--cyan-soft);font-weight:600}
+
+/* company-fact to verify */
+.flag{border-bottom:1px dotted var(--amber);cursor:help}
+.verify{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;
+  color:#04101f;background:var(--amber-soft);border-radius:4px;padding:1px 5px;margin-left:5px;vertical-align:middle}
+.note-verify{background:rgba(245,184,74,.08);border:1px dashed rgba(245,184,74,.4);border-radius:9px;padding:10px 15px;margin:14px 0;font-size:.9em;color:var(--amber-soft)}
+
 /* ---------- mobile ---------- */
 .menubtn{display:none}
 @media(max-width:900px){
