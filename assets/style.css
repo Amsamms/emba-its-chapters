@@ -212,6 +212,20 @@ a.paper p{color:var(--muted);font-size:13.5px;margin:0;line-height:1.55}
   opacity:0;transition:opacity .3s,transform .3s;pointer-events:none}
 .sxtoast.show{opacity:1;transform:translate(-50%,0)}
 
+/* touch unlock box: opened by double-tapping the footer signature (mobile keyboard path) */
+.sxbox{position:fixed;left:0;right:0;bottom:0;z-index:210;display:flex;justify-content:center;
+  padding:0 16px 18px;opacity:0;transform:translateY(12px);transition:opacity .25s,transform .25s;pointer-events:none}
+.sxbox.show{opacity:1;transform:none;pointer-events:auto}
+.sxbox form{display:flex;gap:8px;width:min(420px,100%);background:rgba(10,18,34,.97);
+  border:1px solid var(--line2);box-shadow:0 -6px 30px rgba(0,0,0,.5);border-radius:14px;padding:10px;backdrop-filter:blur(8px)}
+.sxbox input{flex:1;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:9px;
+  color:var(--ink);font-family:var(--mono);font-size:16px;padding:11px 13px;outline:none}
+.sxbox input:focus{border-color:var(--purple)}
+.sxbox button{background:linear-gradient(135deg,var(--purple),#7d63d6);color:#0a0618;border:0;border-radius:9px;
+  font-family:var(--mono);font-weight:700;font-size:13px;padding:0 16px;cursor:pointer}
+.sxbox.shake form{animation:sxshake .45s}
+@keyframes sxshake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}
+
 /* company-fact to verify */
 .flag{border-bottom:1px dotted var(--amber);cursor:help}
 .verify{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;

@@ -127,11 +127,12 @@
     })();
 
     async function tryUnlock(pass) {
-      if (unlocked || !pass || pass.length < 4) return;
+      if (unlocked) return true;
+      if (!pass || pass.length < 4) return false;
       try {
         if (!encBlob) {
           var r = await fetch(ENC_URL, { cache: 'force-cache' });
-          if (!r.ok) return;
+          if (!r.ok) return false;
           encBlob = await r.json();
         }
         var enc = new TextEncoder();
@@ -143,8 +144,10 @@
           { name: 'AES-GCM', iv: b64ToBuf(encBlob.iv) }, key, b64ToBuf(encBlob.ct));
         var notes = JSON.parse(new TextDecoder().decode(plainBuf));
         finish(notes, false);
+        return true;
       } catch (e) {
         // wrong passphrase or bad data: stay locked, say nothing.
+        return false;
       }
     }
 
@@ -169,5 +172,55 @@
         debTimer = setTimeout(function () { tryUnlock(buf); }, 350);
       }
     });
+
+    // Touch path: a small passphrase box, opened by double-tapping the footer
+    // signature. On a phone there is no hardware keyboard and no input on the
+    // page, so the soft keyboard never shows; focusing this field inside the
+    // tap gesture summons it. The box only appears after the secret gesture.
+    function openBox() {
+      if (unlocked || document.querySelector('.sxbox')) return;
+      var box = document.createElement('div');
+      box.className = 'sxbox';
+      box.innerHTML = '<form><input type="password" inputmode="text" autocomplete="off" ' +
+        'autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="key" ' +
+        'placeholder="key"><button type="submit">Go</button></form>';
+      document.body.appendChild(box);
+      requestAnimationFrame(function () { box.classList.add('show'); });
+      var input = box.querySelector('input');
+      input.focus();   // synchronous within the tap gesture so iOS shows the keyboard
+      function close() {
+        if (box.parentNode) box.parentNode.removeChild(box);
+        document.removeEventListener('keydown', onEsc, true);
+      }
+      function onEsc(e) { if (e.key === 'Escape') close(); }
+      document.addEventListener('keydown', onEsc, true);
+      box.querySelector('form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var ok = await tryUnlock(input.value);
+        if (ok) { close(); }
+        else {
+          box.classList.add('shake');
+          input.value = '';
+          setTimeout(function () { box.classList.remove('shake'); }, 500);
+          input.focus();
+        }
+      });
+      box.addEventListener('click', function (e) { if (e.target === box) close(); });
+    }
+
+    var sig = Array.prototype.slice.call(document.querySelectorAll('footer strong'))
+      .filter(function (s) { return /amsamms/i.test(s.textContent); })[0];
+    if (sig) {
+      sig.style.userSelect = 'none';
+      sig.style.webkitUserSelect = 'none';
+      sig.style.webkitTouchCallout = 'none';
+      sig.style.touchAction = 'manipulation';   // no double-tap zoom on mobile
+      var lastTap = 0;
+      sig.addEventListener('click', function (e) {
+        var now = Date.now();
+        if (now - lastTap < 450) { e.preventDefault(); lastTap = 0; openBox(); }
+        else { lastTap = now; }
+      });
+    }
   })();
 })();
