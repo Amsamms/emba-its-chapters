@@ -100,14 +100,28 @@
       return any;
     }
 
-    function toast() {
+    function toastMsg(msg) {
       var t = document.createElement('div');
       t.className = 'sxtoast';
-      t.textContent = 'Private answers unlocked';
+      t.textContent = msg;
       document.body.appendChild(t);
       requestAnimationFrame(function () { t.classList.add('show'); });
       setTimeout(function () { t.classList.remove('show'); }, 2600);
       setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 3100);
+    }
+
+    // Hide the private answers again and forget the unlock (back to public view).
+    function relock() {
+      if (!unlocked) return;
+      unlocked = false;
+      buf = '';
+      try { sessionStorage.removeItem(SS_KEY); } catch (e) {}
+      Array.prototype.forEach.call(document.querySelectorAll('.mine'), function (el) {
+        if (el.parentNode) el.parentNode.removeChild(el);
+      });
+      var b = document.querySelector('.sxbox');
+      if (b && b.parentNode) b.parentNode.removeChild(b);
+      toastMsg('Private answers hidden');
     }
 
     function finish(notes, fromCache) {
@@ -115,7 +129,7 @@
       var any = render(notes);
       unlocked = true;
       try { sessionStorage.setItem(SS_KEY, JSON.stringify(notes)); } catch (e) {}
-      if (!fromCache && any) toast();
+      if (!fromCache && any) toastMsg('Private answers unlocked');
     }
 
     // Already unlocked earlier this tab session: render straight away, no typing.
@@ -218,9 +232,17 @@
       var lastTap = 0;
       sig.addEventListener('click', function (e) {
         var now = Date.now();
-        if (now - lastTap < 450) { e.preventDefault(); lastTap = 0; openBox(); }
-        else { lastTap = now; }
+        if (now - lastTap < 450) {
+          e.preventDefault(); lastTap = 0;
+          // toggle: double-tap reveals when hidden, hides when shown
+          if (unlocked) relock(); else openBox();
+        } else { lastTap = now; }
       });
     }
+
+    // Desktop quick-hide: Escape puts the private answers away (when no box is open).
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && unlocked && !document.querySelector('.sxbox')) relock();
+    });
   })();
 })();
