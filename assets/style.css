@@ -196,6 +196,22 @@ a.paper p{color:var(--muted);font-size:13.5px;margin:0;line-height:1.55}
 .model p,.model li{font-size:.96rem;line-height:1.68}
 .model .co{color:var(--cyan-soft);font-weight:600}
 
+/* private (owner-only) deeper answer, injected after unlock */
+.mine{border-left:5px solid var(--purple);background:linear-gradient(180deg,rgba(177,140,255,.12),rgba(177,140,255,.03));
+  border-radius:8px;padding:6px 20px 14px;margin:10px 0 16px;box-shadow:0 0 0 1px rgba(177,140,255,.18)}
+.mine>.hd{font-family:var(--display);color:#cdb6ff;font-size:1.06rem;font-weight:600;padding:13px 0 6px;display:flex;align-items:center;gap:9px}
+.mine>.hd::before{content:"\1F511";font-size:1.02em}
+.mine p,.mine li{font-size:.96rem;line-height:1.68}
+.mine .move{margin-top:10px;border-top:1px dashed rgba(245,184,74,.35);padding-top:9px;color:var(--amber-soft);font-size:.92rem}
+.mine .move b{color:var(--amber)}
+
+/* brief confirmation when the private layer unlocks */
+.sxtoast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,16px);z-index:200;
+  background:linear-gradient(135deg,var(--purple),#7d63d6);color:#0a0618;font-family:var(--mono);
+  font-size:12px;letter-spacing:.5px;padding:9px 16px;border-radius:999px;box-shadow:0 8px 28px rgba(0,0,0,.45);
+  opacity:0;transition:opacity .3s,transform .3s;pointer-events:none}
+.sxtoast.show{opacity:1;transform:translate(-50%,0)}
+
 /* company-fact to verify */
 .flag{border-bottom:1px dotted var(--amber);cursor:help}
 .verify{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;

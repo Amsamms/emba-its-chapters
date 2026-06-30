@@ -1,2 +1,8 @@
 # Working slide images used only for the visual read; not part of the site
 extracted/
+
+# never commit the plaintext of the private answer set; only the encrypted
+# blob (assets/notes.enc.json) belongs in the repo
+private_answers.*
+*.plain.*
+.playwright-mcp/
